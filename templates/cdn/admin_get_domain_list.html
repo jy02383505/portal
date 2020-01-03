@@ -1,0 +1,94 @@
+{%  extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+<div class="con">
+    <div class="mianbaoxie">
+        <a href="javascript:;">
+            {% trans 'CDN域名列表' %}{{ contract }}
+        </a>
+	</div>
+    <!--查询头-->
+	<div class="search">
+        <div class="search_in layui-form" >
+            {% if 'client_cdn_create_domain' in user_perm or 'admin_cdn_create_domain' in user_perm  %}
+                <div class="position">
+                    <button class="checkBtn" style="margin:0;" id="add_domain" lay-submit lay-filter="add_domain">{% trans '添加域名' %}</button>
+                </div>
+            {% endif %}
+
+            <div class="layui_user" style="position:relative;">
+                <input type="text" class="search_input" id="domain_input" name="domain_input" lay-verify="domain_input" autocomplete="off" placeholder="{% trans '请输入' %}">
+                <span class="search_user"></span>
+            </div>
+            {% if user.is_staff == True %}
+                <div class="position">
+                <select name="username" lay-verify="username" lay-filter="username">
+                    <option value="">{% trans "选择用户" %}</option>
+                    <option value="">{% trans "全部" %}</option>
+                    {% for user in user_list %}
+                        <option value="{{ user.id }}">{% trans user.username %}</option>
+                    {% endfor %}
+                </select>
+                </div>
+            {% endif %}
+            <div class="position">
+                <select name="acceleration_type" lay-verify="acceleration_type" lay-filter="acceleration_type">
+                    <option value="">{% trans "选择加速类型" %}</option>
+                    <option value="">{% trans "全部" %}</option>
+                    {% for cdn in cdn_type %}
+                        <option value="{{ cdn.check_name }}">{% trans cdn.name %}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="position">
+                <select name="domain_status" lay-verify="domain_status" lay-filter="domain_status">
+                    <option value="">{% trans "选择状态" %}</option>
+                    <option value="">{% trans "全部" %}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+	<!--显示列表-->
+	<div class="main">
+	<!--显示列表-->
+        <div class="list" style="padding-bottom: 70px;">
+            <div class="conlist con_tool" style="position: relative">
+
+                <table id="domain_list" class="layui-hide" lay-filter="lay_domain">
+
+                </table>
+                <div id="page" class="page_back"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="list_button">
+    <a class="layui-btn layui-btn-xs" lay-event="statistics">{% trans "统计" %}</a>
+    <a class="layui-btn layui-btn-xs layui_conf" lay-event="cdn_configure">{% trans "配置" %}</a>
+{#    <a class="layui-btn layui-btn-xs layui_conf" style="display: none;" lay-event="layui_status"></a>#}
+
+</script>
+{% if user.is_staff == True %}
+<script type="text/html" id="toolbar_table">
+    <div class="layui-btn-container layui_button">
+        <button class="layui-btn layui_status layui-btn-gray" disabled lay-event="open_domain">{% trans "开 启" %}</button>
+        <button class="layui-btn layui_status layui-btn-gray" disabled lay-event="close_domain">{% trans "关 闭" %}</button>
+    </div>
+</script>
+{% endif %}
+
+<script type="text/javascript">
+    user_list = {{ user_list | safe }}
+    protocol_type={{ protocol_type | safe }}
+    cdn_type={{ cdn_type | safe }}
+    domain_status={{ domain_status | safe }}
+    is_staff='{{ user.is_staff | safe }}'
+    contract = {{ contract | safe }}
+
+
+document.write(
+        '<script src="{% static 'js/cdn/admin_get_domain_list.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}
+

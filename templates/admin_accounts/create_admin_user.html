@@ -1,0 +1,68 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+
+<div class="con">
+    <div class="mianbaoxie">
+        <i class="layui-icon layui-icon-return fl"></i>
+        <a href="javascript:;">{% trans '新建管理员' %}</a>
+	</div>
+    <!--查询头-->
+
+    <div class="main main_in">
+        <div class="list">
+        <!--lay_first-->
+            <div class="layui-form" id="lay_form">
+                <h5 class="mian_h5">{% trans "管理员信息" %}</h5>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><i>*</i>{% trans "管理员" %}</label>
+                    <div class="layui-input-block">
+                       <input type="text" name="username" id="username" lay-verify="username"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><i>*</i>{% trans "登录密码" %}</label>
+                    <div class="layui-input-block">
+                      <input id="password" type="password" name="password"  lay-verify="password" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><i>*</i>{% trans "确认密码" %}</label>
+                    <div class="layui-input-block">
+                      <input id="password_again" type="password" name="password_again"  lay-verify="password" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><i>*</i>{% trans "角色" %}</label>
+                    <div class="layui-input-block">
+                        <select name="role" id="role" lay-filter="role">
+                            <option value="">{% trans "请选择" %}</option>
+                            {% for group_type in group_type %}
+                                <option value="{{ group_type.group_id }}">{% trans group_type.name %}</option>
+                            {% endfor %}
+                        </select>
+{#                      <input id="role" type="text" name="role"  lay-verify="role" placeholder="" autocomplete="off" class="layui-input">#}
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"></label>
+                    <div class="layui-input-block">
+                        <button class="checkBtn" lay-submit lay-filter="confirm">{% trans '确认' %}</button>
+                    </div>
+                </div>
+            </div>
+            <!--lay_first-->
+        </div>
+    </div>
+</div>
+<script>
+    if(lan == 'en'){
+        $('.layui-form-label').width(130)
+    }
+    group_type={{ group_type | safe }};
+    document.write(
+        '<script src="{% static 'js/accounts/create_admin_user.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}
+

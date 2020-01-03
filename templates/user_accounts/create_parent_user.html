@@ -1,0 +1,151 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+
+<div class="con">
+    <div class="mianbaoxie">
+        <i class="layui-icon layui-icon-return fl"></i>
+        <a href="javascript:;">{% trans '新建用户' %}</a>
+	</div>
+    <!--查询头-->
+
+    <div class="main main_in">
+        <div class="list">
+            <h5 class="mian_h5 process_h5">{% trans "创建流程" %}</h5>
+            <ul class="progress">
+                <li class="active"><span>01</span>{% trans "填写用户信息" %}</li>
+                <li><span>02</span>{% trans "设定权限" %}</li>
+                <li><span>03</span>{% trans "完成" %}</li>
+            </ul>
+
+        <!--lay_first-->
+            <div class="layui-form" id="lay_form">
+                <h5 class="mian_h5">{% trans "用户信息" %}</h5>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><i>*</i>{% trans "用户名" %}</label>
+                    <div class="layui-input-block">
+                       <input style="display: none;" type="text" name="username" />
+                       <input type="text" name="username" id="username" lay-verify="username"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><i>*</i>{% trans "公司名称" %}</label>
+                    <div class="layui-input-block">
+                      <input id="company" type="text" name="company"  lay-verify="company" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "联系人" %}</label>
+                    <div class="layui-input-block">
+                      <input id="contacts" type="text" name="contacts"  lay-verify="contacts" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "联系电话" %}</label>
+                    <div class="layui-input-block">
+                      <input id="mobile" type="text" name="mobile"   placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "联系邮箱" %}</label>
+                    <div class="layui-input-block">
+                        <input style="display: none;" type="text" name="email" />
+                        <input id="email" type="text" name="email" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "访问类型" %}</label>
+                    <div class="layui-input-block">
+                        <input id="is_api" title="{% trans '为用户自动生成AccessKey' %}" type="checkbox" name="is_api" value="0" lay-skin="primary">
+                        <p class="tips">{% trans "启用密钥，支持API编程访问" %}</p>
+                    </div>
+                    <div class="layui-input-block">
+                        <input id="is_active" title="{% trans '控制台访问' %}" type="checkbox" name="is_active" value="0" checked lay-skin="primary">
+                        <p class="tips">{% trans "启用密码，允许用户登录到控制台" %}</p>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><i>*</i>{% trans "控制台密码" %}</label>
+                    <div class="layui-input-block">
+                        <input style="display: none;" type="password" name="username" />
+                      <input id="password" type="password" name="password"  lay-verify="password" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item button_all">
+                    <label class="layui-form-label"></label>
+                    <div class="layui-input-block">
+                        <button class="layui-btn layui-btn-blue" lay-submit lay-filter="next_step_first">{% trans '下一步' %}</button>
+                    </div>
+                </div>
+            </div>
+            <!--lay_first-->
+            <!--lay_second-->
+            <div class="layui-form" id="lay_second" style="display:none;">
+                <h5 class="mian_h5" style="padding-bottom: 10px;">{% trans "操作权限" %}</h5>
+                <button class="layui-btn layui-btn-blue" lay-submit lay-filter="add_permissions">{% trans '添加操作权限' %}</button>
+{#                <button class="checkBtn" id="add_permissions" onclick="add_permissions()">{% trans '添加操作权限' %}</button>#}
+                <table class="layui-table" style="margin-top: 20px;" id="permissions_table"  lay-filter="add_permissions_table">
+                    <thead>
+                        <tr>
+                          <th lay-data="{field:'services'}">{% trans "产品/服务" %}</th>
+                          <th lay-data="{field:'operation_name'}">{% trans "操作名称" %}</th>
+                          <th lay-data="{field:'city',toolbar: '#list_button'}">{% trans "操作" %}</th>
+                        </tr>
+                    </thead>
+                     <tbody id="server_tbody">
+
+                    </tbody>
+                </table>
+                <div class="button_all">
+                   {% comment %} <button class="check_pre" id="step_pre" onclick="step_pre()">{% trans '上一步' %}</button>
+                    <button class="checkBtn" id="step_next" onclick="step_next()">{% trans '下一步' %}</button>{% endcomment %}
+                    <button class="layui-btn layui-btn-blue" lay-submit lay-filter="step_pre">{% trans '上一步' %}</button>
+                    <button class="layui-btn layui-btn-blue" lay-submit lay-filter="step_next">{% trans '下一步' %}</button>
+                </div>
+
+            </div>
+            <!--lay_second-->
+            <!--lay_last-->
+            <div class="layui-form" id="lay_last" style="display:none;">
+                <h5 class="mian_h5" style="padding-bottom: 10px;">{% trans "用户信息" %}</h5>
+                <table id="role_table" class="layui-hide" lay-filter="role_table" style="border:1px solid #f8f8f8;">
+
+                </table>
+                <h5 class="mian_h5" style="padding:20px 0 10px 0;">{% trans "操作权限" %}</h5>
+                <table class="layui-table" id="authority_table"  lay-filter="add_authority_table" style="margin-bottom: 20px;">
+                    <thead>
+                        <tr>
+                          <th lay-data="{field:'services'}">{% trans "产品/服务" %}</th>
+                          <th lay-data="{field:'operation_name'}">{% trans "操作名称" %}</th>
+                          <th lay-data="{field:'city',toolbar: '#list_button'}">{% trans "操作" %}</th>
+                        </tr>
+                    </thead>
+                     <tbody id="authority_tbody">
+
+                    </tbody>
+                </table>
+                <div class="button_all">
+                    <button class="layui-btn layui-btn-blue" lay-submit lay-filter="step_third">{% trans '上一步' %}</button>
+                    <button class="layui-btn layui-btn-blue" lay-submit lay-filter="step_over">{% trans '完成' %}</button>
+                </div>
+            </div>
+            <!--lay_last-->
+        </div>
+    </div>
+</div>
+
+<script>
+    if(lan == 'en'){
+        $('.layui-form-label').width(130)
+        $('.layui-input-block').css('margin-left','140px');
+    }
+    perm={{ perm | safe }};
+    group_type={{ user_type | safe }};
+    perm_type={{ perm_type | safe }};
+    document.write(
+        '<script src="{% static 'js/accounts/create_parent_user.js' %}?v='+Math.random()+'"><\/script>');
+
+</script>
+{% endblock %}
+

@@ -1,0 +1,1455 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-31 10:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: static/data/moment.min.js:1
+msgid ": "
+msgstr ""
+
+#: static/formSelects/formSelects-v4.js:68
+#: static/js/accounts/create_details.js:239
+#: static/js/accounts/create_details.js:251
+#: static/js/accounts/create_parent_user.js:139
+#: static/js/accounts/create_parent_user.js:151
+#: static/js/cdn/add_cdn_create_domain.js:132
+#: static/js/cdn/admin_log_upload.js:57 static/js/cdn/admin_refresh.js:158
+msgid "请选择"
+msgstr "Please choose"
+
+#: static/formSelects/formSelects-v4.js:111
+msgid "全选"
+msgstr "All"
+
+#: static/formSelects/formSelects-v4.js:113
+msgid "清空"
+msgstr "Empty"
+
+#: static/formSelects/formSelects-v4.js:1311
+#: static/js/cdn/admin_statistics.js:216 static/js/cdn/admin_statistics.js:240
+#: static/js/cdn/admin_statistics.js:341
+msgid "全部"
+msgstr "All"
+
+#: static/js/accounts/admin_operate_log.js:92
+msgid "操作时间"
+msgstr "Operating Time"
+
+#: static/js/accounts/admin_operate_log.js:93
+#: static/js/accounts/admin_user_list.js:15
+#: static/js/accounts/admin_user_list.js:29
+#: static/js/accounts/create_parent_user.js:8
+#: static/js/accounts/create_parent_user.js:20
+msgid "用户名"
+msgstr "User name"
+
+#: static/js/accounts/admin_operate_log.js:94
+msgid "操作记录"
+msgstr "Operation record"
+
+#: static/js/accounts/admin_operate_log.js:102
+#: static/js/accounts/admin_user_list.js:114
+#: static/js/accounts/create_binding.js:55
+#: static/js/cms/admin_configure_waf.js:121 static/js/user/public_key.js:78
+#: static/js/user/public_key.js:82 static/js/user/public_key.js:127
+#: static/js/user/public_key.js:129
+#: static/js/user/user_secret_info_details.js:52
+#: static/js/user/user_secret_info_details.js:56
+msgid "启用"
+msgstr "Enable"
+
+#: static/js/accounts/admin_operate_log.js:104
+#: static/js/accounts/admin_user_list.js:116
+#: static/js/accounts/create_binding.js:57
+#: static/js/cms/admin_configure_waf.js:123 static/js/user/public_key.js:79
+#: static/js/user/public_key.js:81 static/js/user/public_key.js:126
+#: static/js/user/public_key.js:130
+#: static/js/user/user_secret_info_details.js:53
+#: static/js/user/user_secret_info_details.js:55
+msgid "禁用"
+msgstr "Disable"
+
+#: static/js/accounts/admin_operate_log.js:110
+#: static/js/accounts/admin_user_list.js:111 static/js/accounts/cms_binding
+#: _list.js:60 static/js/cdn/admin_cdn_user_list.js:60
+#: static/js/cdn/admin_get_domain_list.js:148
+#: static/js/cdn/admin_log_upload.js:140 static/js/cdn/admin_refresh.js:247
+#: static/js/cdn/admin_statistics.js:79 static/js/cert/admin_cert_list.js:104
+#: static/js/cms/configure.js:113 static/js/cms/configure.js:192
+#: static/js/cms/statistics.js:31 static/js/cms/statistics.js:685
+#: static/js/user/public_key.js:151 static/js/user/user_management_list.js:113
+#: static/js/user/user_secret_info_details.js:49
+msgid "暂无数据"
+msgstr "Sorry, no relevant data found"
+
+#: static/js/accounts/admin_user_list.js:16
+#: static/js/accounts/admin_user_list.js:30
+msgid "用户状态"
+msgstr "User status"
+
+#: static/js/accounts/admin_user_list.js:17
+#: static/js/accounts/admin_user_list.js:31
+#: static/js/accounts/create_parent_user.js:13
+msgid "用户类型"
+msgstr "User type"
+
+#: static/js/accounts/admin_user_list.js:18
+#: static/js/accounts/admin_user_list.js:32
+#: static/js/accounts/admin_user_list.js:45 static/js/accounts/cms_binding
+#: _list.js:15 static/js/cdn/admin_cdn_user_list.js:17
+#: static/js/cdn/admin_get_domain_list.js:23
+#: static/js/cdn/admin_get_domain_list.js:38
+#: static/js/cdn/admin_log_upload.js:6 static/js/cert/admin_cert_list.js:23
+#: static/js/cert/admin_cert_list.js:39 static/js/cms/safe_channel_list.js:29
+#: static/js/cms/safe_channel_list.js:37 static/js/cms/statistics.js:665
+#: static/js/user/public_key.js:25
+#: static/js/user/user_secret_info_details.js:13
+msgid "操作"
+msgstr "Operation"
+
+#: static/js/accounts/admin_user_list.js:40
+msgid "角色的所有信息都将被删除"
+msgstr "All information for this role will be deleted"
+
+#: static/js/accounts/admin_user_list.js:40
+msgid "确定删除该角色？"
+msgstr "Are you sure to delete the chosen role?"
+
+#: static/js/accounts/admin_user_list.js:42
+msgid "角色"
+msgstr "Role"
+
+#: static/js/accounts/admin_user_list.js:43
+#: static/js/accounts/create_parent_user.js:21
+msgid "描述"
+msgstr "Description"
+
+#: static/js/accounts/admin_user_list.js:44
+#: static/js/accounts/create_parent_user.js:22
+msgid "备注"
+msgstr "Remarks"
+
+#: static/js/accounts/admin_user_list.js:161
+#: static/js/accounts/create_details.js:95
+#: static/js/accounts/create_details.js:200
+#: static/js/accounts/create_details.js:329
+#: static/js/accounts/create_parent_user.js:227
+#: static/js/cdn/add_cdn_create_domain.js:28
+#: static/js/cdn/add_cdn_create_domain.js:64 static/js/cdn/cdn.js:151
+#: static/js/cdn/domain_configure.js:59 static/js/cert/admin_cert_list.js:158
+#: static/js/public/tips.js:121 static/js/user/user_secret_info_details.js:86
+msgid "删除"
+msgstr "Delete"
+
+#: static/js/accounts/admin_user_list.js:167
+msgid "确认删除该角色？"
+msgstr "Are you sure you want to delete this role?"
+
+#: static/js/accounts/admin_user_list.js:168
+#: static/js/accounts/create_details.js:102
+msgid "是，确认删除"
+msgstr "Yes, confirm delete"
+
+#: static/js/accounts/admin_user_list.js:168
+#: static/js/accounts/create_details.js:102
+msgid "否，取消删除"
+msgstr "No, cancel delete"
+
+#: static/js/accounts/cms_binding _list.js:12
+msgid "客户账号"
+msgstr "Customer account"
+
+#: static/js/accounts/cms_binding _list.js:13
+msgid "公司名"
+msgstr "Company Name"
+
+#: static/js/accounts/cms_binding _list.js:14
+#: static/js/cms/safe_channel_list.js:26
+msgid "CMS客户ID"
+msgstr "CMS customer ID"
+
+#: static/js/accounts/cms_binding _list.js:92
+#: static/js/accounts/create_binding.js:209
+msgid "确定解除当前选中账号的绑定关系？"
+msgstr "Are you sure you want to unbind the currently selected account？"
+
+#: static/js/accounts/cms_binding _list.js:93
+#: static/js/accounts/create_binding.js:40
+#: static/js/accounts/create_binding.js:185
+#: static/js/accounts/create_binding.js:210
+msgid "解绑"
+msgstr "Unbound"
+
+#: static/js/accounts/cms_binding _list.js:97
+#: static/js/accounts/create_binding.js:108
+#: static/js/accounts/create_binding.js:214
+#: static/js/accounts/create_details.js:230
+#: static/js/accounts/create_details.js:257
+#: static/js/accounts/create_details.js:679
+#: static/js/accounts/create_parent_user.js:130
+#: static/js/accounts/create_parent_user.js:157
+#: static/js/cdn/admin_get_domain_list.js:323
+#: static/js/cdn/admin_refresh.js:311 static/js/cdn/cdn.js:138
+#: static/js/cert/admin_cert_list.js:163
+#: static/js/cms/admin_configure_waf.js:664 static/js/cms/configure.js:244
+#: static/js/cms/configure.js:316 static/js/public/tips.js:110
+#: static/js/public/tips.js:126 static/js/user/user_secret_info_details.js:91
+msgid "确定"
+msgstr "Confirm"
+
+#: static/js/accounts/cms_binding _list.js:97
+#: static/js/accounts/create_binding.js:108
+#: static/js/accounts/create_binding.js:214
+#: static/js/accounts/create_details.js:679
+#: static/js/cdn/admin_get_domain_list.js:323
+#: static/js/cdn/admin_refresh.js:311 static/js/cdn/cdn.js:138
+#: static/js/cert/admin_cert_list.js:163
+#: static/js/cms/admin_configure_waf.js:231
+#: static/js/cms/admin_configure_waf.js:290
+#: static/js/cms/admin_configure_waf.js:377 static/js/cms/configure.js:244
+#: static/js/cms/configure.js:316 static/js/cms/safe_cdn_list.js:111
+#: static/js/cms/safe_channel_list.js:196 static/js/public/tips.js:110
+#: static/js/public/tips.js:126 static/js/user/user_secret_info_details.js:91
+msgid "取消"
+msgstr "Cancel"
+
+#: static/js/accounts/cms_binding _list.js:109
+#: static/js/accounts/create_binding.js:159
+#: static/js/accounts/create_binding.js:170
+#: static/js/accounts/create_binding.js:231
+#: static/js/accounts/create_binding.js:242
+#: static/js/accounts/create_binding.js:403
+#: static/js/accounts/create_binding.js:415
+#: static/js/cdn/add_cdn_create_domain.js:122
+#: static/js/cdn/add_cdn_create_domain.js:273
+#: static/js/cdn/add_cdn_create_domain.js:283
+#: static/js/cdn/admin_get_domain_list.js:336
+#: static/js/cdn/cdn_base_conf.js:33 static/js/cms/admin_configure_waf.js:107
+#: static/js/cms/admin_configure_waf.js:130
+#: static/js/cms/admin_configure_waf.js:201
+#: static/js/cms/admin_configure_waf.js:213
+#: static/js/cms/admin_configure_waf.js:244
+#: static/js/cms/admin_configure_waf.js:256
+#: static/js/cms/admin_configure_waf.js:302
+#: static/js/cms/admin_configure_waf.js:314
+#: static/js/cms/admin_configure_waf.js:399
+#: static/js/cms/admin_configure_waf.js:412
+#: static/js/cms/admin_configure_waf.js:480
+#: static/js/cms/admin_configure_waf.js:497
+#: static/js/cms/admin_configure_waf.js:700
+#: static/js/cms/admin_configure_waf.js:723
+#: static/js/cms/safe_cdn_configure.js:42
+#: static/js/cms/safe_channel_list.js:82
+#: static/js/cms/safe_channel_list.js:102
+#: static/js/cms/safe_channel_list.js:228
+#: static/js/cms/safe_channel_list.js:239 static/js/cms/statistics.js:649
+#: static/js/public/tips.js:233
+msgid "通讯异常"
+msgstr "error"
+
+#: static/js/accounts/create_admin_user.js:10
+msgid "管理员不能为空"
+msgstr "Please input administrator"
+
+#: static/js/accounts/create_admin_user.js:15
+msgid "登录密码不能为空"
+msgstr "The password cannot be empty"
+
+#: static/js/accounts/create_admin_user.js:20
+#: static/js/accounts/create_parent_user.js:68
+msgid "密码必须6到12位"
+msgstr "Password must be 6 to 12 digits"
+
+#: static/js/accounts/create_admin_user.js:25
+msgid "确认密码不能为空"
+msgstr "The password cannot be empty"
+
+#: static/js/accounts/create_admin_user.js:30
+msgid "两次密码不一致,请重新输入"
+msgstr "The passwords are inconsistent twice, please re-enter"
+
+#: static/js/accounts/create_admin_user.js:35
+#: static/js/accounts/create_parent_user.js:76
+msgid "角色不能为空"
+msgstr "Please select the role"
+
+#: static/js/accounts/create_binding.js:67
+msgid "请选择用户账号"
+msgstr "Please select a user account"
+
+#: static/js/accounts/create_binding.js:72
+msgid "合同编号"
+msgstr "Contract No"
+
+#: static/js/accounts/create_binding.js:74 static/js/cms/safe_cdn_list.js:92
+#: static/js/cms/safe_channel_list.js:178
+msgid "查询"
+msgstr "Inquire"
+
+#: static/js/accounts/create_binding.js:75
+msgid "输入合同编号查询合同信息"
+msgstr "Enter the contract number to query the contract information"
+
+#: static/js/accounts/create_binding.js:78
+msgid "合同信息"
+msgstr "Contract Information"
+
+#: static/js/accounts/create_binding.js:81
+msgid "合同编号："
+msgstr "Contract No"
+
+#: static/js/accounts/create_binding.js:85
+msgid "合同开始日期："
+msgstr "Start Date"
+
+#: static/js/accounts/create_binding.js:89
+msgid "合同结束日期："
+msgstr "End Date"
+
+#: static/js/accounts/create_binding.js:93
+msgid "合同状态："
+msgstr "Contract Status"
+
+#: static/js/accounts/create_binding.js:96
+msgid "可选产品名称"
+msgstr "Available Product"
+
+#: static/js/accounts/create_binding.js:102
+msgid "新增合同信息"
+msgstr "Add Contract Information"
+
+#: static/js/accounts/create_binding.js:140
+msgid "请添加合同信息"
+msgstr "Please add a salesforce contract"
+
+#: static/js/accounts/create_binding.js:290
+msgid "有效"
+msgstr "Valid"
+
+#: static/js/accounts/create_binding.js:292
+msgid "无效"
+msgstr "Invalid"
+
+#: static/js/accounts/create_binding.js:303
+msgid "产品名称"
+msgstr "Product Name"
+
+#: static/js/accounts/create_binding.js:304
+msgid "产品ID"
+msgstr "Product ID"
+
+#: static/js/accounts/create_binding.js:318
+msgid "已到期"
+msgstr "Invalid"
+
+#: static/js/accounts/create_details.js:101
+msgid "确认删除该服务？"
+msgstr "Are you sure you want to delete this service?"
+
+#: static/js/accounts/create_details.js:200
+#: static/js/accounts/create_details.js:329
+#: static/js/accounts/create_parent_user.js:227
+#: static/js/cdn/add_cdn_create_domain.js:27
+#: static/js/cdn/add_cdn_create_domain.js:63 static/js/cdn/cdn.js:150
+#: static/js/cdn/domain_configure.js:58
+msgid "编辑"
+msgstr "Edit"
+
+#: static/js/accounts/create_details.js:213
+#: static/js/accounts/create_parent_user.js:108
+msgid "添加操作权限"
+msgstr "Add Operation Permission"
+
+#: static/js/accounts/create_details.js:222
+#: static/js/accounts/create_parent_user.js:116
+msgid "编辑操作权限"
+msgstr "Edit Operation Permission"
+
+#: static/js/accounts/create_details.js:232
+#: static/js/accounts/create_parent_user.js:132
+msgid "创建"
+msgstr "Create"
+
+#: static/js/accounts/create_details.js:236
+#: static/js/accounts/create_parent_user.js:136
+msgid "选择服务"
+msgstr "Select service"
+
+#: static/js/accounts/create_details.js:244
+#: static/js/accounts/create_parent_user.js:144
+msgid "操作名称"
+msgstr "Operation name"
+
+#: static/js/accounts/create_details.js:246
+#: static/js/accounts/create_details.js:298
+#: static/js/accounts/create_details.js:302
+#: static/js/accounts/create_details.js:417
+#: static/js/accounts/create_parent_user.js:146
+#: static/js/accounts/create_parent_user.js:202
+#: static/js/accounts/create_parent_user.js:279
+msgid "所有操作"
+msgstr "All operations"
+
+#: static/js/accounts/create_details.js:247
+#: static/js/accounts/create_details.js:305
+#: static/js/accounts/create_details.js:314
+#: static/js/accounts/create_details.js:411
+#: static/js/accounts/create_details.js:505
+#: static/js/accounts/create_parent_user.js:147
+#: static/js/accounts/create_parent_user.js:214
+msgid "特定操作"
+msgstr "specify operation"
+
+#: static/js/accounts/create_details.js:283
+#: static/js/accounts/create_parent_user.js:183
+msgid "服务不能为空"
+msgstr "Please select a product"
+
+#: static/js/accounts/create_details.js:315
+#: static/js/accounts/create_parent_user.js:215
+msgid "操作名称不能为空"
+msgstr "Please add operation name"
+
+#: static/js/accounts/create_details.js:490
+#: static/js/accounts/create_parent_user.js:367
+msgid "请先选择服务"
+msgstr "Please choose a product"
+
+#: static/js/accounts/create_details.js:674
+msgid "控制台登录"
+msgstr "Console Password"
+
+#: static/js/accounts/create_details.js:675
+msgid "确定开启/关闭控制台访问权限"
+msgstr "Make sure to turn on/off console access"
+
+#: static/js/accounts/create_parent_user.js:9
+msgid "公司名称"
+msgstr "Company Name"
+
+#: static/js/accounts/create_parent_user.js:10
+msgid "联系人"
+msgstr "Contact"
+
+#: static/js/accounts/create_parent_user.js:11
+msgid "联系邮箱"
+msgstr "Contact Email"
+
+#: static/js/accounts/create_parent_user.js:12
+msgid "联系电话"
+msgstr "Contact Number"
+
+#: static/js/accounts/create_parent_user.js:39
+#: static/js/cdn/add_cdn_create_domain.js:161
+#: static/js/cert/create_admin_cert.js:39
+msgid "用户名不能为空"
+msgstr "User name cannot be empty"
+
+#: static/js/accounts/create_parent_user.js:45
+msgid "公司名称不能为空"
+msgstr "Please enter company"
+
+#: static/js/accounts/create_parent_user.js:57
+#: static/js/cert/create_admin_cert.js:82
+msgid "邮箱格式不正确"
+msgstr "The email format is incorrect"
+
+#: static/js/accounts/create_parent_user.js:63
+msgid "控制台密码不能为空"
+msgstr "Please enter the console password"
+
+#: static/js/accounts/create_parent_user.js:445
+#: static/js/accounts/create_parent_user.js:528
+msgid "操作权限不能为空"
+msgstr "Please add operation permission"
+
+#: static/js/cdn/add_cdn_create_domain.js:23 static/js/cdn/cdn.js:199
+msgid "文件夹"
+msgstr "Directory"
+
+#: static/js/cdn/add_cdn_create_domain.js:24 static/js/cdn/cdn.js:98
+#: static/js/cdn/domain_configure.js:49
+msgid "全部文件"
+msgstr "For all files"
+
+#: static/js/cdn/add_cdn_create_domain.js:25
+#: static/js/cdn/add_cdn_create_domain.js:47 static/js/cdn/cdn.js:119
+#: static/js/cdn/domain_configure.js:35
+msgid "秒"
+msgstr "sec"
+
+#: static/js/cdn/add_cdn_create_domain.js:50 static/js/cdn/cdn.js:120
+#: static/js/cdn/domain_configure.js:38
+msgid "分"
+msgstr "min"
+
+#: static/js/cdn/add_cdn_create_domain.js:53 static/js/cdn/cdn.js:121
+#: static/js/cdn/domain_configure.js:41
+msgid "小时"
+msgstr "hours"
+
+#: static/js/cdn/add_cdn_create_domain.js:56 static/js/cdn/cdn.js:122
+#: static/js/cdn/domain_configure.js:44
+msgid "天"
+msgstr "days"
+
+#: static/js/cdn/admin_cdn_user_list.js:15
+#: static/js/cdn/admin_get_domain_list.js:17
+#: static/js/cert/admin_cert_list.js:18
+msgid "用户"
+msgstr "User"
+
+#: static/js/cdn/admin_cdn_user_list.js:16
+#: static/js/cdn/admin_statistics.js:42 static/js/cdn/admin_statistics.js:54
+msgid "服务商"
+msgstr "Service Provider"
+
+#: static/js/cdn/admin_get_domain_list.js:16
+#: static/js/cdn/admin_get_domain_list.js:34
+msgid "域名"
+msgstr "Domain"
+
+#: static/js/cdn/admin_get_domain_list.js:18
+#: static/js/cdn/admin_get_domain_list.js:35
+msgid "加速类型"
+msgstr "Acceleration Type"
+
+#: static/js/cdn/admin_get_domain_list.js:21
+#: static/js/cdn/admin_get_domain_list.js:37 static/js/cdn/admin_refresh.js:41
+#: static/js/cdn/admin_refresh.js:48 static/js/user/public_key.js:23
+#: static/js/user/user_secret_info_details.js:11
+msgid "状态"
+msgstr "Status"
+
+#: static/js/cdn/admin_get_domain_list.js:22
+msgid "任务进度"
+msgstr "Task Progress"
+
+#: static/js/cdn/admin_get_domain_list.js:96
+#: static/js/cdn/client_overview.js:60
+msgid "您账号下的CDN合同已到期，暂时无法创建新的域名"
+msgstr "The CDN contract under your account has expired and it is temporarily impossible to create a new domain."
+
+#: static/js/cdn/admin_get_domain_list.js:150
+msgid ""
+"设备任务下发进度，如任务进度长时间停滞，或域名仍于配置中状态，请联系平台运维"
+"处理"
+msgstr ""
+"The progress of the CMS device task is scheduled to be executed when the "
+"configuration is modified. If the task is stagnant for a long time and is "
+"still in configuration, you can contact BRE to check."
+
+#: static/js/cdn/admin_get_domain_list.js:176
+msgid "已启动"
+msgstr "Enabled"
+
+#: static/js/cdn/admin_get_domain_list.js:177
+msgid "关闭"
+msgstr "Disable"
+
+#: static/js/cdn/admin_get_domain_list.js:178
+msgid "已关闭"
+msgstr "Disabled"
+
+#: static/js/cdn/admin_get_domain_list.js:179
+msgid "启动"
+msgstr "Enable"
+
+#: static/js/cdn/admin_get_domain_list.js:211
+#: static/js/cdn/admin_get_domain_list.js:309
+msgid "确定关闭当前选中域名正在使用的CDN服务？"
+msgstr ""
+"Are you sure you want to turn off the acceleration service of the chosen "
+"domain name?"
+
+#: static/js/cdn/admin_get_domain_list.js:211
+#: static/js/cdn/admin_get_domain_list.js:309
+msgid ""
+"关闭后的域名配置会保留（下次开启时无需再次配置），但不会继续提供加速服务。"
+msgstr ""
+"The disabled domain configuration will be retained (no need to configure "
+"again next time when it is turned on), but will not continue to provide you "
+"with acceleration services"
+
+#: static/js/cdn/admin_get_domain_list.js:212
+#: static/js/cdn/admin_get_domain_list.js:310
+msgid "关闭CDN"
+msgstr "Disable"
+
+#: static/js/cdn/admin_get_domain_list.js:216
+#: static/js/cdn/admin_get_domain_list.js:282
+msgid "确定启动当前选中域名正在使用的CDN服务？"
+msgstr ""
+"Are you sure you want to turn on the acceleration service of the chosen "
+"domain name?"
+
+#: static/js/cdn/admin_get_domain_list.js:217
+#: static/js/cdn/admin_get_domain_list.js:283
+msgid "启动CDN"
+msgstr "Enable"
+
+#: static/js/cdn/admin_get_domain_list.js:255
+msgid "请选择从属于同一用户下的域名"
+msgstr "Please select domains that belong to the same user"
+
+#: static/js/cdn/admin_get_domain_list.js:255
+msgid "目前不支持同时删除多个用户账号下的域名，请重新选择"
+msgstr ""
+"It is not supported to delete domains under multiple users at the same time. "
+"Please choose again."
+
+#: static/js/cdn/admin_get_domain_list.js:256
+msgid "启动/关闭CDN"
+msgstr "Disable"
+
+#: static/js/cdn/admin_get_domain_list.js:276
+msgid "启动操作只能作用于“已关闭”状态的域名，请重新选择。"
+msgstr ""
+"The enable operation can only be applied to the domain in the 'disabled' "
+"state. Please select it again."
+
+#: static/js/cdn/admin_get_domain_list.js:305
+msgid "关闭操作只能作用于“已启动”状态的域名，请重新选择。"
+msgstr ""
+"The disable operation can only be applied to the domain in the 'enabled' "
+"state. Please select it again."
+
+#: static/js/cdn/admin_log_upload.js:4
+msgid "日志时间"
+msgstr "Log Time "
+
+#: static/js/cdn/admin_log_upload.js:5
+msgid "日志文件名"
+msgstr "Log File Name"
+
+#: static/js/cdn/admin_refresh.js:39
+msgid "刷新记录"
+msgstr "Refresh Record"
+
+#: static/js/cdn/admin_refresh.js:40
+msgid "刷新时间"
+msgstr "Submit Time"
+
+#: static/js/cdn/admin_refresh.js:46
+msgid "预加载记录"
+msgstr "Preload Record"
+
+#: static/js/cdn/admin_refresh.js:47
+msgid "预加载时间"
+msgstr "Submit Time"
+
+#: static/js/cdn/admin_refresh.js:101
+msgid "用户不能为空"
+msgstr "User name cannot be empty"
+
+#: static/js/cdn/admin_refresh.js:104
+msgid "操作类型不能为空"
+msgstr "Refresh type cannot be empty"
+
+#: static/js/cdn/admin_refresh.js:107
+msgid "域名不能为空"
+msgstr "Domain cannot be empty"
+
+#: static/js/cdn/admin_refresh.js:135
+msgid "您的刷新请求已提交，预计将在10分钟内生效"
+msgstr ""
+"Your refresh request has been submitted and is expected to take effect "
+"within 10 minutes."
+
+#: static/js/cdn/admin_refresh.js:137
+msgid "您的预加载请求已提交，预计将在10分钟内生效"
+msgstr ""
+"Your preload request has been submitted and is expected to take effect "
+"within 10 minutes."
+
+#: static/js/cdn/admin_refresh.js:299
+msgid "重置任务操作只能作用于“失败”状态的域名，请重新选择。"
+msgstr ""
+"The reset task operation can only be applied to the domain in the 'failed' "
+"state. Please select it again."
+
+#: static/js/cdn/admin_refresh.js:305
+msgid "确定重新下发当前选中域名？"
+msgstr "Are you sure to reissue the currently selected domain?"
+
+#: static/js/cdn/admin_refresh.js:306
+msgid "重置任务"
+msgstr "Reset"
+
+#: static/js/cdn/admin_statistics.js:23 static/js/cdn/admin_statistics.js:29
+#: static/js/cdn/admin_statistics.js:826
+msgid "状态码"
+msgstr "Status Code"
+
+#: static/js/cdn/admin_statistics.js:24 static/js/cdn/admin_statistics.js:30
+msgid "总数"
+msgstr "Total"
+
+#: static/js/cdn/admin_statistics.js:25 static/js/cdn/admin_statistics.js:31
+#: static/js/cdn/admin_statistics.js:784
+msgid "百分比"
+msgstr "Percentage"
+
+#: static/js/cdn/admin_statistics.js:50
+msgid "其他"
+msgstr "Others"
+
+#: static/js/cdn/admin_statistics.js:218 static/js/cdn/admin_statistics.js:764
+msgid "所有"
+msgstr "All"
+
+#: static/js/cdn/admin_statistics.js:472
+msgid "时间"
+msgstr "Time"
+
+#: static/js/cdn/admin_statistics.js:473 static/js/cdn/admin_statistics.js:549
+#: static/js/cdn/admin_statistics.js:564 static/js/cdn/admin_statistics.js:569
+#: static/js/cdn/admin_statistics.js:574
+msgid "峰值带宽"
+msgstr "Peak Bandwidth"
+
+#: static/js/cdn/admin_statistics.js:474 static/js/cdn/admin_statistics.js:477
+msgid "发生时间"
+msgstr "Time of occurrence"
+
+#: static/js/cdn/admin_statistics.js:475
+msgid "流量"
+msgstr "Total Traffic"
+
+#: static/js/cdn/admin_statistics.js:476
+msgid "回源峰值带宽"
+msgstr "Return Source Peak Bandwidth"
+
+#: static/js/cdn/admin_statistics.js:478
+msgid "回源流量"
+msgstr "Return Source Traffic"
+
+#: static/js/cdn/admin_statistics.js:595 static/js/cdn/admin_statistics.js:658
+msgid "CDN带宽"
+msgstr "CDN bandwidth"
+
+#: static/js/cdn/admin_statistics.js:595 static/js/cdn/admin_statistics.js:674
+msgid "回源带宽"
+msgstr "Origin  bandwidth"
+
+#: static/js/cdn/admin_statistics.js:773
+msgid "占比"
+msgstr ""
+
+#: static/js/cdn/cdn.js:54 static/js/cdn/cdn.js:60
+#: static/js/cms/safe_cdn_configure.js:11
+#: static/js/cms/safe_cdn_configure.js:16
+msgid "默认"
+msgstr "Default"
+
+#: static/js/cdn/cdn.js:62
+msgid "自定义"
+msgstr "Custom"
+
+#: static/js/cdn/cdn.js:94
+msgid "编辑缓存配置"
+msgstr "Edit cache rule"
+
+#: static/js/cdn/cdn.js:96
+msgid "添加缓存配置"
+msgstr "New cache rule"
+
+#: static/js/cdn/cdn.js:103
+msgid "缓存类型"
+msgstr "Cache Type"
+
+#: static/js/cdn/cdn.js:107
+msgid "缓存内容"
+msgstr "Cache Content"
+
+#: static/js/cdn/cdn.js:111 static/js/cdn/cdn.js:198
+msgid "文件类型必须是以.开头的文件后缀，如.jpg"
+msgstr "Input the file extension with a semicolon,e.g.js;css;png"
+
+# "The file type must be a file suffix starting with “English period”, such as .jpg"
+#: static/js/cdn/cdn.js:114
+msgid "缓存时间"
+msgstr "Cache Time"
+
+#: static/js/cdn/cdn.js:197
+msgid "文件"
+msgstr "File Extension"
+
+#: static/js/cdn/cdn.js:203
+msgid "文件夹必须是以/开头的文件后缀，如/abc"
+msgstr ""
+"The directory must be a directory beginning with “/”, such as /abc, the path "
+"to the entire site is /.*"
+
+#: static/js/cdn/cdn.js:207
+msgid "全路径必须以“/”开头，支持*匹配某一类型文件"
+msgstr ""
+
+#: static/js/cdn/cdn.js:239
+msgid "确定删除此条缓存配置？"
+msgstr "Are you sure you want to delete this cache rule?"
+
+#: static/js/cdn/cdn_base_conf.js:15
+msgid "请选择CMS解析模板配置"
+msgstr "Please choose CMS parsing template configuration"
+
+#: static/js/cdn/cdn_base_conf.js:18
+msgid "请选择ICP检测频率配置"
+msgstr "Please choose ICP detecting frequency configuration"
+
+#: static/js/cdn/domain_configure.js:189
+msgid "源站地址不能为空"
+msgstr "The origin cannot be empty"
+
+#: static/js/cdn/domain_configure.js:194
+msgid "缓存规则不能为空"
+msgstr "The cache rules cannot be empty"
+
+#: static/js/cdn/domain_configure.js:200
+#: static/js/cert/create_admin_cert.js:57
+msgid "证书不能为空"
+msgstr "The certificate name cannot be empty"
+
+#: static/js/cdn/domain_configure.js:250
+msgid "配置中"
+msgstr "In Configuration"
+
+#: static/js/cert/admin_cert_list.js:17 static/js/cert/admin_cert_list.js:34
+msgid "证书名称"
+msgstr "Name"
+
+#: static/js/cert/admin_cert_list.js:19 static/js/cert/admin_cert_list.js:35
+msgid "证书来源"
+msgstr "Source"
+
+#: static/js/cert/admin_cert_list.js:20 static/js/cert/admin_cert_list.js:36
+msgid "颁发时间"
+msgstr "Issued time"
+
+#: static/js/cert/admin_cert_list.js:21 static/js/cert/admin_cert_list.js:37
+msgid "到期时间"
+msgstr "Expire date"
+
+#: static/js/cert/admin_cert_list.js:22 static/js/cert/admin_cert_list.js:38
+msgid "证书状态"
+msgstr "Status"
+
+#: static/js/cert/admin_cert_list.js:164
+#: static/js/user/user_secret_info_details.js:92
+msgid "确定删除该证书？"
+msgstr "Are you sure you want to delete this certificate?"
+
+#: static/js/cert/create_admin_cert.js:51
+msgid "证书名称不能为空"
+msgstr "The certificate name cannot be empty"
+
+#: static/js/cert/create_admin_cert.js:63
+msgid "私钥不能为空"
+msgstr "The private key cannot be empty"
+
+#: static/js/cert/create_admin_cert.js:77
+msgid "邮箱不能为空"
+msgstr "The email cannot be empty"
+
+#: static/js/cms/admin_configure_waf.js:31
+msgid "再接入CDN"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:33
+msgid "接入CDN"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:37
+#: static/js/cms/admin_configure_waf.js:115
+msgid "创建中"
+msgstr "Create"
+
+#: static/js/cms/admin_configure_waf.js:118
+msgid "绑定中"
+msgstr "Binding"
+
+#: static/js/cms/admin_configure_waf.js:141
+msgid "边缘回WAF配置"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:142
+msgid "边缘回WAF地址-CNAME"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:143
+msgid "WAF回上层配置"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:149
+msgid "上层回WAF配置"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:150
+msgid "上层回WAF地址-CNAME"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:151
+msgid "WAF回源站配置"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:224
+#: static/js/cms/admin_configure_waf.js:283
+#: static/js/cms/admin_configure_waf.js:657 static/js/cms/configure.js:237
+#: static/js/cms/configure.js:309 static/js/public/tips.js:90
+#: static/js/public/tips.js:206
+msgid "提示"
+msgstr "Tips"
+
+#: static/js/cms/admin_configure_waf.js:268
+msgid "确定停用青松WAF服务？"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:269
+msgid "确定停用"
+msgstr "Disable"
+
+#: static/js/cms/admin_configure_waf.js:275
+msgid "确定启用青松WAF服务？"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:276
+msgid "确定启用"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:290
+msgid "确定删除"
+msgstr "Confirm delete"
+
+#: static/js/cms/admin_configure_waf.js:291
+msgid "确定删除青松WAF服务"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:353
+msgid "证书名"
+msgstr "Certificate Name"
+
+#: static/js/cms/admin_configure_waf.js:358
+msgid "公钥"
+msgstr "Public key"
+
+#: static/js/cms/admin_configure_waf.js:363
+msgid "私钥"
+msgstr "Private Key"
+
+#: static/js/cms/admin_configure_waf.js:370
+msgid "上传新证书"
+msgstr "Upload Certificate"
+
+#: static/js/cms/admin_configure_waf.js:377
+msgid "上传"
+msgstr "Upload"
+
+#: static/js/cms/admin_configure_waf.js:509
+msgid "在移出 WAF 前，请先确认 CDN 服务是否正常！"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:515
+msgid "在接入 WAF 前，请先确认 CDN 服务是否正常！"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:611
+msgid "请选择WAF接入CDN方式"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:614
+msgid "请选择WAF回源方式"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:617
+msgid "请输入WAF回源地址"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:620
+msgid "请输入回源端口"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:625
+msgid "WAF回源地址格式不正确，请重新输入"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:629
+msgid "WAF回源端口格式不正确，请重新输入"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:645
+msgid "请上传证书"
+msgstr ""
+
+#: static/js/cms/admin_configure_waf.js:655
+msgid "前往编辑waf配置"
+msgstr ""
+
+#: static/js/cms/client_configure_waf.js:32
+msgid "该防御模式未修改"
+msgstr ""
+
+#: static/js/cms/configure.js:70
+msgid "防止利用多个“script”重叠标签进行xss跨站攻击的规则"
+msgstr ""
+"Rules for preventing xss cross-site attacks using multiple 'script' "
+"overlapping tags"
+
+#: static/js/cms/configure.js:91 static/js/cms/configure.js:166
+#: static/js/cms/statistics.js:661
+msgid "规则ID"
+msgstr "Rule ID"
+
+#: static/js/cms/configure.js:92 static/js/cms/configure.js:167
+msgid "规则名"
+msgstr "Rule Name"
+
+#: static/js/cms/configure.js:93 static/js/cms/configure.js:170
+msgid "规则开关"
+msgstr "Rule Switch"
+
+#: static/js/cms/configure.js:168 static/js/cms/configure.js:356
+msgid "匹配内容"
+msgstr "Matching Content"
+
+#: static/js/cms/configure.js:169
+msgid "后续动作"
+msgstr "Follow-up Action"
+
+#: static/js/cms/configure.js:178
+msgid "直接阻断"
+msgstr "Direct blocking"
+
+#: static/js/cms/configure.js:180
+msgid "直接放行"
+msgstr "Direct pass-through"
+
+#: static/js/cms/configure.js:223
+msgid "确定开启全部默认规则？"
+msgstr "Are you sure you want to turn on all default rules?"
+
+#: static/js/cms/configure.js:229
+msgid "确定关闭全部默认规则？"
+msgstr "Are you sure you want to turn off all default rules?"
+
+#: static/js/cms/configure.js:275
+msgid "确定开启默认规则？"
+msgstr "Are you sure you want to open default rules?"
+
+#: static/js/cms/configure.js:279
+msgid "确定关闭默认规则？"
+msgstr "Are you sure you want to close default rules?"
+
+#: static/js/cms/configure.js:295
+msgid "确定开启自定义规则？"
+msgstr "Are you sure you want to open custom rules?"
+
+#: static/js/cms/configure.js:299
+msgid "确定关闭自定义规则？"
+msgstr "Are you sure you want to close the custom rule?"
+
+#: static/js/cms/safe_cdn_list.js:87
+msgid "选择客户"
+msgstr ""
+
+#: static/js/cms/safe_cdn_list.js:88
+msgid "显示方式：融合客户账号 / CMS客户ID"
+msgstr ""
+
+#: static/js/cms/safe_cdn_list.js:91
+msgid "客户账号 /  CMS客户ID"
+msgstr "Customer account / CMS customer ID"
+
+#: static/js/cms/safe_cdn_list.js:104
+msgid "添加安全客户"
+msgstr "Add a security customer"
+
+#: static/js/cms/safe_cdn_list.js:111 static/js/cms/safe_channel_list.js:196
+msgid "确定添加"
+msgstr "OK to add"
+
+#: static/js/cms/safe_channel_list.js:25
+msgid "融合客户账号"
+msgstr "Converged customer account"
+
+#: static/js/cms/safe_channel_list.js:27 static/js/cms/safe_channel_list.js:35
+msgid "安全频道名"
+msgstr "Secure Channel Name"
+
+#: static/js/cms/safe_channel_list.js:173
+msgid "融合客户账号/CMS客户ID"
+msgstr "Converged customer account / CMS customer ID"
+
+#: static/js/cms/safe_channel_list.js:177
+msgid "频道名"
+msgstr "Channel name"
+
+#: static/js/cms/safe_channel_list.js:189
+msgid "添加安全频道"
+msgstr "Add a secure channel"
+
+#: static/js/cms/statistics.js:180 static/js/cms/statistics.js:349
+msgid "攻击数"
+msgstr "Number of attacks"
+
+#: static/js/cms/statistics.js:251 static/js/cms/statistics.js:496
+msgid "攻击次数（单位：次）"
+msgstr "Number of attacks (Unit: times)"
+
+#: static/js/cms/statistics.js:313
+msgid "次"
+msgstr "times"
+
+#: static/js/cms/statistics.js:348 static/js/cms/statistics.js:660
+msgid "攻击类型"
+msgstr "Attack type"
+
+#: static/js/cms/statistics.js:350
+msgid "攻击百分比"
+msgstr "Percentage of attacks"
+
+#: static/js/cms/statistics.js:383
+msgid "攻击类型分布"
+msgstr "Attack type distribution"
+
+#: static/js/cms/statistics.js:471 static/js/cms/statistics.js:727
+msgid "复制"
+msgstr "Copy"
+
+#: static/js/cms/statistics.js:484 static/js/cms/statistics.js:736
+msgid "复制成功"
+msgstr "Copy success"
+
+#: static/js/cms/statistics.js:657
+msgid "拦截时间"
+msgstr "Interception time"
+
+#: static/js/cms/statistics.js:719
+msgid "日志详情"
+msgstr "Log details"
+
+#: static/js/user/public_key.js:22
+#: static/js/user/user_secret_info_details.js:10
+msgid "创建时间"
+msgstr "Create Time"
+
+#: static/js/user/public_key.js:24
+#: static/js/user/user_secret_info_details.js:12
+msgid "类型"
+msgstr "Type"
+
+#: static/js/user/public_key.js:87
+#: static/js/user/user_secret_info_details.js:60
+msgid "显示"
+msgstr "show"
+
+#: static/js/user/user_change_password.js:8
+msgid "密码不能为空"
+msgstr "Please enter the password"
+
+#: static/js/user/user_change_password.js:11
+msgid "密码格式不正确"
+msgstr "The passwords is incorrect"
+
+#: static/js/user/user_change_password.js:14
+msgid "两次密码不一致"
+msgstr "The passwords are inconsistent twice, please re-enter"
+
+#: static/layui/layui.all.js:5
+msgid "未命名"
+msgstr ""
+
+#: static/layui/layui.all.js:5
+msgid "无数据"
+msgstr "Sorry, no relevant data found"
+
+msgid "请选择或搜索"
+msgstr "Please select or search"
+
+msgid "联系电话格式不正确"
+msgstr "Contact number is incorrect"
+
+msgid "不启用https"
+msgstr "Https not enabled"
+
+msgid "启用https"
+msgstr "Enable https"
+
+msgid "CMS客户状态"
+msgstr "CMS customer ID"
+
+msgid "安全频道"
+msgstr "Secure Channel Name"
+
+msgid "从"
+msgstr "From"
+
+msgid "到"
+msgstr "To"
+
+msgid "日"
+msgstr "Su"
+
+msgid "一"
+msgstr "Mo"
+
+msgid "二"
+msgstr "Tu"
+
+msgid "三"
+msgstr "We"
+
+msgid "四"
+msgstr "Th"
+
+msgid "五"
+msgstr "Fr"
+
+msgid "六"
+msgstr "Sa"
+
+msgid "一月"
+msgstr "Jan"
+
+msgid "二月"
+msgstr "Feb"
+
+msgid "三月"
+msgstr "Mar"
+
+msgid "四月"
+msgstr "Apr"
+
+msgid "五月"
+msgstr "May"
+
+msgid "六月"
+msgstr "Jun"
+
+msgid "七月"
+msgstr "Jul"
+
+msgid "八月"
+msgstr "Aug"
+
+msgid "九月"
+msgstr "Sep"
+
+msgid "十月"
+msgstr "Oct"
+
+msgid "十一月"
+msgstr "Nov"
+
+msgid "十二月"
+msgstr "Dec"
+
+msgid "刷新中"
+msgstr "Refreshing"
+
+msgid "预加载中"
+msgstr "Preloading"
+
+msgid "成功"
+msgstr "Completed"
+
+msgid "失败"
+msgstr "Failed"
+
+msgid "下发失败"
+msgstr "Failed"
+
+msgid "所有产品"
+msgstr "All"
+
+msgid "备份源站地址不能为空"
+msgstr "The backup origin cannot be empty"
+
+# js手动加入
+msgid "页面加速"
+msgstr "Small File Acceleration"
+
+msgid "普通用户"
+msgstr "Standard user"
+
+msgid "代理用户"
+msgstr "Reseller user"
+
+msgid "SSL证书管理"
+msgstr "SSL Certificate"
+
+msgid "域名列表"
+msgstr "Domain List"
+
+msgid "安全CDN频道"
+msgstr "Secure CDN Channel"
+
+msgid "用户管理"
+msgstr "User Management"
+
+msgid "策略管理"
+msgstr "Policy management"
+
+msgid "总览"
+msgstr "Overview"
+
+msgid "统计"
+msgstr "Statistics"
+
+msgid "刷新"
+msgstr "Refreshing"
+
+msgid "预加载"
+msgstr "Preloading"
+
+msgid "下载日志"
+msgstr "Log Download"
+
+msgid "添加域名"
+msgstr "Add Domain"
+
+msgid "证书管理"
+msgstr "Certificate Management"
+
+msgid "账号信息"
+msgstr "Account Information"
+
+msgid "修改密码"
+msgstr "Change Password"
+
+msgid "蓝汛"
+msgstr "ChinaCache"
+
+msgid "用户登录"
+msgstr "User login"
+
+msgid "管理员"
+msgstr "Administrator"
+
+msgid "cdn管理员"
+msgstr "CDN Administrator"
+
+msgid "客户"
+msgstr "Customer"
+
+msgid "客服"
+msgstr "Customer Support"
+
+msgid "普通员工"
+msgstr "Standard Employee"
+
+msgid "用户账号管理"
+msgstr "User Management"
+
+msgid "管理员账号管理"
+msgstr "Administrator Management"
+
+msgid "CDN业务管理"
+msgstr "CDN Service Management"
+
+msgid "安全业务管理"
+msgstr "Standard Employee"
+
+msgid "访问管理"
+msgstr "Access management"
+
+msgid "安全服务"
+msgstr "Security service"
+
+msgid "我的账号"
+msgstr "My Account"
+
+msgid "安全CDN客户列表"
+msgstr "Secure CDN Channel List"
+
+msgid "概览"
+msgstr "Overview"
+
+msgid "管理员添加安全CDN频道"
+msgstr "Administrator adds secure CDN channel List"
+
+msgid "管理员添加安全用户"
+msgstr "Administrator adds security users"
+
+msgid "管理员账户列表"
+msgstr "Administrator account list"
+
+msgid "管理员操作记录"
+msgstr "Administrator action record"
+
+msgid "角色管理"
+msgstr "Role Management"
+
+msgid "创建管理员"
+msgstr "Creation Administrator"
+
+msgid "创建角色"
+msgstr "Creation role"
+
+msgid "用户账号列表"
+msgstr "User account list"
+
+msgid "用户操作记录"
+msgstr "User operation record"
+
+msgid "创建父账号"
+msgstr "Create a parent account"
+
+msgid "CMS客户绑定"
+msgstr "CMS client binding"
+
+msgid "CDN用户列表"
+msgstr "CDN User List"
+
+msgid "过期"
+msgstr "invalid"
+
+msgid "自有证书"
+msgstr "Self-uploaded Certificate"
+
+msgid "上传失败"
+msgstr "Failed"
+
+msgid "正常"
+msgstr "Configuration succeeded"
+
+msgid "上传中"
+msgstr "Uploading"
+
+msgid "渠道商账号"
+msgstr "Channel account"
+
+msgid "普通账号"
+msgstr "Standard account"
+
+msgid "访问秘钥"
+msgstr "Access Key"
+
+msgid "创建子账号"
+msgstr "Create a sub-account"
+
+msgid "点播加速"
+msgstr "VOD  Acceleration"
+
+msgid "下载加速"
+msgstr "Download  Acceleration"
+
+msgid "创建权限策略"
+msgstr "Create a permission policy"
+
+msgid "账号名或密码错误"
+msgstr "Incorrect account name or password"

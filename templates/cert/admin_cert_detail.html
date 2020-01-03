@@ -1,0 +1,190 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+
+<div class="con">
+    <div class="mianbaoxie">
+        <i class="layui-icon layui-icon-return fl"></i>
+        <a href="javascript:;">{% trans '证书' %} {% trans cert_detail.cert_name %}</a>
+	</div>
+    <!--查询头-->
+
+    <div class="main main_in">
+        <div class="list layui-form tab_border">
+        <!--lay_first-->
+            <h5 class="mian_h5">{% trans "证书信息" %}</h5>
+            {% if user.is_staff == True %}
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:98px;">{% trans "用户" %}</label>
+                    <div class="layui-input-block user_details">
+                        {% trans cert_detail.username %}
+                    </div>
+                </div>
+            {% endif %}
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:98px;">{% trans "证书名称" %}</label>
+                <div class="layui-input-block user_details">
+                    {% trans cert_detail.cert_name %}
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:98px;">{% trans "证书来源" %}</label>
+                <div class="layui-input-block user_details">
+                    {% for cert_status in cert_from %}
+                        {% if  cert_status.id == cert_detail.cert_from %}
+                            {% trans cert_status.name %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:98px;">{% trans "创建时间" %}</label>
+                <div class="layui-input-block user_details">
+                    {{ cert_detail.start_time }}
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:98px;">{% trans "到期时间" %}</label>
+                <div class="layui-input-block user_details">
+                    {{ cert_detail.end_time }}
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:98px;">{% trans "证书状态" %}</label>
+                <div class="layui-input-block user_details">
+                    {% for cert in cert_status %}
+                        {% for id  in cert.id %}
+                            {% if  id == cert_detail.status %}
+                                {% trans cert.name %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:98px;">{% trans "联系邮箱" %}</label>
+                <div class="layui-input-block user_details">
+                    {% trans cert_detail.email %}
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:98px;">{% trans "备注" %}</label>
+                <div class="layui-input-block user_details">
+                    {% trans cert_detail.remark %}
+                </div>
+            </div>
+        </div>
+        <!--lay_first-->
+        <div class="list layui-form tab_border">
+            <h5 class="mian_h5">{% trans "CDN服务" %}</h5>
+            <table lay-even class="layui-table" style="width:60%;">
+              <colgroup>
+                <col width="150">
+                <col width="200">
+                <col>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>{% trans "关联域名" %}</th>
+                  <th>{% trans "状态" %}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for relation_list in cert_detail.relation_list %}
+                    <tr><td>{% trans relation_list.domain %}</td>
+                        <td>
+{#                            {{ relation_list.status }}#}
+                            {% for status in domain_status %}
+                                {% for status_id in status.id %}
+                                    {% if status_id == relation_list.status  %}
+                                        {% trans status.name  %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+        {% if user.is_staff == True %}
+            <div class="list layui-form tab_border">
+                <h5 class="mian_h5">{% trans "操作记录" %}</h5>
+                <table lay-even class="layui-table">
+                  <thead>
+                    <tr>
+                        <th>{% trans "时间" %}</th>
+                        <th>{% trans "操作" %}</th>
+                        <th>{% trans "操作人" %}</th>
+                        <th>{% trans "操作状态" %}</th>
+                        <th>{% trans "操作详情" %}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for log_list in cert_detail.log_list %}
+                        <tr><td>{{ log_list.create_time }}</td><td>{% trans log_list.cert_name %}</td><td>{% trans log_list.opt_username %}</td>
+                            <td>
+    {#                            {% trans log_list.log_opt %}#}
+                                {% for opt in log_list.opt_result %}
+                                    {% for opt_status in opt_send_status %}
+                                       {% comment %} 333{{ opt_status.id }}
+                                        222{{ opt }}{% endcomment %}
+                                        {% if opt.result == opt_status.id  %}
+                                            {% trans opt_status.name %}
+
+
+                                      {% comment %}          {{ opt_status.name }}
+                                        {% elif opt.result == 1 %}
+                                            {{ opt_status.name }}
+                                        {% elif opt.result == 0 %}
+                                            {{ opt_status.name }}{% endcomment %}
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                            </td>
+                            <td>
+                            {% for status in provider_list %}
+                                {% for opt in log_list.opt_result %}
+                                    {% if opt.opt == status.code  %}
+                                            {% trans status.name %}:
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                            {% for opt_status in opt_send_status %}
+                                {% for opt in log_list.opt_result %}
+                                    {% if opt.result == opt_status.id  %}
+                                            {% trans opt_status.name %}
+                                        {% if not forloop.last %}|{% endif %}
+                                    {% endif %}
+
+                                {% endfor %}
+                            {% endfor %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+        {% endif %}
+    </div>
+</div>
+<script>
+    //cert_detail   证书详情
+    //provider_list 服务商
+    //cert_status   证书状态
+    //cert_from     证书来源
+    //opt_send_status   cdn服务域名列表
+    if(lan == 'en'){
+        $('.layui-form-label').width(100)
+
+    }
+    console.log({{ cert_detail | safe }})
+    cert_detail={{ cert_detail | safe }}
+    provider_list={{ provider_list | safe }}
+    opt_send_status={{ opt_send_status | safe }}
+    cert_status={{ cert_status | safe }}
+    cert_from={{ cert_from | safe }}
+</script>
+{% endblock %}
+

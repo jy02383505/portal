@@ -1,0 +1,75 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+
+<div class="con">
+    <div class="mianbaoxie">
+        <a href="javascript:;">{% trans '证书管理' %}</a>
+	</div>
+    <!--查询头-->
+	<div class="search">
+        <div class="search_in layui-form" >
+{#            <button class="checkBtn fl" id="add_user">{% trans '证书管理' %}</button>#}
+            <button class="checkBtn fl" lay-submit lay-filter="add_cert">{% trans '上传证书' %}</button>
+            <div class="fl layui_user" style="position:relative;">
+                <input type="text" class="search_input" id="cert" name="cert" lay-verify="cert" autocomplete="off" placeholder="{% trans '请输入证书名称' %}">
+                <span class="search_user"></span>
+            </div>
+            {% if user.is_staff == True %}
+                <div class="position fl">
+                    <select name="username" lay-verify="username" lay-filter="username">
+                        <option value="">{% trans "选择用户" %}</option>
+                        <option value="">{% trans "全部" %}</option>
+                        {% for user in user_list %}
+                            <option value="{{ user.id }}">{{ user.username }}</option>
+                        {% endfor %}
+                    </select>
+
+                </div>
+            {% endif %}
+
+            <div class="position fl">
+                <select name="cert_status" lay-verify="cert_status" lay-filter="cert_status">
+                    <option value="">{% trans "选择证书状态" %}</option>
+                    <option value="">{% trans "全部" %}</option>
+                   {% comment %} {% for status in cert_status %}
+                        {% if status.name == status.name %}
+                            {{ status.id }}
+                            {{ status.name }}
+                        {% endif %}
+                        <option value="{{ status.id }}">{{ status.name }}</option>
+                    {% endfor %}{% endcomment %}
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+	<!--显示列表-->
+        <div class="list">
+            <div class="conlist">
+
+                <table id="accounts_list" class="layui-hide" lay-filter="lay_table">
+
+                </table>
+                <div id="page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="list_button">
+  <a class="layui-btn layui-btn-xs" lay-event="details">{% trans "详情" %}</a>
+  <a class="layui-btn layui-btn-xs" lay-event="up_data">{% trans "更新" %}</a>
+{#  <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">{% trans "删除" %}</a>#}
+</script>
+<script>
+    //证书状态
+    //证书来源
+    cert_status={{ cert_status | safe }}
+    cert_from={{ cert_from | safe }}
+    document.write('<script src="{% static 'js/cert/admin_cert_list.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+
+{% endblock %}
+

@@ -1,0 +1,37 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="con">
+    <!--查询头-->
+    <div class="search" style="box-shadow:none;">
+        <div class="search_in layui-form">
+            <div class="fl layui_user" style="position:relative;">
+                <input type="text" id="custom_id" name="customer_account" lay-verify="customer_account" autocomplete="off" placeholder="{% trans '规则名' %}">
+            </div>
+            <div class="fl layui_user" style="position:relative;">
+                <select name="" id="custom_status" lay-filter="custom_status">
+                    <option value="">{% trans "规则状态" %}</option>
+                    <option value="1">{% trans "开启" %}</option>
+                    <option value="0">{% trans "关闭" %}</option>
+                </select>
+            </div>
+            <button class="checkBtn" style="margin-bottom:20px;" id="custom_search" onclick="custom_search()">{% trans '查询' %}</button>
+        </div>
+    </div>
+    <div class="main main_in">
+	<!--显示列表-->
+        <div class="list">
+            <div class="conlist">
+                <table id="custom_list" class="layui-hide" style="width:70%;" lay-filter="custom_list">
+
+                </table>
+                <div id="page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="custom_bar">
+    <a class="layui-btn layui-btn-xs" lay-event="details">{% trans "详情" %}</a>
+</script>
+
+
+

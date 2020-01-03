@@ -1,0 +1,103 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+
+<div class="con">
+    <div class="mianbaoxie">
+        <i class="layui-icon layui-icon-return fl"></i><a href="javascript:;">{% trans '融合CDN配置' %}</a>
+	</div>
+    <!--查询头-->
+
+    <div class="main main_in">
+        <div class="list">
+        <!--lay_first-->
+            <div class="layui-form tab_border">
+                <h5 class="mian_h5">{% trans "服务商配置" %}</h5>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:52px;">{% trans "服务商" %}</label>
+                    <div class="layui-input-block" style="margin-left: 60px;">
+                        {% if edit_user.template_name == '' %}
+                            {% for opt_conf in opt_conf %}
+                                {% if opt_conf.id == 'CC' %}
+                                    <input type="radio" name="opt_conf" id="{{ opt_conf.id }}" value="{{ opt_conf.id }}" title="{% trans opt_conf.name %}" checked />
+                                {% else %}
+                                    <input type="radio" name="opt_conf" id="{{ opt_conf.id }}" value="{{ opt_conf.id }}" title="{% trans opt_conf.name %}" />
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            {% for i in edit_user.opt_name %}
+                                {{ i }}
+                                {% trans i %}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form tab_border">
+                <h5 class="mian_h5">{% trans "CMS解析模板" %}</h5>
+                <p class="remark_p">{% trans "泛模板适用不同业务共用同一套设备组的业务场景，可以通过在CMS配置泛模板预先定义使用的解析组和分层组，客户的域名将根据规则下发到对应设备组" %}</p>
+                <div class="layui-form-item" style="margin-top: 10px;">
+                    <label class="layui-form-label" style="width:95px;">{% trans "CMS解析模板" %}</label>
+                    <div class="layui-input-block">
+                    {% if edit_user.template_name == '' %}
+                        {% for cms_ana_template in cms_ana_template %}
+                            <input type="radio" name="cc_cms_template" id="{{ cms_ana_template.id }}" value="{{ cms_ana_template.id }}" title="{% trans cms_ana_template.name %}">
+                        {% endfor %}
+                    {% else %}
+                        {% trans edit_user.template_name %}
+                    {% endif %}
+
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form">
+                <h5 class="mian_h5">{% trans "CMS解析模板" %}</h5>
+                <p class="remark_p">{% trans "每天检测域名ICP备案是否有效，若域名无有效备案则将解析切换至RIM节点，此项适用海外客户业务。" %}</p>
+                {% if edit_user.template_name  == '' %}
+                    <p class="remark_p blue">{% trans "注意：此功能为定期校验海外客户备案是否吊销而设，为避免调用工信部接口造成接口请求压力，国内客户请勾选无。" %}</p>
+                {% endif %}
+
+                <div class="layui-form-item" style="margin-top: 10px;">
+                    <label class="layui-form-label" style="width:90px;">{% trans "ICP检测频率" %}</label>
+                    <div class="layui-input-block">
+                        {% if edit_user.template_name == '' %}
+                            <input type="radio" name="cc_icp_check" value='0' title="{% trans "无" %}" >
+                            <input type="radio" name="cc_icp_check" value='1' title="{% trans "每天一次" %}">
+                        {% else %}
+                            {% if edit_user.cc_icp_check == True %}
+                                {% trans "每天一次" %}
+                            {% else %}
+                                {% trans "无" %}
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+                {% if edit_user.template_name == '' %}
+                    <button class="fl layui-btn layui-btn-blue" style="margin-top: 100px;" lay-submit lay-filter="submit_cdn_conf">{% trans '提交' %}</button>
+                {% endif %}
+
+            </div>
+            <!--lay_first-->
+        </div>
+    </div>
+</div>
+
+<script>
+if(lan == 'en'){
+    $('.layui-form-label').width(244)
+}else{
+    $('.layui-form-label').width(90)
+}
+cc_icp_check='{{ edit_user.cc_icp_check | safe }}';
+template_name='{{ edit_user.template_name | safe }}'
+    console.log(template_name)
+console.log(cc_icp_check)
+    opt_conf={{ opt_conf | safe }}
+    cms_ana_template={{ cms_ana_template | safe }}
+    document.write(
+        '<script src="{% static 'js/cdn/cdn_base_conf.js' %}?v='+Math.random()+'"><\/script>');
+
+</script>
+{% endblock %}
+

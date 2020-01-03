@@ -1,0 +1,114 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>NovaCDN</title>
+<link rel="shortcut icon" href="{% static 'image/nova.png' %}" />
+<script>
+    document.write('<link rel="stylesheet" type="text/css" href="{% static 'layui/css/layui.css' %}">' +
+        '<link rel="stylesheet" href="{% static 'css/base.css' %}?v='+Math.random()+'">'+
+    '<script src="{% static 'js/public/jquery-2.1.0.min.js' %}"><\/script>'+
+        '<script src="{% static 'layui/layui.js' %}"><\/script>');
+</script>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">
+        <img src="/static/image/logo_in.png" alt="">
+    </div>
+    <div style="display: none;">
+        <form name="testform" id="testform" method='post'><input type='hidden' name='csrfmiddlewaretoken' value='5S6OmSJo7IZHh7Dknfd8fYbWh0I3LjVs' />
+            {% csrf_token %}
+            <select id="language" name="language" onchange="selectlang(this)">
+                <option value="en" >English</option>
+                <option value="zh-Hans" >中文简体</option>
+            </select>
+        </form>
+    </div>
+    <ul class="layui-nav layui-layout-right" style="margin-top:18px;">
+        <li class="layui-nav-item" id="user_name">
+            {% if user.is_staff  ==  True %}
+                <a href="javascript:;">{% trans "在线帮助" %}</a>
+                <dl class="layui-nav-child">
+                {% comment %}    <dd><a href="">移动模块</a></dd>
+                    <dd><a href="">移动模块</a></dd>{% endcomment %}
+                    {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                        <dd><a target="_blank" href="/static/pdf/CDN_Operation_Manual_Management_Side.pdf" target="_blank">{% trans "CDN操作文档管理端" %}</a></dd>
+                    {% else %}
+                        <dd><a target="_blank" href="/static/pdf/CDN_Operation_Manual_Management_Side_Zh.pdf" target="_blank">{% trans "CDN操作文档管理端" %}</a></dd>
+                    {% endifequal %}
+                    <dd><a target="_blank" href="/static/pdf/WAF_Operation_Manual_Management_Side_Zh.pdf">{% trans "WAF操作文档管理端" %}</a></dd>
+                </dl>
+            {% else %}
+                {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                    <a id="userName" href="/static/pdf/CDN_Operation_Manual.pdf" target="_blank">{% trans "在线帮助" %}</a>
+                {% else %}
+                    <a id="userName" href="/static/pdf/CDN_Operation_Manual_Zh.pdf" target="_blank">{% trans "在线帮助" %}</a>
+                {% endifequal %}
+            {% endif %}
+
+        </li>
+        <li class="user-name layui-nav-item">
+            <img alt="nova portal" src="/static/image/convert_lang.png"/>
+            <a id="user_lang" href="javascript:selectlang()" style="padding-left: 0;">
+                {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                    <span id="user_lang_en">中文</span>
+                {% else %}
+                    English
+                {% endifequal %}
+            </a>
+        </li>
+        <li class="layui-nav-item" id="user_name">
+            <a id="userName" href="javascript:;">{{user.username}} </a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="/base/logout/" style="border:0;" id="log_out"><img alt="nova portal" style="" src="/static/image/out.png" alt=""></a>
+        </li>
+    </ul>
+  </div>
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul id="layui-nav" class="layui-nav layui-nav-tree"  lay-filter="navigation">
+
+      </ul>
+    </div>
+  </div>
+  <div class="layui-body" id="LAY_app_body">
+      <iframe url="" src="" frameborder="0" class="layadmin-iframe" id="iframe_admin"></iframe>
+  </div>
+</div>
+
+{%  ifequal request.LANGUAGE_CODE  'en'  %}
+    <input id="lang" style="display:none;" type="text" value="en" />
+{% else %}
+    <input id="lang" style="display:none;" type="text" value="zh" />
+{% endifequal %}
+<!--js-->
+<script>
+menus={{ menus | safe }}
+is_staff='{{ user.is_staff | safe }}';
+    lan=document.getElementById('lang').value
+    function selectlang() {
+        var str="/i18n/setlang/";
+        myform = document.getElementById('testform');
+        myform.method = "POST";
+        myform.action = str;
+        if ($("#user_lang_en") && $("#user_lang_en").html() =='中文'){
+            $("#language").val("zh-Hans");
+            console.log('zh-Hans');
+        }
+        else
+            $("#language").val("en");
+            myform.submit();
+    }
+
+    document.write(
+        '<script src="{% static 'js/public/public.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+</body>
+</html>

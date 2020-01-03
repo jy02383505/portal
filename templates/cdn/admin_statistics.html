@@ -1,0 +1,132 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+<script>
+    document.write(
+    '<link rel="stylesheet" type="text/css" href="{% static 'formSelects/formSelects-v4.css' %}?v='+Math.random()+'">'
+);
+</script>
+<div class="con" style="position: relative;">
+    <div class="mianbaoxie">
+        <a href="javascript:;">
+            {% trans '统计' %}
+        </a>
+	</div>
+    <div class="search layui-form" style="top:105px;position: absolute;box-shadow:none;box-sizing: border-box;width:100%;">
+        <div class="search_in layui-form sta_search" style="margin-bottom: 20px;">
+            <div class="layui-form-item" style="display: block;">
+                {% if user.is_staff == True %}
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{% trans "用户" %}</label>
+                        <div class="layui-input-inline">
+                            <select name="choice_user" lay-verify="choice_user" lay-filter="choice_user">
+                                <option value="">{% trans "请选择" %}</option>
+                                {% for user in user_list %}
+                                    {% if forloop.counter == 1 %}
+                                        <option selected value="{{ user.id }}">{{ user.username }}</option>
+                                    {% else %}
+                                        <option value="{{ user.id }}">{{ user.username }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="layui-inline">
+                    <label class="layui-form-label">{% trans "加速域名" %}</label>
+                    <div class="layui-input-inline">
+               {% comment %}         <select name="choice_domain" lay-verify="choice_domain" lay-filter="choice_domain" xm-select="choice_domain">
+                            <option value="">{% trans "请选择" %}</option>
+                        </select>{% endcomment %}
+                        <select id="choice_domain" name="choice_domain" xm-select-skin='default' style="width:208px;" xm-select="choice_domain" xm-select-height="30px" xm-select-search>
+{#                            <option value="">{% trans "请选择" %}</option>#}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" style="display: block;">
+                <div class="layui-inline">
+                    <label class="layui-form-label">{% trans "选择日期" %}</label>
+                    <div class="layui-input-inline layui-tab-content input-group">
+                        <div class="layui-tab layui-tab-card tab_border" lay-filter="time_tab">
+                          <ul class="layui-tab-title tab_second">
+                                {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                                    <li class="layui-this tab_li" style="width:110px;" lay-id='24'>{% trans "近24小时" %}</li>
+                                {% else %}
+                                    <li class="layui-this tab_li" lay-id='24'>{% trans "近24小时" %}</li>
+                                {% endifequal %}
+                                <li class="tab_li" lay-id='today'>{% trans "今天" %}</li>
+                                <li class="tab_li" lay-id='yesterday'>{% trans "昨天" %}</li>
+                                <li class="tab_li"  lay-id='seven'>{% trans "近7天" %}</li>
+                                <li class="tab_li"  lay-id='thirty'>{% trans "近30天" %}</li>
+                                <li class="tab_li"  lay-id='last_month'>{% trans "上月" %}</li>
+                                <li>
+                                    <div class="input-group">
+                                      <input type="text" style="border: 0;height:28px;" class="form-control daterange data_time" name="code_data" id="code_data">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if user.is_staff == True %}
+                    <div class="layui-inline" style="margin-bottom: 0;" style="display: block;">
+                        <label class="layui-form-label">{% trans "服务商" %}</label>
+                        <div class="layui-input-inline" id="opts" style="height:30px;min-width: 90px;padding-top: 6px;">
+                        </div>
+                    </div>
+
+            {% endif %}
+            <button class="layui-btn layui-btn-blue fr layui-query" lay-submit lay-filter="lay_query">{% trans '查询' %}</button>
+{#        </div>#}
+      </div>
+    </div>
+    <div class="layui-tab layui-tab-card" lay-filter="statistical_data" style="padding-bottom: 20px;" id="tab_sta">
+        <ul class="layui-tab-title" id="comprehensive">
+            <li class="layui-nav-item layui-this" lay-id="1">
+                <a href="javascript:;">{% trans "流量带宽明细" %}</a>
+            </li>
+            <li class="layui-nav-item" lay-id="2">
+                <a href="javascript:;">{% trans "状态码分析" %}</a>
+            </li>
+        </ul>
+        {% if user.is_staff == True %}
+            <div class="layui-tab-content" id="tab_content" style="top:170px;padding-bottom: 170px;">
+        {% else %}
+{#            <div class="layui-tab-content" style="top:120px;padding-bottom: 120px;">#}
+            <div class="layui-tab-content" id="tab_content">
+        {% endif %}
+            <div class="layui-tab-item layui-show">
+                {% include "cdn/admin_bandwidth.html" %}
+            </div>
+            <div class="layui-tab-item">
+                {% include "cdn/admin_state_code.html" %}
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript">
+    if(lan == 'en' && parent.document.body.clientWidth<1400 && is_staff == 'False'){
+        $('#tab_content').css('top','190px')
+        $('.sta_search').css('padding-bottom','20px')
+    }else if(lan == 'en' && parent.document.body.clientWidth<1500 && is_staff == 'False'){
+        $('#tab_content').css('top','150px')
+    }else if(lan == 'en' && parent.document.body.clientWidth<1470 && is_staff == 'True'){
+        $('#tab_content').css('top','200px')
+    }else if(lan == 'en' && parent.document.body.clientWidth<1500 && is_staff == 'True'){
+        $('#tab_content').css('top','170px')
+    }
+
+    user_list = {{ user_list | safe }}
+    provider_info={{ provider_info | safe }}
+
+    document.write('<script src="{% static 'js/public/echarts.min.js' %}"><\/script>'+
+            '<script src="{% static 'formSelects/formSelects-v4.js' %}?v='+Math.random()+'"><\/script>'+
+        '<script src="{% static 'js/cdn/admin_statistics.js' %}?v='+Math.random()+'"><\/script>'+
+    '<script src="{% static 'js/public/en_width.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}

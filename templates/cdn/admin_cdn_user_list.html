@@ -1,0 +1,45 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+<div class="con">
+    <div class="mianbaoxie">
+        <a href="javascript:;">
+            {% trans 'CDN用户列表' %}
+        </a>
+	</div>
+    <!--查询头-->
+	<div class="search">
+        <div class="search_in layui-form" >
+            <div class="fl layui_user" style="position:relative;">
+                <input type="text" class="search_input" id="username" name="username" lay-verify="username" autocomplete="off" placeholder="{% trans "请输入" %}">
+                <span class="search_user"></span>
+            </div>
+        </div>
+    </div>
+	<!--显示列表-->
+	<div class="main">
+	<!--显示列表-->
+        <div class="list">
+            <div class="conlist">
+                <table id="user_list" class="layui-hide" lay-filter="parse-table-demo">
+
+                </table>
+                <div id="page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="list_button">
+    <a class="layui-btn layui-btn-xs" lay-event="cdn_configure">{% trans "融合CDN配置" %}</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="domain_list">{% trans "域名列表" %}</a>
+    <a class="layui-btn layui-btn-xs" lay-event="statistics">{% trans "统计" %}</a>
+</script>
+<script type="text/javascript">
+    //服务商对照表
+    opt_type={{ opt_type | safe }}
+
+    document.write(
+        '<script src="{% static 'js/cdn/admin_cdn_user_list.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}

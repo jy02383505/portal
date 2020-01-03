@@ -1,0 +1,67 @@
+{% load i18n %}
+{% load staticfiles %}
+{% block media %}
+<script>
+    document.write(
+        '<link rel="stylesheet" type="text/css" href="{% static 'layui/css/layui.css' %}">' +
+        '<link rel="stylesheet" type="text/css" href="{% static 'data/bootstrap.min.css' %}?='+Math.random()+'">' +
+        '<link rel="stylesheet" type="text/css" href="{% static 'data/daterangepicker-bs3.css' %}?='+Math.random()+'">' +
+        '<link rel="stylesheet" href="{% static 'css/base.css' %}?v='+Math.random()+'">'+
+        '<link rel="stylesheet" href="{% static 'css/iframe.css' %}?v='+Math.random()+'">'
+    );
+</script>
+{% endblock %}
+{% block static_js %}
+<script>
+    is_staff='{{ user.is_staff | safe }}';
+    user_perm={{ user_perm | safe }}   //用户或者管理员开通的三级权限
+    internation_trans={};     //js国际化
+    var lan=parent.document.getElementById('lang').value;
+    if(lan == 'zh'){
+        internation_trans.local={
+            applyLabel: '确定',
+            cancelLabel: '取消',
+            fromLabel: '从',
+            toLabel: '到',
+            {#customRangeLabel: '手动选择',#}
+            daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+            monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+                '七月', '八月', '九月', '十月', '十一月', '十二月'
+            ],
+            firstDay: 1
+        }
+    }else{
+        internation_trans.local={
+            applyLabel: 'Confirm',
+            cancelLabel: 'Cancel',
+            fromLabel: 'From',
+            toLabel: 'To',
+            {#customRangeLabel: '手动选择',#}
+            daysOfWeek: ['Su','Mo',	'Tu','We','Th',	'Fr','Sa'],
+            monthNames: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+            ],
+            firstDay: 1
+        }
+    }
+
+    document.write(
+        '<script src="{% static 'js/public/jquery-2.1.0.min.js' %}"><\/script>'+
+        '<script src="{% static 'js/public/jquery.cookie.js' %}"><\/script>'+
+        '<script src="{% static 'layui/layui.js' %}"><\/script>'+
+        '<script src="{% static 'js/public/crypto-js.js' %}"><\/script>'+
+        '<script src="{% static 'data/moment.js' %}"><\/script>'+
+        '<script src="{% static 'data/bootstrap.min.js' %}"><\/script>'+
+        '<script src="{% static 'data/daterangepicker.js' %}?v=2"><\/script>'+
+        '<script src="{% static 'js/public/page.js' %}?v='+Math.random()+'"><\/script>'+
+        '<script src="{% static 'js/public/tips.js' %}?v='+Math.random()+'"><\/script>'+
+        '<script type="text/javascript" src="{% url 'javascript-catalog' %}"><\/script>'
+
+    )
+</script>
+{% endblock %}
+<div class="body_list">
+    {% block body_public %}
+    {% endblock %}
+</div>
+<script src="{% static 'js/public/cust_height.js' %}?=1"></script>

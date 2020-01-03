@@ -1,0 +1,57 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="main main_alarm layui-form">
+
+    <div class="list">
+        <h6 class="mian_h6">{% trans "状态码" %}</h6>
+        <div class="layui-tab layui-tab-card" lay-filter="code_tab">
+          <ul class="layui-tab-title configuration_tap" >
+            <li class="layui-this" lay-id="11">{% trans "状态码饼图" %}</li>
+            <li lay-id="22">{% trans "状态码趋势图" %}</li>
+          </ul>
+          <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <div class="" style="padding:20px 0;">
+                    <div id="code_echart" style="height:350px;"></div>
+                </div>
+                <h6 class="mian_h6">{% trans "状态码数据分析" %}</h6>
+                <div class="layui-tab-content">
+                    <i class="layui-icon layui-icon-export" style="top:-44px;display: block" id="state_data_upload"></i>
+                    <div class="layui-tab-item layui-show">
+                        <table id="state_code_table" class="layui-hide" lay-filter="state_code_table">
+                        </table>
+{#                        <div style="height:300px;"></div>#}
+                    </div>
+                </div>
+            </div>
+            <div class="layui-tab-item">
+                <div class="layui-tab layui-tab-card" lay-filter="code_xx">
+                  <ul class="layui-tab-title layui_tab_xx">
+                    <li class="layui-this" lay-id="2xx">2XX</li>
+                    <li lay-id="3xx">3XX</li>
+                    <li lay-id="4xx">4XX</li>
+                    <li lay-id="5xx">5XX</li>
+                  </ul>
+                  {% comment %}<div class="layui-tab-content" style="height: 350px;width:100%;">
+
+                  </div>{% endcomment %}
+                </div>
+{#                <div id="code_echart_xx" style="height:350px;"></div>#}
+                <div class="code_width">
+                    <div id="code_echart_xx" style="height:350px;"></div>
+                </div>
+                <h6 class="mian_h6">{% trans "状态码数据分析" %}</h6>
+                <div class="layui-tab-content">
+                    <i class="layui-icon layui-icon-export" style="top:-44px;display: block" id="code_data_upload"></i>
+                    <div class="layui-tab-item layui-show">
+                        <table id="lay_table_xx" class="layui-hide" lay-filter="lay_table_xx">
+                        </table>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+

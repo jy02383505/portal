@@ -1,0 +1,70 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+<div class="con">
+    <div class="mianbaoxie">
+        <a href="javascript:;">{% trans '日志下载' %}</a>
+	</div>
+    <!--查询头-->
+	<div class="search">
+        <div class="search_in layui-form" >
+            <div class="layui-form-item">
+                {% if user.is_staff == True %}
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{% trans "用户" %}</label>
+                        <div class="layui-input-inline">
+                            <select name="choice_user" lay-verify="choice_user" lay-filter="choice_user">
+                                <option value="">{% trans "选择用户" %}</option>
+                                <option value="">{% trans "全部" %}</option>
+                                {% for user in user_list %}
+                                    <option value="{{ user.id }}">{{ user.username }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="layui-inline">
+                    <label class="layui-form-label">{% trans "选择域名" %}</label>
+                    <div class="layui-input-inline">
+                        <select name="choice_domain" lay-verify="choice_domain" lay-filter="choice_domain">
+                            <option value="">{% trans "请选择" %}</option>
+                            {% if user.is_staff == False %}
+                                {% for domain in domain_list %}
+                                    <option value="{{ domain }}">{{ domain }}</option>
+                                {% endfor %}
+                            {% endif %}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">{% trans "选择日期" %}</label>
+                    <div class="layui-input-inline input-group">
+                        <input type="text" placeholder="{% trans "请选择日期" %}" style="width:208px;" class="form-control daterange" name="code_data" id="code_data">
+                    </div>
+                </div>
+                <button class="layui-btn layui-btn-blue" lay-submit lay-filter="lay_query">{% trans '查询' %}</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="main">
+	<!--显示列表-->
+        <div class="list">
+            <div class="conlist">
+                <table id="lay_table" class="layui-hide" lay-filter="lay_table">
+                </table>
+                <div id="page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="list_button">
+  <a class="layui-btn layui-btn-xs" lay-event="upload">{% trans "下载" %}</a>
+</script>
+<script>
+user_list = {{ user_list | safe }}
+document.write('<script src="{% static 'js/cdn/admin_log_upload.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}
+

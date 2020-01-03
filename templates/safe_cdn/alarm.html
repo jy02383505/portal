@@ -1,0 +1,40 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+<div class="con">
+    {% include "safe_cdn/base_top.html" %}
+    <div class="layui-tab layui-tab-card" lay-filter="test1" id="tab">
+      {% include "safe_cdn/base_tab.html" %}
+      <div class="layui-tab-content">
+        <div class="layui-tab-item ">{% trans "暂未开放" %}</div>
+        <div class="layui-tab-item">{% trans "暂未开放" %}</div>
+        <div class="layui-tab-item">{% trans "暂未开放" %}</div>
+        <div class="layui-tab-item layui-show">
+            {% include "safe_cdn/alarm_cc.html" %}
+        </div>
+        <div class="layui-tab-item">
+            {% include "safe_cdn/alarm_waf.html" %}
+        </div>
+        <div class="layui-tab-item">{% trans "暂未开放" %}</div>
+        <div class="layui-tab-item">{% trans "暂未开放" %}</div>
+        <div class="layui-tab-item">{% trans "暂未开放" %}</div>
+        <div class="layui-tab-item">{% trans "暂未开放" %}</div>
+      </div>
+    </div>
+</div>
+<div id="check_page">
+</div>
+<script>
+    document.write('<script src="{% static 'js/cms/alarm.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="mianbaoxie layui-form">
+    <a href="javascript:;">{% trans '安全CDN' %} > </a>
+    <a href="javascript:;" id="domain">{{ domain.domain }}</a>
+    <a href="javascript:;" class="conf_a"> > </a>
+    <a href="javascript:;" class="channel_choice conf_a" style="width:120px;">
+        <select name="channel_select" id="channel_select" lay-verify="channel_select" lay-filter="channel_select" >
+            {% if user.is_staff == True %}
+                    <option value="admin_sec_overview">{% trans "统计" %}</option>
+                    <option value="admin_sec_domain_conf">{% trans "配置" %}</option>
+            {% else %}
+                <option value="parent_sec_overview">{% trans "统计" %}</option>
+                <option value="parent_sec_domain_conf">{% trans "配置" %}</option>
+            {% endif %}
+        </select>
+    </a>
+</div>
+
+
+
+

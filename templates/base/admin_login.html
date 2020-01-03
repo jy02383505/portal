@@ -1,0 +1,131 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>NovaCDN</title>
+<link rel="shortcut icon" href="{% static 'image/nova.png' %}" />
+<script>
+    document.write('' +
+        '<link rel="stylesheet" type="text/css" href="{% static 'layui/css/layui.css' %}">' +
+        '<link rel="stylesheet" href="{% static 'css/login.css' %}?v='+Math.random()+'">');
+</script>
+</head>
+<body>
+<div class="login_midlle">
+    <div id="login_bg" class="login_bg">
+            <div class="login_top login_txt">
+                {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                    <a class="fl" href="javascript:;"><img alt="nova portal" src="/static/image/logo_login_en.png?v=3a0d84461" alt=""></a>
+                {% else %}
+                    <a class="fl" href="javascript:;"><img alt="nova portal" src="/static/image/logo.png?v=3a0d84461" alt=""></a>
+                {% endifequal %}
+                <a class="fr" href="javascript:;"><em>400-6850-196</em></a>
+            </div>
+        </div>
+    <input type='hidden' name='csrfmiddlewaretoken' value='cM9lYP9Yl1g5P0hAiJ3gKyYtsw1IdHlH' />
+    <form id="login_form" class="layui-form" name="myform" action="https://sso.chinacache.com/?clientName={{sso_name}}" method="post">
+        {% csrf_token %}
+        <input type="hidden" id="next" name="next" value="/base/logout/">
+        <div class="form_in">
+            <div>
+                <h2 class="h2" style="display: inline-block">{% trans "登录" %}</h2>
+                <div class="user-name layui-nav-item fr">
+                    <img alt="nova portal" src="/static/image/convert_blue.png"/>
+                    <a id="user_lang" href="javascript:selectlang()">
+                        {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                        <span id="user_lang_en">中文</span>
+                        {% else %}
+                            English
+                        {% endifequal %}
+                    </a>
+                </div>
+            </div>
+            <div class="login_in">
+                 <div class="logoin-input">
+                     <div class="layui-input-block">
+                      <input id="username" name="username" lay-verify="title" autocomplete="off" placeholder="{% trans "用户名" %}" class="layui-input" type="text">
+                      <img class="delete_image" src="/static/image/delete.png?v=3a0d84460" alt="">
+                     </div>
+                 </div>
+                 <div class="logoin-input">
+                     <div class="layui-input-block">
+                      <input id="password" name="password" placeholder="{% trans "密码" %}" autocomplete="off" class="layui-input" type="password">
+                      <img class="delete_image" src="/static/image/delete.png?v=3a0d84460" alt="">
+                     </div>
+                     <span class="tip uname_tip" id="uname_tip"></span>
+                 </div>
+                 <div class="logoin-input">
+                    <label for=""> <input id="remember_password" type="checkbox" class=""> {% trans "记住密码" %}</label>
+                </div>
+            </div>
+            <div class="common-bot common_English">
+                <button id="login_btn" class="layui-btn layui-btn-normal btn btn-large btn-primary" type="submit" onclick="check(this.form)">{% trans "管理员登录" %}</button>
+            </div>
+            <div class="logoin-input">
+                <p class="login_tips">{% trans "温馨提示：忘记密码请拨打客服电话" %} <em>400-6850-196</em></p>
+            </div>
+         </div>
+    </form>
+    <div class="login_txt login_bottom">
+        {% trans "Copyright © 北京蓝汛通信技术有限责任公司 蓝汛国际控股有限公司     京公网安备11010502001414号     粤ICP备11108162号-3" %}
+    </div>
+</div>
+<div style="display: none;">
+    <form name="testform" id="testform" method='post'><input type='hidden' name='csrfmiddlewaretoken' value='5S6OmSJo7IZHh7Dknfd8fYbWh0I3LjVs' />
+        {% csrf_token %}
+        <select id="language" name="language" onchange="selectlang(this)">
+            <option value="en" >English</option>
+            <option value="zh-Hans" >中文简体</option>
+        </select>
+    </form>
+</div>
+</body>
+</html>
+<script>
+    document.write('<script src="{% static 'js/public/base.js' %}?v='+Math.random()+'"><\/script>'+
+    '<script type="text/javascript" src="{% url 'javascript-catalog' %}"><\/script>')
+</script>
+<script>
+    //浏览器高度
+    function getViewSize() {
+        return {
+            "w": window['innerWidth'] || document.documentElement.clientWidth,
+            "h": window['innerHeight'] || document.documentElement.clientHeight
+        }
+    }
+    function setContainerSize() {
+        var size = getViewSize();
+        document.getElementById("login_bg").style.width = size["w"] + "px";
+        document.getElementById("login_bg").style.height = size["h"] + "px";
+    }
+    setContainerSize();
+    window.onresize = setContainerSize;
+
+    document.onkeydown = function (e){
+        var theEvent = window.event || e;
+        var code = theEvent.keyCode || theEvent.which;
+        if(code == 13){
+            document.getElementById('login_btn').submit();
+            return false;
+        }
+    };
+
+</script>
+<script>
+    var msg='{{ msg }}';
+    if(msg != ''){
+        var edit_msg = '<p class="mistake">' + gettext(msg) + '</p>';
+        $('#uname_tip').html(edit_msg);
+        $('#uname_tip').show();
+    }
+function check(form) {
+    document.myform.submit();
+    {% comment %}console.log(document.myform.submit());{% endcomment %}
+    return;
+}
+</script>

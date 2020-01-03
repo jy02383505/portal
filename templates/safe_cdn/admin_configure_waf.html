@@ -1,0 +1,180 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="main" style="padding-top: 0;">
+    <div class="list">
+        <button class="checkBtn list_checkBtn" lay-submit id="opening_waf" lay-filter="opening_waf" style="display: none;" >{% trans '开通WAF' %}</button>
+        <div class="time_line" id="create_time_line" style="display: none;">
+            <span class="line fl" style="left:0;width:30%;"></span>
+            <ul class="line_ul fl">
+                <li class="line_li fl active">
+                    <div>
+                        <i class="layui-icon layui-icon-ok"></i>
+                        <p id="waf_status">
+                        {% if whetherBind == False %}
+                            {% comment %}创建waf{% endcomment %}
+                            {% if status == 0 %}
+                                {% trans "创建完成" %}
+                            {% elif status == 2 or status == 3 %}
+                                {% trans "创建完成" %}
+                            {% else %}
+                                {% trans "创建中" %}
+                            {% endif %}
+                        {% elif whetherBind == True %}
+                            {% comment %}绑定waf{% endcomment %}
+                            {% if status == 0 %}
+                                {% trans "绑定完成" %}
+                            {% elif status == 2 or status == 3 %}
+                                {% trans "绑定完成" %}
+                            {% else %}
+                                {% trans "绑定中" %}
+                            {% endif %}
+                        {% endif %}
+
+                        </p>
+                    </div>
+                    <p class="line_p">
+                        <span class="line_span">
+                            {% if status == 0 %}
+                                <span style="width:50%;"></span>
+                            {% elif status == 2 or status == 3 %}
+                                <span style="width:100%;"></span>
+                            {% else %}
+                                <span style="width:50%;"></span>
+                            {% endif %}
+
+                        </span>
+                    </p>
+                </li>
+                {% if status == 3 %}
+                    <li class="line_li fl active">
+                        <div>
+                            <i class="layui-icon layui-icon-ok"></i>
+                            <p>{% trans "已启用" %}</p>
+                        </div>
+                        <p class="line_p">
+                            <span class="line_span"><span style="width:100%;"></span></span>
+                        </p>
+                    </li>
+                    <li class="line_li fl active">
+                        <div>
+                            <i class="layui-icon layui-icon-ok"></i>
+                            <p>{% trans "已接入" %}</p>
+                        </div>
+                        <p class="line_p">
+                            <span class="line_span"></span>
+                        </p>
+                    </li>
+                {% elif  status == 2 %}
+                    <li class="line_li fl active">
+                        <div>
+                            <i class="layui-icon layui-icon-ok"></i>
+                            <p>{% trans "已启用" %}</p>
+                        </div>
+                        <p class="line_p">
+                            <span class="line_span"></span>
+                        </p>
+                    </li>
+                    <li class="line_li fl">
+                        <div>
+                            <i class="layui-icon">03</i>
+                            <p>{% trans "未接入" %}</p>
+                        </div>
+                        <p class="line_p">
+                            <span class="line_span"></span>
+                        </p>
+                    </li>
+                {% else %}
+                    <li class="line_li fl">
+                        <div>
+                            <i class="layui-icon">02</i>
+                            <p>{% trans "未启用" %}</p>
+                        </div>
+                        <p class="line_p">
+                            <span class="line_span"></span>
+                        </p>
+                    </li>
+                    <li class="line_li fl">
+                        <div>
+                            <i class="layui-icon">03</i>
+                            <p>{% trans "未接入" %}</p>
+                        </div>
+                        <p class="line_p">
+                            <span class="line_span"></span>
+                        </p>
+                    </li>
+                {% endif %}
+
+
+            </ul>
+            <span class="line fl" style="right:0;padding-left: 20px;width:20%;box-sizing: border-box"></span>
+        </div>
+        {#     绑定waf    #}
+        {% include "safe_cdn/admin_domain_waf_binding.html" %}
+        {#   创建waf    #}
+        {% include "safe_cdn/admin_domain_waf_create.html" %}
+
+        <div class="main main_in binding_waf" id="domain_second" style="display: none;">
+            <div class="layui-tab layui-tab-card" lay-filter="waf_con">
+              <ul class="layui-tab-title configuration_tap">
+                <li class="layui-this" lay-id="11">{% trans "基础配置" %}</li>
+                <li lay-id="22">{% trans "默认规则" %}</li>
+                <li lay-id="33">{% trans "自定义规则" %}</li>
+              </ul>
+              <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show" id="admin_basic_waf">
+                    {% if whetherBind == True %}
+                        {% comment %} 绑定waf {% endcomment %}
+                        {% include "safe_cdn/admin_binding_waf.html" %}
+                    {% else %}
+                        {% comment %} 创建waf {% endcomment %}
+                        {% include "safe_cdn/admin_create_waf.html" %}
+                    {% endif %}
+                    {% comment %} 接入或者移出waf {% endcomment %}
+                    {% include "safe_cdn/access_or_move_cdn.html" %}
+                </div>
+                <div class="layui-tab-item">
+                    {% comment %}默认规则{% endcomment %}
+                    {% include "safe_cdn/default_waf.html" %}
+                </div>
+                <div class="layui-tab-item">
+                    {% comment %}自定义规则{% endcomment %}
+                    {% include "safe_cdn/custom_waf.html" %}
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+{#    </div>#}
+</div>
+<script>
+    // domain                  域名
+    // waf_default_mode_conf   默认防御模式
+    // waf_self_mode_conf   自定义防御模式
+    // access_type_conf    接入方式
+    // access_point_conf   接入点
+    // src_type_conf       回源方式
+    // access_point_conf   接入点
+    // access_point_conf   接入点
+    // waf_origin          cname
+    // whetherBind         绑定或创建
+    // waf_conf_json       页面waf配置数据
+    domain='{{ domain.domain | safe }}'
+    waf_default_mode_conf={{ waf_default_mode_conf | safe }}
+    waf_self_mode_conf={{ waf_self_mode_conf | safe }}
+    access_type_conf={{ access_type_conf | safe }}
+    access_point_conf={{ access_point_conf | safe }}
+    src_type_conf={{ src_type_conf | safe }}
+    waf_origin='{{ waf_origin | safe }}'
+    whetherBind='{{ whetherBind | safe }}'
+    access_type='{{ access_type | safe }}'
+    waf_status_safe={{ status | safe }}
+    selection_access_type={{ waf_conf.access_type | safe }}
+    waf_conf={{ waf_conf_json | safe }}
+
+    document.write('<script src="{% static 'js/cms/admin_configure_waf.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+
+
+
+
+

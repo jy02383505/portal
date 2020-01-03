@@ -1,0 +1,49 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="layui-form" id="strategy" style="display: none;">
+    <h5 class="mian_h5" style="padding-bottom: 10px;">{% trans "选择权限策略" %}</h5>
+    <div class="layui-form" style="height:30px;margin-bottom: 20px;">
+        <div class="fl" style="margin-right: 10px;">
+            <select name="" id="screening_strategy" lay-filter="screening_strategy">
+                <option value="">{% trans "筛选策略" %}</option>
+                {% for type_dict in strategy_type_dict %}
+                    <option value="{{ type_dict.name }}">{{ type_dict.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="fl layui_user" style="position:relative;">
+            <input type="text" class="search_input" id="screening_name" name="screening_name" lay-verify="screening_name" autocomplete="off" placeholder="支持搜索策略名称/描述">
+            <span class="search_user"></span>
+        </div>
+    </div>
+    <ul class="title_ul public_title">
+        <li>{% trans "策略名" %}</li>
+        <li>{% trans "已选择" %}</li>
+    </ul>
+    <div class="permission_policy public_title">
+        <ul class="policy">
+            <li id="1">
+                <p>1AdministratorAccess</p>
+                <span>管理所有资源的权限</span>
+            </li>
+            <li id="2">
+                <p>2AdministratorAccess</p>
+                <span>管理所有资源的权限</span>
+            </li>
+            <li id="3">
+                <p>3AdministratorAccess</p>
+                <span>管理所有资源的权限</span>
+            </li>
+            <li id="4">
+                <p>4AdministratorAccess</p>
+                <span>管理所有资源的权限</span>
+            </li>
+        </ul>
+        <ul class="added"></ul>
+    </div>
+
+{% comment %}    <div class="button_all">
+        <button class="check_pre" id="step_pre" onclick="step_pre()">{% trans '上一步' %}</button>
+        <button class="checkBtn" id="step_next" onclick="step_next()">{% trans '下一步' %}</button>
+    </div>{% endcomment %}
+</div>

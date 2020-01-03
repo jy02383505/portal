@@ -1,0 +1,56 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="main" style="padding-top: 0;">
+    <div class="list">
+        {% if user.is_staff == True %}
+            <button class="checkBtn list_checkBtn" id="opening_waf" >{% trans '开通WAF' %}</button>
+        {% else %}
+            <div class="layui-tab layui-tab-card" lay-filter="waf_con">
+              <ul class="layui-tab-title configuration_tap">
+                <li class="layui-this" lay-id="11">{% trans "基础配置" %}</li>
+                <li lay-id="22">{% trans "默认规则" %}</li>
+                <li lay-id="33">{% trans "自定义规则" %}</li>
+              </ul>
+              <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    {% include "safe_cdn/client_basic_waf.html" %}
+                </div>
+                <div class="layui-tab-item">
+                    {% include "safe_cdn/default_waf.html" %}
+                </div>
+                <div class="layui-tab-item">
+                    {% include "safe_cdn/custom_waf.html" %}
+                </div>
+              </div>
+            </div>
+        {% endif %}
+
+
+    </div>
+    {% comment %}<div class="layui-form-item" style="padding:0 20px;">
+        <button class="checkBtn fl" id="user_sure" onclick="user_sure()">{% trans '下发CC防御配置' %}</button>
+        <button class="checkBtn fl btn_cancel" id="user_cancel" onclick="user_cancel()">{% trans '还原' %}</button>
+    </div>{% endcomment %}
+{#    <div class="main_shadow"></div>#}
+</div>
+
+<script type="text/html" id="startup_button">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">{% trans "编辑" %}</a>
+    <a class="layui-btn layui-btn-xs" style="display: none" lay-event="preservation">{% trans "保存" %}</a>
+    <a class="layui-btn layui-btn-xs" style="display: none" lay-event="cancel">{% trans "取消" %}</a>
+</script>
+<script type="text/html" id="recognition_button">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">{% trans "编辑" %}</a>
+</script>
+<script type="text/html" id="alarm_button">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">{% trans "编辑" %}</a>
+    <a class="layui-btn layui-btn-xs" style="display: none" lay-event="preservation">{% trans "保存" %}</a>
+    <a class="layui-btn layui-btn-xs" style="display: none" lay-event="cancel">{% trans "取消" %}</a>
+</script>
+<script>
+    document.write('<script src="{% static 'js/cms/configure.js' %}?v='+Math.random()+'"><\/script>'+
+    '<script src="{% static 'js/cms/client_configure_waf.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+
+
+

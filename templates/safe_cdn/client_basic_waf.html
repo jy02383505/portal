@@ -1,0 +1,121 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="main main_in form_information layui-form">
+    <div class="list client_width">
+        <h5 class="mian_h5">{% trans "WAF防御配置" %}</h5>
+        <div class="layui-form-item">
+            {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                <label class="layui-form-label" style="width:255px;">{% trans "WAF防护/服务域名" %}</label>
+            {% else %}
+                <label class="layui-form-label" style="width:165px;">{% trans "WAF防护/服务域名" %}</label>
+            {% endifequal %}
+
+            <div class="layui-input-block" id="waf_domain">{{ domain.domain }}</div>
+        </div>
+        <div class="layui-form-item">
+            {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                <label class="layui-form-label" style="width:255px;">{% trans "WAF服务协议" %}</label>
+            {% else %}
+                <label class="layui-form-label" style="width:165px;">{% trans "WAF服务协议" %}</label>
+            {% endifequal %}
+
+            <div class="layui-input-block" id="waf_agreement">
+                {% if base_conf.ssl_status == 0 %}
+                    {% trans "不启用" %}
+                {% else %}
+                    {% trans "启用" %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="layui-form-item label_item">
+            {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                <label class="layui-form-label" style="width:255px;">{% trans "WAF默认规则防御模式" %}</label>
+            {% else %}
+                <label class="layui-form-label" style="width:165px;">{% trans "WAF默认规则防御模式" %}</label>
+            {% endifequal %}
+
+            <div class="layui-input-block ">
+                <label class="user_details" id="waf_default_cname" for="">
+{#                    {{ waf_default_mode_conf }}#}
+
+                    {% for waf_default_mode_conf in waf_default_mode_conf %}
+                        {% if base_conf.default_waf_mode == waf_default_mode_conf.id %}
+                            {% trans waf_default_mode_conf.cname %}
+                        {% endif %}
+                    {% endfor %}
+                </label>
+                <div class="layui-input-inline user_add">
+                    <select name="" class="" id="waf_default" lay-filter="waf_default">
+                        {% for waf_default_mode_conf in waf_default_mode_conf %}
+                            {% if base_conf.default_waf_mode == waf_default_mode_conf.id %}
+                                <option value="{{ waf_default_mode_conf.id }}" selected>{% trans waf_default_mode_conf.cname %}</option>
+                            {% else %}
+                                <option value="{{ waf_default_mode_conf.id }}">{% trans waf_default_mode_conf.cname %}</option>
+                            {% endif %}
+
+                        {% endfor %}
+                    </select>
+                </div>
+                <img id="edit" class="edit_add" src="/static/image/edit.png" alt="">
+            </div>
+            <div class="layui-form-item user_add" style="margin-top: 10px;">
+                {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                    <label class="layui-form-label" style="width:255px;"></label>
+                {% else %}
+                    <label class="layui-form-label" style="width:165px;"></label>
+                {% endifequal %}
+                <button class="checkBtn fl" id="default_sure" lay-submit lay-filter="default_sure">{% trans '确定' %}</button>
+                <button class="checkBtn fl btn_cancel" id="default_cancel" lay-filter="default_cancel">{% trans '取消' %}</button>
+            </div>
+        </div>
+
+        <div class="layui-form-item label_item">
+            {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                <label class="layui-form-label" style="width:245px;">{% trans "WAF自定义规则防御模式" %}</label>
+            {% else %}
+                <label class="layui-form-label" style="width:165px;">{% trans "WAF自定义规则防御模式" %}</label>
+            {% endifequal %}
+
+            <div class="layui-input-block ">
+                <label class="user_details" id="waf_self_cname" for="">
+{#                    {{ waf_self_mode_conf }}#}
+                    {% for waf_self_mode_conf in waf_self_mode_conf %}
+                        {% if base_conf.self_waf_mode == waf_self_mode_conf.id %}
+                            {% trans waf_self_mode_conf.cname %}
+                        {% endif %}
+                    {% endfor %}
+                </label>
+
+                <div class="layui-input-inline user_add">
+                    <select name="" id="waf_self" lay-filter="waf_default">
+                        {% for waf_self_mode_conf in waf_self_mode_conf %}
+                            {% if base_conf.self_waf_mode == waf_self_mode_conf.id %}
+                                <option value="{{ waf_self_mode_conf.id }}" selected>{% trans waf_self_mode_conf.cname %}</option>
+                            {% else %}
+                                <option value="{{ waf_self_mode_conf.id }}">{% trans waf_self_mode_conf.cname %}</option>
+                            {% endif %}
+
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <img id="edit" class="edit_add" src="/static/image/edit.png" alt="">
+            </div>
+            <div class=" user_add" style="margin-top: 10px;">
+                {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                    <label class="layui-form-label" style="width:245px;"></label>
+                {% else %}
+                    <label class="layui-form-label" style="width:165px;"></label>
+                {% endifequal %}
+                <button class="checkBtn fl" id="self_sure" >{% trans '确定' %}</button>
+                <button class="checkBtn fl btn_cancel" id="self_cancel">{% trans '取消' %}</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    waf_default_mode_conf={{ waf_default_mode_conf | safe }} ;
+    waf_self_mode_conf={{ waf_self_mode_conf | safe }} ;
+    base_conf={{ base_conf | safe }}
+</script>

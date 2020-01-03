@@ -1,0 +1,22 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="main main_in form_information" id="create_waf_first" style="display: none;">
+    <div class="list layui-form">
+        <h5 class="mian_h5">{% trans "选择服务商" %}</h5>
+        <div class="layui-form-item">
+            <div class="layui-input-block" style="margin-left: 0;">
+              <input type="radio" name="service_create" lay-filter="service_create" value="{% trans "青松" %}" title="{% trans "青松" %}" checked>
+              <div class="layui-form-item">
+{#                    <label class="layui-form-label" style="width:133px;"></label>#}
+                    <div class="layui-input-block" style="margin-left: 25px;">
+                        <button class="layui-btn" lay-submit="" id="create_waf" lay-filter="create_waf">{% trans "创建waf" %}</button>
+                    </div>
+              </div>
+            </div>
+            <div class="layui-input-block service_provider">
+              <input type="radio" name="service_create" disabled lay-filter="service_create" value="{% trans "F5" %}" title="{% trans "F5" %}" >
+              <p class="waf_txt">{% trans "即将上线，敬请期待" %}</p>
+            </div>
+        </div>
+    </div>
+</div>

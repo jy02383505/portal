@@ -1,0 +1,85 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+
+<div class="con">
+    <div class="mianbaoxie">
+        <a href="javascript:;">{% trans '新建策略' %}</a>
+	</div>
+    <!--查询头-->
+
+    <div class="main main_in">
+        <div class="list">
+        <!--lay_first-->
+            <div class="layui-form" id="lay_form">
+                <h5 class="mian_h5">{% trans "策略名称" %}</h5>
+                <div class="layui-form-item">
+                    <div class="layui-input-block" style="margin-left:0;">
+                       <input type="text" style="width:60%;" name="username" autocomplete="off" id="username" lay-verify="username"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <h5 class="mian_h5">{% trans "描述" %}</h5>
+                <div class="layui-form-item">
+                    <div class="layui-input-block" style="margin-left:0;">
+                      <input id="describe" style="width:60%;" type="text" name="describe"  placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <!--lay_first-->
+            <!--lay_second-->
+            <div class="layui-form" id="lay_second">
+                <h5 class="mian_h5" style="padding-bottom: 10px;">{% trans "添加策略内容" %}</h5>
+                <button class="checkBtn" id="add_permissions" onclick="add_permissions()">{% trans '添加操作权限' %}</button>
+                <table class="layui-table" id="permissions_table"  lay-filter="add_permissions_table">
+                    <thead>
+                        <tr>
+                          <th lay-data="{field:'services'}">{% trans "产品/服务" %}</th>
+                          <th lay-data="{field:'operation_name'}">{% trans "操作名称" %}</th>
+                          <th lay-data="{field:'operation_name'}">{% trans "资源" %}</th>
+                          <th lay-data="{field:'city',toolbar: '#list_button'}">{% trans "操作" %}</th>
+                        </tr>
+                    </thead>
+                     <tbody id="server_tbody">
+
+                    </tbody>
+                </table>
+
+
+                <div class="button_all">
+                    <button class="checkBtn" id="sure" onclick="sure()">{% trans '确定' %}</button>
+
+                </div>
+
+            </div>
+            <!--lay_second-->
+        </div>
+    </div>
+</div>
+<script type="text/html" id="list_button">
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">{% trans "删除" %}</a>
+</script>
+<script>
+    var perm={{ user_perm | safe }};
+    var user_perm_type={{ user_perm_type | safe }};
+    var perm_strategy_list={{ perm_strategy_list | safe }};
+    internation_trans.custom_strategy='{% trans "自定义策略" %}';
+    internation_trans.is_services='{% trans "选择服务" %}';
+    internation_trans.operation_name='{% trans "操作名称" %}';
+    internation_trans.all_operation='{% trans "所有操作" %}';
+    internation_trans.spe_operation='{% trans "特定操作" %}';
+    internation_trans.all_resources='{% trans "所有资源" %}';
+    internation_trans.spe_resources='{% trans "特定资源" %}';
+    internation_trans.add_operation='{% trans "添加操作权限" %}';
+    internation_trans.resources='{% trans "资源" %}';
+    internation_trans.cannot_empty='{% trans "服务不能为空" %}';
+
+    internation_trans.operation_cannot_empty='{% trans "操作名称不能为空" %}';
+    internation_trans.resources_cannot_empty='{% trans "资源不能为空" %}';
+
+    document.write(
+        '<script src="{% static 'js/user/create_perm_strategy.js' %}?v='+Math.random()+'"><\/script>');
+
+</script>
+{% endblock %}
+

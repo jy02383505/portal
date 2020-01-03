@@ -1,0 +1,106 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="main main_alarm layui-form">
+    <div class="list">
+        <h6 class="mian_h6">{% trans "状态码" %}
+             <button type="button" class="layui-btn layui-btn-xs cms_btn">
+                <i class="layui-icon">&#xe61a;</i>
+             </button>
+            <a class="blue " href="javascript:;"></a>
+        </h6>
+        <div class="layui-tab layui-tab-card tab_border" lay-filter="status_code">
+          <ul class="layui-tab-title tab_second">
+              <li class="layui-this">{% trans "近1小时" %}</li>
+              <li>{% trans "近24小时" %}</li>
+              <li>{% trans "今天" %}</li>
+              <li>{% trans "昨天" %}</li>
+              <li>{% trans "近7天" %}</li>
+              <li><input type="text" class="layui-input" id="code_data" placeholder="{% trans "请选择日期" %}"></li>
+          </ul>
+          <div class="layui-tab-content">
+            <div id="code_echart" style="width:100%;height:300px;"></div>
+            <div class="layui-tab-item layui-show"></div>
+          </div>
+        </div>
+        <h6 class="mian_h6">{% trans "TOP URL" %}</h6>
+        <div class="layui-tab layui-tab-card tab_border">
+        <div class=" layui-form" >
+            <ul class="layui-tab-title tab_second" style="display: inline-block">
+            <li class="layui-this">{% trans "近10分钟" %}</li>
+            <li>{% trans "近1小时" %}</li>
+          </ul>
+            <div class="position">
+                <select name="" id="select_status" lay-filter="select_status">
+                    <option value="-1">{% trans "国内" %}</option>
+                </select>
+            </div>
+            <div class="position">
+                <select name="" id="select_status" lay-filter="select_status">
+                    <option value="-1">{% trans "省" %}</option>
+                </select>
+            </div>
+            <div class="position">
+                <select name="" id="select_status" lay-filter="select_status">
+                    <option value="-1">{% trans URL类型 %}</option>
+                </select>
+            </div>
+            <div class="layui_user" style="position:relative;">
+                <input type="text" id="customer_account" name="customer_account" lay-verify="customer_account" autocomplete="off" placeholder="{% trans '客户账号/账号ID' %}">
+            </div>
+            <div class="layui_user" style="position:relative;">
+                <input type="text" id="company" name="company" lay-verify="company" autocomplete="off" placeholder="{% trans 'CMS客户ID' %}">
+            </div>
+            <button class="checkBtn " style="margin-bottom:20px;" id="search_pro" onclick="my_search()">{% trans '查询' %}</button>
+        </div>
+
+          <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <table id="recognition_ip" class="layui-hide" lay-filter="recognition_ip">
+                </table>
+            </div>
+            <div class="layui-tab-item">
+
+            </div>
+          </div>
+        </div>
+        <h6 class="mian_h6">{% trans "告警配置" %}</h6>
+        <div class="layui-tab layui-tab-card tab_border">
+          <ul class="layui-tab-title tab_second">
+            <li class="layui-this">{% trans "默认" %}</li>
+            <li>{% trans "自定义" %}</li>
+          </ul>
+          <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <table id="alarm_configuration" class="layui-hide" lay-filter="alarm_configuration">
+                </table>
+            </div>
+            <div class="layui-tab-item">
+
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="layui-form-item" style="padding:0 20px;">
+        <button class="checkBtn fl" id="user_sure" onclick="user_sure()">{% trans '下发CC防御配置' %}</button>
+        <button class="checkBtn fl btn_cancel" id="user_cancel" onclick="user_cancel()">{% trans '还原' %}</button>
+    </div>
+</div>
+
+<script type="text/html" id="startup_button">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">{% trans "编辑" %}</a>
+    <a class="layui-btn layui-btn-xs" style="display: none" lay-event="preservation">{% trans "保存" %}</a>
+    <a class="layui-btn layui-btn-xs" style="display: none" lay-event="cancel">{% trans "取消" %}</a>
+</script>
+<script type="text/html" id="recognition_button">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">{% trans "编辑" %}</a>
+</script>
+<script type="text/html" id="alarm_button">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">{% trans "编辑" %}</a>
+    <a class="layui-btn layui-btn-xs" style="display: none" lay-event="preservation">{% trans "保存" %}</a>
+    <a class="layui-btn layui-btn-xs" style="display: none" lay-event="cancel">{% trans "取消" %}</a>
+</script>
+<script>
+</script>
+
+
+

@@ -1,0 +1,50 @@
+{% load i18n %}
+{% load staticfiles %}
+
+<div class="con">
+    <div class="search" style="box-shadow:none;">
+        <div class="search_in layui-form" >
+            <div class="fl layui_user" style="position:relative;">
+                <input type="text" id="rule_id" name="rule_id" lay-verify="rule_id" autocomplete="off" placeholder="{% trans '规则ID' %}">
+            </div>
+            <div class="fl layui_user" style="position:relative;">
+                <input type="text" id="rule_name" name="rule_name" lay-verify="rule_name" autocomplete="off" placeholder="{% trans '规则名' %}">
+            </div>
+            <div class="fl layui_user" style="position:relative;">
+                <select name="" id="rule_status" lay-filter="rule_status">
+                    <option value="">{% trans "规则状态" %}</option>
+                    <option value="1">{% trans "开启" %}</option>
+                    <option value="0">{% trans "关闭" %}</option>
+                </select>
+            </div>
+            <button class="checkBtn" style="margin-bottom:20px;" id="search_rule" onclick="search_rule()">{% trans '查询' %}</button>
+        </div>
+    </div>
+    <div class="main main_in">
+	<!--显示列表-->
+        <div class="list">
+            <button class="checkBtn list_checkBtn" lay-submit="" lay-filter="open_all_rules" id="open_all_rules">{% trans '开启全部规则' %}</button>
+            <button class="checkBtn list_checkBtn" lay-submit="" lay-filter="close_all_rules" id="close_all_rules">{% trans '关闭全部规则' %}</button>
+            <div class="conlist acc_list_con default_div">
+                <table id="default_waf" class="layui-table" lay-filter="default_waf">
+
+                </table>
+                <div id="default_page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="list_button">
+{% if user.is_staff == True %}
+    <a class="layui-btn layui-btn-xs" lay-event="alarm">{% trans "告警" %}</a>
+    <a class="layui-btn layui-btn-xs" lay-event="statistics">{% trans "统计" %}</a>
+    <a class="layui-btn layui-btn-xs" lay-event="configure">{% trans "配置" %}</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">{% trans "删除" %}</a>
+{% else %}
+    <a class="layui-btn layui-btn-xs" lay-event="details">{% trans "详情" %}</a>
+{% endif %}
+</script>
+
+
+

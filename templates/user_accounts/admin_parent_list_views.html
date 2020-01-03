@@ -1,0 +1,68 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+<div class="con">
+    <div class="mianbaoxie">
+        <a href="javascript:;">
+            {% trans '用户账号列表' %}
+        </a>
+	</div>
+    <!--查询头-->
+	<div class="search">
+        <div class="search_in layui-form" >
+            <button class="checkBtn fl" id="add_user">{% trans '新建用户' %}</button>
+            <div class="fl layui_user" style="position:relative;">
+                <input type="text" class="search_input" id="username" name="username" lay-verify="username" autocomplete="off" placeholder="{% trans '请输入用户名' %}">
+                <span class="search_user"></span>
+            </div>
+            <div class="position">
+                <select name="" id="select_status" lay-filter="select_status">
+                    <option value="">{% trans "选择用户状态" %}</option>
+                    <option value="">{% trans "全部" %}</option>
+                    <option value="1">{% trans '启用' %}</option>
+                    <option value="0">{% trans '禁用' %}</option>
+                </select>
+            </div>
+            <div class="position">
+                <select name="" id="select_type" lay-filter="select_type">
+                    <option value="">{% trans "选择用户类型" %}</option>
+                    <option value="">{% trans "全部" %}</option>
+                    {% for user_type in user_type %}
+                        <option value="{{ user_type.id }}">{% trans user_type.name %}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+	<!--显示列表-->
+        <div class="list">
+            <button class="checkBtn addbtn fl" style="display: none;" id="add">{% trans 'Add account' %}</button>
+            <div class="conlist">
+
+                <table id="accounts_list" class="layui-hide" lay-filter="parse-table-demo">
+
+                </table>
+                <div id="page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="list_button">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">{% trans "操作记录" %}</a>
+{#  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">{% trans "删除" %}</a>#}
+</script>
+<script>
+    user_type_safe={{ user_type | safe }};
+    console.log(user_type_safe);
+    user_type_json = JSON.stringify(user_type_safe);
+    localStorage.setItem("user_type_json",user_type_json);
+    document.write(
+    '<script src="{% static 'js/accounts/admin_user_list.js' %}?v='+Math.random()+'"><\/script>');
+
+</script>
+
+{% endblock %}
+

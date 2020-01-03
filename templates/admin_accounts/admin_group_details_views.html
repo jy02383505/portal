@@ -1,0 +1,72 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+
+<div class="con">
+    <div class="mianbaoxie">
+        <i class="layui-icon layui-icon-return fl"></i>
+        <a href="javascript:;">
+            {% trans group_profile.group.name %}
+        </a>
+	</div>
+    <!--查询头-->
+    <div class="search">
+        <div class="search_in layui-form" >
+            <!--lay_first-->
+            <div class="layui-form" id="form_details">
+                <h5 class="mian_h5">{% trans "角色信息" %}</h5>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "角色名" %}</label>
+                    <div class="layui-input-block">{% trans group_profile.group.name %}</div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "描述" %}</label>
+                    <div class="layui-input-block">{% trans group_profile.desc %}</div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "备注" %}</label>
+                    <div class="layui-input-block">{% trans group_profile.remark %}</div>
+                </div>
+            </div>
+            <!--lay_first-->
+        </div>
+    </div>
+    <div class="main">
+        <div class="list">
+            <!--lay_second-->
+            <div class="layui-form" id="lay_authority">
+                <h5 class="mian_h5">{% trans "权限内容" %}</h5>
+                <div class="layui-tab-item layui-show">
+                    <button class="layui-btn layui-btn-blue " lay-submit lay-filter="add_operation">{% trans '添加操作权限' %}</button>
+{#                    <button class="checkBtn" id="add_operation" onclick="add_operation()">{% trans '添加操作权限' %}</button>#}
+                    <table class="layui-table" id="permissions_table"  lay-filter="add_permissions_table" style="margin-top: 10px;">
+                        <thead>
+                            <tr>
+                              <th lay-data="{field:'services'}">{% trans "产品/服务" %}</th>
+                              <th lay-data="{field:'operation_name'}">{% trans "操作名称" %}</th>
+                              <th lay-data="{field:'city',toolbar: '#list_button'}">{% trans "操作" %}</th>
+                            </tr>
+                        </thead>
+                         <tbody id="server_tbody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--lay_second-->
+        </div>
+    </div>
+</div>
+
+<script>
+    perm={{ all_perm | safe }};
+    perm_type={{ all_perm_type | safe }};
+    user_perm={{ group_perm | safe }};
+    user_perm_type={{ group_perm_type | safe }}
+    document.write(
+        '<script src="{% static 'js/accounts/create_details.js' %}?v='+Math.random()+'"><\/script>');
+
+</script>
+{% endblock %}
+

@@ -1,0 +1,70 @@
+{%  extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+<div class="con">
+    <div class="mianbaoxie">
+        <i class="layui-icon layui-icon-return fl"></i>
+        <a href="javascript:;">
+            {{ domain.domain }}
+        </a>
+	</div>
+    <!--查询头-->
+    <div class="layui-tab layui-tab-card" lay-filter="test1" id="tab">
+        <ul class="layui-tab-title" id="comprehensive">
+            <li class="layui-nav-item layui-this">
+                <a href="javascript:;">{% trans "基础配置" %}</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">{% trans "缓存配置" %}</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">{% trans "HTTPS配置" %}</a>
+            </li>
+        </ul>
+        {% if domain.status == '配置中' %}
+            <p class="domain_conf">{% trans "配置正在部署中，大约需要5-10分钟" %}</p>
+        {% else %}
+            <p class="domain_conf" style="display:none;">{% trans "配置正在部署中，大约需要5-10分钟" %}</p>
+        {% endif %}
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show layui_width">
+                {% include "cdn/admin_basic_configuration.html" %}
+            </div>
+            <div class="layui-tab-item layui_width">
+                {% include "cdn/admin_cache_configuration.html" %}
+            </div>
+            <div class="layui-tab-item">
+                {% include "cdn/admin_https_configuration.html" %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    if(lan == 'en'){
+        $('.layui_width .layui-form-label').width(170)
+        $('.layui_width .layui-input-block').css('margin-left','180px');
+
+    }else{
+        $('.layui-form-label').width(95)
+    }
+    domain='{{ domain.src_value | safe }}'
+    src_type = {{ src_type | safe }}
+    src_back_type = {{ src_back_type | safe }}
+    cache_type = {{ cache_type | safe }}
+    default_cache={{ domain.cache_rule | safe }}
+    cache_rule={{ domain.cache_rule | safe }}
+    cert_info={{ domain.cert_info | safe }}
+    cert_status={{ cert_status | safe }}
+    cert_from={{ cert_from | safe }}
+    cert_list={{ cert_list | safe }}
+    src_back_type='{{ domain.src_back_type | safe }}'
+    src_back_value='{{ domain.src_back_value | safe }}'
+    ignore_cache_control={{ domain.ignore_cache_control | safe }}
+    ignore_query_string={{ domain.ignore_query_string | safe }}
+document.write(
+        '<script src="{% static 'js/cdn/cdn.js' %}?v='+Math.random()+'"><\/script>'+
+        '<script src="{% static 'js/cdn/domain_configure.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}

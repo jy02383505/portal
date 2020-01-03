@@ -1,0 +1,47 @@
+{% load i18n %}
+{% load staticfiles %}
+{% comment %}接入/移除cdn{% endcomment %}
+<div id="move_basic_configure" style="display: none;">
+    <div class="list" style="padding:20px 20px 0;">
+        {% if status == 3 %}
+            <h5 class="mian_h5">{% trans "WAF移出CDN检查确认" %}</h5>
+        {% elif status == 2 %}
+            <h5 class="mian_h5">{% trans "WAF接入CDN检查确认" %}</h5>
+        {% endif %}
+        <h5 class="mian_h5">{% trans "接入模式：" %}<p class="waf_cdn">
+            {% for access in access_type_conf %}
+                {% if access.id == access_type %}
+                    {% trans access.name %}
+                {% endif %}
+            {% endfor %}
+        </p></h5>
+        <h5 class="mian_h5">{% trans "接入点：" %}<p class="waf_point_address">{{ waf_conf.access_point }}</p></h5>
+    </div>
+    <div class="list layui-form top_border">
+        <div class="layui-form-item">
+            {% if status == 3 %}
+                <p class="move_cdn_txt"><a class="blue" id="domain" href="javascript:;" ></a>{% trans "在移出 WAF 前，请先确认 CDN 服务是否正常！" %}</p>
+                {% comment %}上层>waf>源站 or 边缘>waf>上层  移除cdn{% endcomment %}
+                {% include "safe_cdn/station_move_cdn.html" %}
+
+
+            {% elif status == 2 %}
+                <p class="move_cdn_txt"><a class="blue" id="domain" href="javascript:;" ></a>{% trans "在接入 WAF 前，请先确认 CDN 服务是否正常！" %}</p>
+                {% comment %}  上层>waf>源站 or 边缘>waf>上层 接入cdn {% endcomment %}
+                {% include "safe_cdn/station_access_cdn.html" %}
+            {% endif %}
+            <div class="move_infor" style="margin-top: 20px;">
+                <div class="layui-form">
+                    <div class="layui-form-item">
+                        {% if status == 3 %}
+                            <button class="fl layui-btn layui-btn-blue" lay-submit lay-filter="sure_move_cdn">{% trans '确认移出CDN' %}</button>
+                        {% elif status == 2 %}
+                            <button class="fl layui-btn layui-btn-blue" lay-submit lay-filter="sure_access_cdn">{% trans '完成' %}</button>
+                        {% endif %}
+                        <button class="fl layui-btn" lay-submit lay-filter="back_cdn">{% trans '返回' %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

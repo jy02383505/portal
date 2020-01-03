@@ -1,0 +1,3654 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-14 17:23+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: cdn/views/admin_views.py:223 cdn/views/client_views.py:157
+#: common/feed.py:218 common/feed.py:225
+msgid "页面加速"
+msgstr ""
+
+#: cdn/views/admin_views.py:224 cdn/views/client_views.py:158
+#: common/feed.py:219 common/feed.py:226
+msgid "下载加速"
+msgstr ""
+
+#: cdn/views/admin_views.py:225 cdn/views/client_views.py:159
+#: common/feed.py:220 common/feed.py:227
+msgid "点播加速"
+msgstr ""
+
+#: cdn/views/admin_views.py:229 cdn/views/client_views.py:163
+#: common/feed.py:322 common/feed.py:329
+msgid "配置中"
+msgstr "配置中"
+
+#: cdn/views/admin_views.py:230 cdn/views/client_views.py:164
+#: common/feed.py:323 common/feed.py:330
+msgid "已启动"
+msgstr "已启动"
+
+#: cdn/views/admin_views.py:231 cdn/views/client_views.py:165
+#: common/feed.py:324 common/feed.py:331
+msgid "已关闭"
+msgstr "已关闭"
+
+#: cdn/views/admin_views.py:232 cdn/views/client_views.py:166
+#: common/feed.py:92 common/feed.py:325 common/feed.py:332
+msgid "下发失败"
+msgstr ""
+
+#: cert/views/admin_views.py:53 cert/views/client_views.py:36
+#: common/feed.py:412
+msgid "不提醒"
+msgstr ""
+
+#: cert/views/admin_views.py:54 cert/views/client_views.py:37
+#: common/feed.py:413
+msgid "一个月"
+msgstr ""
+
+#: cert/views/admin_views.py:55 cert/views/client_views.py:38
+#: common/feed.py:414
+msgid "三个月"
+msgstr ""
+
+#: common/feed.py:43
+#: templates/admin_accounts/admin_admin_details_views.html:18
+#: templates/admin_accounts/create_admin_user.html:19
+msgid "管理员"
+msgstr ""
+
+#: common/feed.py:44
+msgid "客服"
+msgstr ""
+
+#: common/feed.py:45
+msgid "普通员工"
+msgstr ""
+
+#: common/feed.py:46
+msgid "客户"
+msgstr ""
+
+#: common/feed.py:47
+msgid "客户子账号"
+msgstr ""
+
+#: common/feed.py:48
+msgid "客户端"
+msgstr ""
+
+#: common/feed.py:49
+msgid "管理端"
+msgstr ""
+
+#: common/feed.py:51
+msgid "通用"
+msgstr ""
+
+#: common/feed.py:53 templates/user/parent_get_perm_strategy_views.html:22
+#: templates/user/user_management_list.html:40
+msgid "系统策略"
+msgstr ""
+
+#: common/feed.py:54 templates/user/parent_create_perm_strategy_views.html:66
+#: templates/user/parent_get_perm_strategy_views.html:23
+msgid "自定义策略"
+msgstr ""
+
+#: common/feed.py:57
+msgid "参数错误"
+msgstr ""
+
+#: common/feed.py:58
+msgid "账号名称不能为空"
+msgstr ""
+
+#: common/feed.py:59
+msgid "用户已经存在"
+msgstr ""
+
+#: common/feed.py:60
+msgid "用户不存在"
+msgstr ""
+
+#: common/feed.py:61
+msgid "账号密码不能为空"
+msgstr ""
+
+#: common/feed.py:62
+msgid "公司名不能为空"
+msgstr ""
+
+#: common/feed.py:63
+msgid "账号名或密码错误"
+msgstr ""
+
+#: common/feed.py:64
+msgid "账号已被锁定"
+msgstr ""
+
+#: common/feed.py:65
+msgid "账号没有激活"
+msgstr ""
+
+#: common/feed.py:66
+msgid "角色不存在"
+msgstr ""
+
+#: common/feed.py:67
+msgid "角色名称不能为空"
+msgstr ""
+
+#: common/feed.py:68
+msgid "角色已存在"
+msgstr ""
+
+#: common/feed.py:69
+msgid "角色下还有用户,请清空后再删除"
+msgstr ""
+
+#: common/feed.py:71
+msgid "普通用户"
+msgstr ""
+
+#: common/feed.py:72
+msgid "代理用户"
+msgstr ""
+
+#: common/feed.py:73
+msgid "子用户"
+msgstr ""
+
+#: common/feed.py:75
+#: templates/admin_accounts/admin_admin_details_views.html:32
+#: templates/admin_accounts/admin_admin_details_views.html:35
+#: templates/admin_accounts/admin_admin_list_views.html:22
+#: templates/base/public.html:57 templates/safe_cdn/admin_binding_waf.html:136
+#: templates/safe_cdn/admin_binding_waf.html:284
+#: templates/safe_cdn/admin_create_waf.html:122
+#: templates/safe_cdn/admin_create_waf.html:245
+#: templates/user_accounts/admin_parent_list_views.html:23
+#: templates/user_accounts/create_binding.html:55
+msgid "启用"
+msgstr "启用"
+
+#: common/feed.py:76
+#: templates/admin_accounts/admin_admin_details_views.html:33
+#: templates/admin_accounts/admin_admin_details_views.html:36
+#: templates/admin_accounts/admin_admin_list_views.html:23
+#: templates/base/public.html:58
+#: templates/user_accounts/admin_parent_list_views.html:24
+#: templates/user_accounts/create_binding.html:57
+msgid "禁用"
+msgstr "禁用"
+
+#: common/feed.py:78
+msgid "策略名称不能为空"
+msgstr ""
+
+#: common/feed.py:79
+msgid "权限列表不能为空"
+msgstr ""
+
+#: common/feed.py:80
+msgid "策略不存在"
+msgstr ""
+
+#: common/feed.py:82
+msgid "域名不存在"
+msgstr ""
+
+#: common/feed.py:83
+msgid "域名已存在"
+msgstr ""
+
+#: common/feed.py:84 common/feed.py:87
+msgid "证书名不能为空"
+msgstr ""
+
+#: common/feed.py:85
+msgid "域名协议不能为空"
+msgstr ""
+
+#: common/feed.py:86
+msgid "备回源类型不能为空"
+msgstr ""
+
+#: common/feed.py:88
+msgid "证书内容与key不能为空"
+msgstr ""
+
+#: common/feed.py:89
+msgid "证书邮箱不能为空"
+msgstr ""
+
+#: common/feed.py:91
+msgid "url格式不正确"
+msgstr ""
+
+#: common/feed.py:93
+msgid "我的账号"
+msgstr ""
+
+#: common/feed.py:95
+msgid "协议格式不正确"
+msgstr ""
+
+#: common/feed.py:96
+msgid "缓存格式不正确"
+msgstr ""
+
+#: common/feed.py:150 common/feed.py:157 security/views/client_views.py:19
+#: security/views/client_views.py:26 templates/safe_cdn/custom_waf.html:14
+#: templates/safe_cdn/default_waf.html:17
+msgid "关闭"
+msgstr "关闭"
+
+#: common/feed.py:151 common/feed.py:158 security/views/client_views.py:20
+#: security/views/client_views.py:27
+msgid "普通模式"
+msgstr "普通模式"
+
+#: common/feed.py:152 security/views/client_views.py:21
+msgid "严防模式"
+msgstr "严防模式"
+
+#: common/feed.py:153 security/views/client_views.py:22
+msgid "观察模式"
+msgstr "观察模式"
+
+#: common/feed.py:162
+msgid "广州"
+msgstr ""
+
+#: common/feed.py:163
+msgid "香港"
+msgstr ""
+
+#: common/feed.py:164
+msgid "大陆节点"
+msgstr ""
+
+#: common/feed.py:165
+msgid "交通运输部特殊端口专用"
+msgstr ""
+
+#: common/feed.py:206
+msgid "通用自助模板"
+msgstr ""
+
+#: common/feed.py:207
+msgid "泛模板"
+msgstr ""
+
+#: common/feed.py:224
+msgid "全部类型"
+msgstr ""
+
+#: common/feed.py:242 templates/base/public.html:49
+msgid "IP回源"
+msgstr ""
+
+#: common/feed.py:243 templates/base/public.html:50
+msgid "域名回源"
+msgstr ""
+
+#: common/feed.py:251
+msgid "域名"
+msgstr ""
+
+#: common/feed.py:258
+msgid "文件"
+msgstr ""
+
+#: common/feed.py:259
+msgid "文件夹"
+msgstr ""
+
+#: common/feed.py:340
+msgid "刷新中"
+msgstr ""
+
+#: common/feed.py:341 common/feed.py:359 common/feed.py:424
+msgid "成功"
+msgstr ""
+
+#: common/feed.py:342 common/feed.py:360 common/feed.py:425
+msgid "失败"
+msgstr "添加失败"
+
+#: common/feed.py:349
+msgid "file"
+msgstr "文件"
+
+#: common/feed.py:350
+msgid "目录"
+msgstr "目录"
+
+#: common/feed.py:358
+msgid "预加载中"
+msgstr ""
+
+#: common/feed.py:399
+msgid "上传中"
+msgstr ""
+
+#: common/feed.py:400
+msgid "正常"
+msgstr ""
+
+#: common/feed.py:401
+msgid "上传失败"
+msgstr ""
+
+#: common/feed.py:402
+msgid "过期"
+msgstr ""
+
+#: common/feed.py:409
+msgid "自有证书"
+msgstr ""
+
+#: common/feed.py:423
+msgid "下发中"
+msgstr ""
+
+#: fuse_nova/settings/base.py:149
+msgid "English"
+msgstr ""
+
+#: fuse_nova/settings/base.py:150
+msgid "中文简体"
+msgstr ""
+
+#: templates/admin_accounts/admin_admin_details_views.html:16
+#: templates/admin_accounts/create_admin_user.html:17
+msgid "管理员信息"
+msgstr ""
+
+#: templates/admin_accounts/admin_admin_details_views.html:22
+#: templates/base/public.html:30
+#: templates/cdn/admin_basic_configuration.html:21
+#: templates/cert/admin_cert_detail.html:38
+#: templates/user/user_info_details.html:23
+#: templates/user/user_management_details.html:23
+#: templates/user/user_management_details.html:131
+msgid "创建时间"
+msgstr ""
+
+#: templates/admin_accounts/admin_admin_details_views.html:28
+#: templates/user_accounts/create_binding.html:51
+msgid "账号状态"
+msgstr ""
+
+#: templates/admin_accounts/admin_admin_details_views.html:43
+#: templates/admin_accounts/admin_group_create_views.html:25
+#: templates/admin_accounts/create_admin_user.html:37
+msgid "角色"
+msgstr ""
+
+#: templates/admin_accounts/admin_admin_details_views.html:59
+#: templates/base/public.html:20
+#: templates/cdn/admin_basic_configuration.html:143
+#: templates/cdn/admin_cache_configuration.html:49
+#: templates/cdn/admin_cache_configuration.html:58
+#: templates/cdn/admin_cdn_create_domain.html:175
+#: templates/cdn/admin_https_configuration.html:72
+#: templates/safe_cdn/client_basic_waf.html:51
+#: templates/safe_cdn/client_basic_waf.html:81
+#: templates/safe_cdn/safe_cdn_configure.html:26
+#: templates/user/parent_create_perm_strategy_views.html:50
+#: templates/user/user_management_details.html:58
+#: templates/user_accounts/admin_parent_details_views.html:67
+msgid "确定"
+msgstr "确定"
+
+#: templates/admin_accounts/admin_admin_details_views.html:60
+#: templates/base/public.html:46
+#: templates/cdn/admin_basic_configuration.html:144
+#: templates/cdn/admin_cache_configuration.html:48
+#: templates/cdn/admin_cache_configuration.html:59
+#: templates/cdn/admin_cdn_create_domain.html:174
+#: templates/cdn/admin_https_configuration.html:73
+#: templates/safe_cdn/admin_binding_waf.html:298
+#: templates/safe_cdn/admin_create_waf.html:257
+#: templates/safe_cdn/alarm_cc.html:95 templates/safe_cdn/alarm_cc.html:103
+#: templates/safe_cdn/alarm_waf.html:94 templates/safe_cdn/alarm_waf.html:102
+#: templates/safe_cdn/client_basic_waf.html:52
+#: templates/safe_cdn/client_basic_waf.html:82
+#: templates/safe_cdn/client_configure_waf.html:41
+#: templates/safe_cdn/client_configure_waf.html:49
+#: templates/safe_cdn/configure_cc.html:73
+#: templates/safe_cdn/configure_cc.html:81
+#: templates/safe_cdn/safe_cdn_configure.html:27
+#: templates/safe_cdn/statistics_cc.html:92
+#: templates/safe_cdn/statistics_cc.html:100
+#: templates/user/user_management_details.html:59
+#: templates/user_accounts/admin_parent_details_views.html:68
+msgid "取消"
+msgstr "取消"
+
+#: templates/admin_accounts/admin_admin_list_views.html:8
+msgid "管理员账号列表"
+msgstr ""
+
+#: templates/admin_accounts/admin_admin_list_views.html:13
+#: templates/admin_accounts/create_admin_user.html:9
+msgid "新建管理员"
+msgstr ""
+
+#: templates/admin_accounts/admin_admin_list_views.html:15
+#: templates/admin_accounts/admin_admin_opt_log_views.html:14
+#: templates/admin_accounts/admin_group_manage_views.html:15
+#: templates/base/customer_login.html:53
+#: templates/user_accounts/admin_bind_cms_parent.html:17
+#: templates/user_accounts/admin_parent_list_views.html:16
+#: templates/user_accounts/admin_parent_opt_log.html:14
+msgid "请输入用户名"
+msgstr "请输入用户名"
+
+#: templates/admin_accounts/admin_admin_list_views.html:20
+msgid "选择管理员状态"
+msgstr ""
+
+#: templates/admin_accounts/admin_admin_list_views.html:21
+#: templates/admin_accounts/admin_admin_list_views.html:29
+#: templates/cdn/admin_get_domain_list.html:29
+#: templates/cdn/admin_get_domain_list.html:39
+#: templates/cdn/admin_get_domain_list.html:48
+#: templates/cdn/admin_log_upload.html:19
+#: templates/cdn/admin_log_upload.html:32 templates/cdn/admin_refresh.html:87
+#: templates/cdn/admin_refresh.html:125
+#: templates/cert/admin_cert_ssl_manage.html:23
+#: templates/cert/admin_cert_ssl_manage.html:35
+#: templates/user/parent_get_perm_strategy_views.html:21
+#: templates/user_accounts/admin_parent_list_views.html:22
+#: templates/user_accounts/admin_parent_list_views.html:30
+msgid "全部"
+msgstr ""
+
+#: templates/admin_accounts/admin_admin_list_views.html:28
+msgid "选择角色"
+msgstr ""
+
+#: templates/admin_accounts/admin_admin_list_views.html:52
+#: templates/admin_accounts/admin_admin_opt_log_views.html:39
+#: templates/cert/admin_cert_detail.html:107
+#: templates/user_accounts/admin_parent_list_views.html:54
+msgid "操作记录"
+msgstr ""
+
+#: templates/admin_accounts/admin_admin_opt_log_views.html:7
+msgid "管理员操作记录"
+msgstr ""
+
+#: templates/admin_accounts/admin_admin_opt_log_views.html:18
+#: templates/cdn/admin_log_upload.html:42 templates/cdn/admin_refresh.html:102
+#: templates/cdn/admin_statistics.html:51
+#: templates/user_accounts/admin_parent_opt_log.html:18
+#, fuzzy
+#| msgid "请选择日期"
+msgid "选择日期"
+msgstr "请选择日期"
+
+#: templates/admin_accounts/admin_admin_opt_log_views.html:20
+#: templates/cdn/admin_log_upload.html:44 templates/cdn/admin_refresh.html:104
+#: templates/safe_cdn/alarm_waf.html:9
+#: templates/safe_cdn/statistics_cc.html:18
+#: templates/user_accounts/admin_parent_opt_log.html:20
+msgid "请选择日期"
+msgstr "请选择日期"
+
+#: templates/admin_accounts/admin_admin_opt_log_views.html:40
+#: templates/admin_accounts/admin_group_manage_views.html:35
+#: templates/base/public.html:21 templates/safe_cdn/default_waf.html:43
+#: templates/user/parent_create_perm_strategy_views.html:60
+#: templates/user/parent_get_perm_strategy_views.html:47
+#: templates/user/strategy_management_details.html:65
+#: templates/user/user_management_details.html:93
+#: templates/user/user_secret_info_details.html:29
+#: templates/user_accounts/admin_parent_details_views.html:146
+msgid "删除"
+msgstr "删除"
+
+#: templates/admin_accounts/admin_group_create_views.html:9
+#: templates/admin_accounts/admin_group_manage_views.html:13
+msgid "新建角色"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_create_views.html:14
+#: templates/user/create_user_management.html:15
+#: templates/user_accounts/create_parent_user.html:15
+msgid "创建流程"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_create_views.html:16
+msgid "填写角色信息"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_create_views.html:17
+#: templates/user/create_user_management.html:18
+#: templates/user_accounts/create_parent_user.html:18
+msgid "设定权限"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_create_views.html:18
+#: templates/admin_accounts/admin_group_create_views.html:94
+#: templates/safe_cdn/access_or_move_cdn.html:36
+#: templates/user/create_user_management.html:19
+#: templates/user/create_user_management.html:112
+#: templates/user_accounts/create_parent_user.html:19
+#: templates/user_accounts/create_parent_user.html:144
+msgid "完成"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_create_views.html:23
+#: templates/admin_accounts/admin_group_create_views.html:75
+#: templates/admin_accounts/admin_group_details_views.html:18
+msgid "角色信息"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_create_views.html:31
+#: templates/admin_accounts/admin_group_details_views.html:24
+#: templates/user/parent_create_perm_strategy_views.html:22
+#: templates/user/strategy_management_details.html:27
+msgid "描述"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_create_views.html:37
+#: templates/admin_accounts/admin_group_details_views.html:28
+#: templates/base/public.html:29 templates/cert/admin_cert_create.html:62
+#: templates/cert/admin_cert_detail.html:67
+#: templates/user/create_user_management.html:45
+#: templates/user/user_management_details.html:47
+msgid "备注"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_create_views.html:45
+#: templates/admin_accounts/admin_group_create_views.html:68
+#: templates/user/create_user_management.html:77
+#: templates/user/create_user_management.html:87
+#: templates/user_accounts/create_parent_user.html:91
+#: templates/user_accounts/create_parent_user.html:118
+msgid "下一步"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_create_views.html:52
+#: templates/admin_accounts/admin_group_create_views.html:79
+#: templates/user/create_user_management.html:98
+#: templates/user/user_management_details.html:72
+#: templates/user_accounts/admin_parent_details_views.html:81
+#: templates/user_accounts/create_parent_user.html:98
+#: templates/user_accounts/create_parent_user.html:129
+msgid "操作权限"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_create_views.html:53
+#: templates/admin_accounts/admin_group_details_views.html:41
+#: templates/user/parent_create_perm_strategy_views.html:33
+#: templates/user/parent_create_perm_strategy_views.html:73
+#: templates/user_accounts/admin_parent_details_views.html:87
+#: templates/user_accounts/create_parent_user.html:99
+msgid "添加操作权限"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_create_views.html:57
+#: templates/admin_accounts/admin_group_create_views.html:83
+#: templates/admin_accounts/admin_group_details_views.html:46
+#: templates/user/parent_create_perm_strategy_views.html:37
+#: templates/user/strategy_management_details.html:47
+#: templates/user_accounts/admin_parent_details_views.html:91
+#: templates/user_accounts/create_parent_user.html:104
+#: templates/user_accounts/create_parent_user.html:133
+msgid "产品/服务"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_create_views.html:58
+#: templates/admin_accounts/admin_group_create_views.html:84
+#: templates/admin_accounts/admin_group_details_views.html:47
+#: templates/user/parent_create_perm_strategy_views.html:38
+#: templates/user/parent_create_perm_strategy_views.html:68
+#: templates/user/strategy_management_details.html:48
+#: templates/user_accounts/admin_parent_details_views.html:92
+#: templates/user_accounts/create_parent_user.html:105
+#: templates/user_accounts/create_parent_user.html:134
+msgid "操作名称"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_create_views.html:59
+#: templates/admin_accounts/admin_group_create_views.html:85
+#: templates/admin_accounts/admin_group_details_views.html:48
+#: templates/base/public.html:18
+#: templates/cdn/admin_cache_configuration.html:39
+#: templates/cdn/admin_cdn_create_domain.html:165
+#: templates/cert/admin_cert_detail.html:112
+#: templates/user/parent_create_perm_strategy_views.html:40
+#: templates/user/strategy_management_details.html:50
+#: templates/user/user_management_details.html:135
+#: templates/user_accounts/admin_parent_details_views.html:93
+#: templates/user_accounts/create_binding.html:97
+#: templates/user_accounts/create_parent_user.html:106
+#: templates/user_accounts/create_parent_user.html:135
+msgid "操作"
+msgstr "操作"
+
+#: templates/admin_accounts/admin_group_create_views.html:67
+#: templates/admin_accounts/admin_group_create_views.html:93
+#: templates/user/create_user_management.html:86
+#: templates/user/create_user_management.html:111
+#: templates/user_accounts/create_parent_user.html:117
+#: templates/user_accounts/create_parent_user.html:143
+msgid "上一步"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_details_views.html:20
+msgid "角色名"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_details_views.html:39
+msgid "权限内容"
+msgstr ""
+
+#: templates/admin_accounts/admin_group_manage_views.html:8
+msgid "管理员角色列表"
+msgstr ""
+
+#: templates/admin_accounts/create_admin_user.html:25
+msgid "登录密码"
+msgstr ""
+
+#: templates/admin_accounts/create_admin_user.html:31
+#: templates/user/user_change_password.html:35
+msgid "确认密码"
+msgstr ""
+
+#: templates/admin_accounts/create_admin_user.html:40
+#: templates/base/public.html:32 templates/base/public.html:36
+#: templates/cdn/admin_cdn_create_domain.html:61
+#: templates/cdn/admin_https_configuration.html:47
+#: templates/cdn/admin_log_upload.html:31 templates/cdn/admin_refresh.html:86
+#: templates/cdn/admin_refresh.html:124 templates/cdn/admin_statistics.html:24
+msgid "请选择"
+msgstr "请选择"
+
+#: templates/admin_accounts/create_admin_user.html:51
+msgid "确认"
+msgstr ""
+
+#: templates/base/admin_login.html:31 templates/base/customer_login.html:37
+msgid "登录"
+msgstr "登录"
+
+#: templates/base/admin_login.html:46 templates/base/public.html:28
+#: templates/user/create_user_management.html:26
+#: templates/user/user_management_details.html:19
+#: templates/user_accounts/create_parent_user.html:26
+msgid "用户名"
+msgstr "用户名"
+
+#: templates/base/admin_login.html:52
+msgid "密码"
+msgstr "密码"
+
+#: templates/base/admin_login.html:58 templates/base/customer_login.html:65
+msgid "记住密码"
+msgstr "记住密码"
+
+#: templates/base/admin_login.html:62
+msgid "管理员登录"
+msgstr "管理员登录"
+
+#: templates/base/admin_login.html:65 templates/base/customer_login.html:73
+msgid "温馨提示：忘记密码请拨打客服电话"
+msgstr "温馨提示：忘记密码请拨打客服电话"
+
+#: templates/base/admin_login.html:70 templates/base/customer_login.html:81
+msgid ""
+"Copyright © 北京蓝汛通信技术有限责任公司 蓝汛国际控股有限公司     京公网安备"
+"11010502001414号     粤ICP备11108162号-3"
+msgstr ""
+"Copyright © 北京蓝汛通信技术有限责任公司 蓝汛国际控股有限公司     京公网安备"
+"11010502001414号     粤ICP备11108162号-3"
+
+#: templates/base/customer_login.html:59
+msgid "请输入密码"
+msgstr "请输入密码"
+
+#: templates/base/customer_login.html:70
+msgid "登 录"
+msgstr "登 录"
+
+#: templates/base/err_page.html:7 templates/base/product_prompt_views.html:7
+msgid "您无权使用该功能,请使用正确方式操作"
+msgstr ""
+
+#: templates/base/help_base.html:76
+msgid "控制台"
+msgstr ""
+
+#: templates/base/public.html:19
+msgid "提示"
+msgstr "提示"
+
+#: templates/base/public.html:22
+msgid "是，确认删除"
+msgstr "是，确认删除"
+
+#: templates/base/public.html:23
+msgid "否，取消删除"
+msgstr "否，取消删除"
+
+#: templates/base/public.html:24 templates/cert/admin_cert_ssl_manage.html:63
+#: templates/safe_cdn/custom_waf.html:33
+#: templates/safe_cdn/default_waf.html:45
+#: templates/safe_cdn/statistics_waf.html:106
+#: templates/user_accounts/admin_bind_cms_parent.html:42
+msgid "详情"
+msgstr "详情"
+
+#: templates/base/public.html:25 templates/cdn/admin_log_upload.html:47
+#: templates/cdn/admin_refresh.html:138 templates/cdn/admin_statistics.html:83
+#: templates/safe_cdn/custom_waf.html:17
+#: templates/safe_cdn/default_waf.html:20
+#: templates/safe_cdn/safe_cdn_list.html:18
+#: templates/safe_cdn/safe_channel_list.html:33
+#: templates/safe_cdn/statistics_cc.html:53
+#: templates/safe_cdn/statistics_waf.html:85
+msgid "查询"
+msgstr "查询"
+
+#: templates/base/public.html:26
+msgid "确定添加"
+msgstr "确定添加"
+
+#: templates/base/public.html:27
+msgid "添加失败"
+msgstr "添加失败"
+
+#: templates/base/public.html:31 templates/safe_cdn/admin_binding_waf.html:295
+#: templates/safe_cdn/admin_create_waf.html:235
+msgid "创建"
+msgstr "创建"
+
+#: templates/base/public.html:33
+#: templates/user/user_management_details.html:78
+msgid "添加权限策略"
+msgstr "添加权限策略"
+
+#: templates/base/public.html:34
+msgid "确认删除该服务？"
+msgstr "确认删除该服务？"
+
+#: templates/base/public.html:35
+#: templates/user/user_management_details.html:120
+#: templates/user_accounts/admin_parent_details_views.html:121
+msgid "重置密码"
+msgstr ""
+
+#: templates/base/public.html:37
+msgid "total"
+msgstr ""
+
+#: templates/base/public.html:38
+msgid "通讯异常"
+msgstr "通讯异常"
+
+#: templates/base/public.html:39
+msgid "复制"
+msgstr "复制"
+
+#: templates/base/public.html:40
+msgid "复制成功"
+msgstr ""
+
+#: templates/base/public.html:41
+msgid "次"
+msgstr ""
+
+#: templates/base/public.html:42
+#: templates/cdn/admin_basic_configuration.html:114
+#: templates/cdn/admin_basic_configuration.html:121
+#: templates/cdn/admin_basic_configuration.html:124
+#: templates/cdn/admin_cdn_create_domain.html:120
+#: templates/safe_cdn/alarm_cc.html:39 templates/safe_cdn/alarm_cc.html:55
+#: templates/safe_cdn/alarm_cc.html:71 templates/safe_cdn/alarm_waf.html:38
+#: templates/safe_cdn/alarm_waf.html:54 templates/safe_cdn/alarm_waf.html:70
+#: templates/safe_cdn/configure_cc.html:17
+#: templates/safe_cdn/configure_cc.html:33
+#: templates/safe_cdn/configure_cc.html:49
+#: templates/safe_cdn/safe_cdn_configure.html:17
+#: templates/safe_cdn/statistics_cc.html:69
+msgid "默认"
+msgstr "默认"
+
+#: templates/base/public.html:43
+msgid "创建WAF中"
+msgstr ""
+
+#: templates/base/public.html:44
+msgid "WAF创建完成，请将WAF"
+msgstr ""
+
+#: templates/base/public.html:45 templates/safe_cdn/admin_binding_waf.html:286
+#: templates/safe_cdn/admin_create_waf.html:247
+msgid "接入CDN"
+msgstr ""
+
+#: templates/base/public.html:47 templates/safe_cdn/base_tab.html:33
+#: templates/safe_cdn/safe_base.html:41
+msgid "启用https"
+msgstr "启用https"
+
+#: templates/base/public.html:48 templates/safe_cdn/base_tab.html:34
+#: templates/safe_cdn/safe_base.html:42
+msgid "不启用https"
+msgstr "不启用https"
+
+#: templates/base/public.html:51
+msgid "确定停用"
+msgstr ""
+
+#: templates/base/public.html:52 templates/safe_cdn/admin_binding_waf.html:166
+#: templates/safe_cdn/admin_binding_waf.html:188
+#: templates/safe_cdn/admin_create_waf.html:147
+msgid "上传新证书"
+msgstr ""
+
+#: templates/base/public.html:53
+msgid "上传"
+msgstr ""
+
+#: templates/base/public.html:54
+msgid "证书名"
+msgstr ""
+
+#: templates/base/public.html:55
+msgid "公钥"
+msgstr ""
+
+#: templates/base/public.html:56 templates/cert/admin_cert_create.html:56
+msgid "私钥"
+msgstr ""
+
+#: templates/base/public.html:59
+#, fuzzy
+#| msgid "WAF防御模式"
+msgid "该防御模式未修改"
+msgstr "该防御模式未修改"
+
+#: templates/cdn/admin_bandwidth.html:7
+msgid "CDN带宽趋势"
+msgstr ""
+
+#: templates/cdn/admin_bandwidth.html:10
+#, fuzzy
+#| msgid "近24小时"
+msgid "最近24小时"
+msgstr "近24小时"
+
+#: templates/cdn/admin_bandwidth.html:11
+#: templates/cdn/admin_statistics.html:60
+#: templates/safe_cdn/statistics_cc.html:15
+#: templates/safe_cdn/statistics_waf.html:7
+msgid "今天"
+msgstr "今天"
+
+#: templates/cdn/admin_bandwidth.html:12
+#: templates/cdn/admin_statistics.html:61
+#: templates/safe_cdn/statistics_cc.html:16
+#: templates/safe_cdn/statistics_waf.html:8
+msgid "昨天"
+msgstr "昨天"
+
+#: templates/cdn/admin_bandwidth.html:13
+#: templates/cdn/admin_statistics.html:62
+#: templates/safe_cdn/statistics_cc.html:17
+msgid "近7天"
+msgstr "近7天"
+
+#: templates/cdn/admin_bandwidth.html:14
+msgid "本月"
+msgstr ""
+
+#: templates/cdn/admin_bandwidth.html:19
+msgid "带宽统计"
+msgstr ""
+
+#: templates/cdn/admin_bandwidth.html:26
+msgid "峰值带宽"
+msgstr ""
+
+#: templates/cdn/admin_bandwidth.html:32
+msgid "总流量"
+msgstr ""
+
+#: templates/cdn/admin_bandwidth.html:38
+msgid "回源流量"
+msgstr ""
+
+#: templates/cdn/admin_bandwidth.html:44
+msgid "流量命中率"
+msgstr ""
+
+#: templates/cdn/admin_bandwidth.html:47
+#, python-format
+msgid "计算方式：（HIT请求数/总请求数）*100%%"
+msgstr ""
+
+#: templates/cdn/admin_bandwidth.html:57
+msgid "详细带宽数据"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:5
+#: templates/cdn/admin_cdn_create_domain.html:16
+#: templates/user/strategy_management_details.html:17
+#: templates/user/user_info_details.html:15
+msgid "基本信息"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:8
+#: templates/cdn/admin_cdn_create_domain.html:19
+#: templates/cdn/admin_log_upload.html:15 templates/cdn/admin_refresh.html:83
+#: templates/cdn/admin_statistics.html:21
+#: templates/cert/admin_cert_create.html:24
+#: templates/cert/admin_cert_detail.html:18
+#: templates/user_accounts/create_binding.html:24
+msgid "用户"
+msgstr "用户"
+
+#: templates/cdn/admin_basic_configuration.html:17
+#: templates/cdn/admin_cdn_create_domain.html:32
+#: templates/cdn/admin_statistics.html:37
+#: templates/online_help/flow_bandwidth.html:32
+#: templates/online_help/request_distribution.html:30
+#: templates/online_help/state_code.html:32
+msgid "加速域名"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:25
+msgid "CNAME"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:29
+#: templates/cdn/admin_cdn_create_domain.html:38
+msgid "加速类型"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:33
+#: templates/cdn/admin_cdn_create_domain.html:50
+#: templates/online_help/get_start.html:64
+msgid "协议类型"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:37
+#: templates/cdn/admin_refresh.html:121
+#: templates/cert/admin_cert_detail.html:85
+#: templates/user/user_management_details.html:132
+msgid "状态"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:42
+#: templates/cdn/admin_cdn_create_domain.html:78
+msgid "源站信息"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:42
+#: templates/cdn/admin_cache_configuration.html:5
+#: templates/cdn/admin_https_configuration.html:5
+#: templates/safe_cdn/admin_binding_waf.html:291
+#: templates/safe_cdn/admin_create_waf.html:252
+#: templates/safe_cdn/alarm_cc.html:93 templates/safe_cdn/alarm_cc.html:98
+#: templates/safe_cdn/alarm_cc.html:101 templates/safe_cdn/alarm_waf.html:92
+#: templates/safe_cdn/alarm_waf.html:97 templates/safe_cdn/alarm_waf.html:100
+#: templates/safe_cdn/client_configure_waf.html:39
+#: templates/safe_cdn/client_configure_waf.html:44
+#: templates/safe_cdn/client_configure_waf.html:47
+#: templates/safe_cdn/configure_cc.html:71
+#: templates/safe_cdn/configure_cc.html:76
+#: templates/safe_cdn/configure_cc.html:79
+#: templates/safe_cdn/statistics_cc.html:90
+#: templates/safe_cdn/statistics_cc.html:95
+#: templates/safe_cdn/statistics_cc.html:98
+#: templates/user/user_management_details.html:17
+#: templates/user_accounts/admin_parent_details_views.html:18
+msgid "编辑"
+msgstr "编辑"
+
+#: templates/cdn/admin_basic_configuration.html:44
+#: templates/cdn/admin_cdn_create_domain.html:80
+msgid "回源方式"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:57
+#: templates/cdn/admin_cdn_create_domain.html:88
+msgid "源站地址"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:71
+#: templates/cdn/admin_cdn_create_domain.html:95
+msgid "备份源站类型"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:85
+#: templates/cdn/admin_cdn_create_domain.html:104
+msgid "备份源站地址"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:88
+#: templates/cdn/admin_cdn_base_conf.html:64
+#: templates/cdn/admin_cdn_base_conf.html:70
+#: templates/safe_cdn/admin_binding_waf.html:86
+#: templates/safe_cdn/admin_binding_waf.html:100
+#: templates/safe_cdn/admin_binding_waf.html:121
+#: templates/safe_cdn/admin_binding_waf.html:153
+#: templates/safe_cdn/admin_binding_waf.html:176
+#: templates/safe_cdn/admin_binding_waf.html:198
+#: templates/safe_cdn/admin_binding_waf.html:224
+msgid "无"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:106
+#: templates/cdn/admin_cdn_create_domain.html:111
+msgid "回源host"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:109
+#: templates/cdn/admin_cdn_create_domain.html:115
+msgid "回源host是CDN回源到源站时的访问域名，默认回源host是您的加速域名"
+msgstr ""
+
+#: templates/cdn/admin_basic_configuration.html:116
+#: templates/cdn/admin_basic_configuration.html:122
+#: templates/cdn/admin_basic_configuration.html:125
+#: templates/cdn/admin_cdn_create_domain.html:121
+#: templates/safe_cdn/alarm_cc.html:40 templates/safe_cdn/alarm_cc.html:56
+#: templates/safe_cdn/alarm_cc.html:72 templates/safe_cdn/alarm_waf.html:39
+#: templates/safe_cdn/alarm_waf.html:55 templates/safe_cdn/alarm_waf.html:71
+#: templates/safe_cdn/configure_cc.html:18
+#: templates/safe_cdn/configure_cc.html:34
+#: templates/safe_cdn/configure_cc.html:50
+#: templates/safe_cdn/statistics_cc.html:70
+msgid "自定义"
+msgstr "自定义"
+
+#: templates/cdn/admin_cache_configuration.html:5
+#: templates/cdn/admin_cdn_create_domain.html:132
+msgid "缓存设置"
+msgstr ""
+
+#: templates/cdn/admin_cache_configuration.html:7
+#: templates/cdn/admin_cdn_create_domain.html:134
+msgid "header配置"
+msgstr ""
+
+#: templates/cdn/admin_cache_configuration.html:11
+#: templates/cdn/admin_cache_configuration.html:13
+#: templates/cdn/admin_cdn_create_domain.html:136
+msgid "忽略CacheControl"
+msgstr ""
+
+#: templates/cdn/admin_cache_configuration.html:18
+#: templates/cdn/admin_cdn_create_domain.html:144
+msgid "参数配置"
+msgstr ""
+
+#: templates/cdn/admin_cache_configuration.html:22
+#: templates/cdn/admin_cache_configuration.html:24
+#: templates/cdn/admin_cdn_create_domain.html:146
+msgid "忽略URL参数"
+msgstr ""
+
+#: templates/cdn/admin_cache_configuration.html:29
+#: templates/cdn/admin_cdn_create_domain.html:155
+#: templates/online_help/configuration_overview.html:52
+#: templates/online_help/log_download.html:62
+msgid "缓存规则"
+msgstr ""
+
+#: templates/cdn/admin_cache_configuration.html:31
+#: templates/cdn/admin_cdn_create_domain.html:157
+#, fuzzy
+#| msgid "确定添加"
+msgid "添加"
+msgstr "确定添加"
+
+#: templates/cdn/admin_cache_configuration.html:32
+#: templates/cdn/admin_cdn_create_domain.html:158
+msgid "调整优先级"
+msgstr ""
+
+#: templates/cdn/admin_cache_configuration.html:36
+#: templates/cdn/admin_cdn_create_domain.html:162
+#: templates/user/strategy_management_details.html:23
+#: templates/user/user_management_details.html:133
+msgid "类型"
+msgstr ""
+
+#: templates/cdn/admin_cache_configuration.html:37
+#: templates/cdn/admin_cdn_create_domain.html:163
+#, fuzzy
+#| msgid "匹配内容"
+msgid "内容"
+msgstr "匹配内容"
+
+#: templates/cdn/admin_cache_configuration.html:38
+#: templates/cdn/admin_cdn_create_domain.html:164
+msgid "缓存时间"
+msgstr ""
+
+#: templates/cdn/admin_cache_configuration.html:47
+#: templates/cdn/admin_cdn_create_domain.html:173
+msgid "根据列表中配置项的顺序来确定优先级，列表底部的优先级大于列表顶部"
+msgstr ""
+
+#: templates/cdn/admin_cache_configuration.html:54
+#: templates/cdn/admin_cdn_base_conf.html:76
+#: templates/cdn/admin_cdn_create_domain.html:180
+#: templates/cdn/admin_refresh.html:71
+#: templates/cert/admin_cert_create.html:86
+#: templates/user/user_change_password.html:44
+#: templates/user_accounts/create_binding.html:107
+#, fuzzy
+#| msgid "提示"
+msgid "提交"
+msgstr "提示"
+
+#: templates/cdn/admin_cdn_base_conf.html:8
+#: templates/cdn/admin_cdn_user_list.html:34
+msgid "融合CDN配置"
+msgstr ""
+
+#: templates/cdn/admin_cdn_base_conf.html:16
+msgid "服务商配置"
+msgstr ""
+
+#: templates/cdn/admin_cdn_base_conf.html:18
+#: templates/cdn/admin_statistics.html:77
+#: templates/safe_cdn/admin_binding_waf.html:7
+#: templates/safe_cdn/admin_create_waf.html:7
+msgid "服务商"
+msgstr ""
+
+#: templates/cdn/admin_cdn_base_conf.html:37
+#: templates/cdn/admin_cdn_base_conf.html:40
+#: templates/cdn/admin_cdn_base_conf.html:54
+msgid "CMS解析模板"
+msgstr ""
+
+#: templates/cdn/admin_cdn_base_conf.html:38
+msgid ""
+"泛模板适用不同业务共用同一套设备组的业务场景，可以通过在CMS配置泛模板预先定义"
+"使用的解析组和分层组，客户的域名将根据规则下发到对应设备组"
+msgstr ""
+
+#: templates/cdn/admin_cdn_base_conf.html:55
+msgid ""
+"每天检测域名ICP备案是否有效，若域名无有效备案则将解析切换至RIM节点，此项适用"
+"海外客户业务。"
+msgstr ""
+
+#: templates/cdn/admin_cdn_base_conf.html:57
+msgid ""
+"注意：此功能为定期校验海外客户备案是否吊销而设，为避免调用工信部接口造成接口"
+"请求压力，国内客户请勾选无。"
+msgstr ""
+
+#: templates/cdn/admin_cdn_base_conf.html:61
+msgid "ICP检测频率"
+msgstr ""
+
+#: templates/cdn/admin_cdn_base_conf.html:65
+#: templates/cdn/admin_cdn_base_conf.html:68
+msgid "每天一次"
+msgstr ""
+
+#: templates/cdn/admin_cdn_create_domain.html:10
+#: templates/cdn/admin_get_domain_list.html:15
+msgid "添加域名"
+msgstr ""
+
+#: templates/cdn/admin_cdn_create_domain.html:22
+#: templates/cert/admin_cert_create.html:30
+#: templates/user_accounts/create_binding.html:27
+msgid "请选择或搜索"
+msgstr ""
+
+#: templates/cdn/admin_cdn_create_domain.html:58
+#: templates/cdn/admin_https_configuration.html:44
+#: templates/online_help/https_configure.html:41
+#: templates/online_help/https_configure.html:60
+msgid "选择证书"
+msgstr ""
+
+#: templates/cdn/admin_cdn_create_domain.html:91
+#: templates/cdn/admin_cdn_create_domain.html:107
+msgid "支持多个IP源站设置，一行一个"
+msgstr ""
+
+#: templates/cdn/admin_cdn_create_domain.html:139
+msgid "是否忽略返回头中的cache-control头部对请求内容进行缓存"
+msgstr ""
+
+#: templates/cdn/admin_cdn_create_domain.html:149
+msgid "是否忽略用户请求URL中“？”之后的参数"
+msgstr ""
+
+#: templates/cdn/admin_cdn_user_list.html:8
+msgid "CDN用户列表"
+msgstr ""
+
+#: templates/cdn/admin_cdn_user_list.html:15
+#: templates/cdn/admin_get_domain_list.html:22
+#: templates/cdn/admin_refresh.html:27 templates/cdn/admin_refresh.html:98
+#, fuzzy
+#| msgid "请输入密码"
+msgid "请输入"
+msgstr "请输入密码"
+
+#: templates/cdn/admin_cdn_user_list.html:35
+msgid "域名列表"
+msgstr ""
+
+#: templates/cdn/admin_cdn_user_list.html:36
+#: templates/cdn/admin_get_domain_list.html:68
+#: templates/cdn/admin_statistics.html:13 templates/safe_cdn/base_top.html:14
+#: templates/safe_cdn/base_top.html:17 templates/safe_cdn/cms_base.html:11
+#: templates/safe_cdn/cms_base.html:14 templates/safe_cdn/default_waf.html:41
+#: templates/safe_cdn/safe_channel_list.html:58
+#: templates/safe_cdn/safe_channel_list.html:61
+msgid "统计"
+msgstr "统计"
+
+#: templates/cdn/admin_get_domain_list.html:8
+msgid "CDN域名列表"
+msgstr ""
+
+#: templates/cdn/admin_get_domain_list.html:28
+#: templates/cdn/admin_log_upload.html:18
+#: templates/cert/admin_cert_ssl_manage.html:22
+msgid "选择用户"
+msgstr ""
+
+#: templates/cdn/admin_get_domain_list.html:38
+msgid "选择加速类型"
+msgstr ""
+
+#: templates/cdn/admin_get_domain_list.html:47
+msgid "选择状态"
+msgstr ""
+
+#: templates/cdn/admin_get_domain_list.html:69
+#: templates/safe_cdn/base_top.html:15 templates/safe_cdn/base_top.html:18
+#: templates/safe_cdn/cms_base.html:12 templates/safe_cdn/cms_base.html:15
+#: templates/safe_cdn/default_waf.html:42
+#: templates/safe_cdn/safe_channel_list.html:59
+#: templates/safe_cdn/safe_channel_list.html:62
+msgid "配置"
+msgstr "配置"
+
+#: templates/cdn/admin_get_domain_list.html:77
+msgid "开 启"
+msgstr "开启"
+
+#: templates/cdn/admin_get_domain_list.html:78
+msgid "关 闭"
+msgstr "关闭"
+
+#: templates/cdn/admin_https_configuration.html:5
+msgid "HTTPS设置"
+msgstr ""
+
+#: templates/cdn/admin_https_configuration.html:6
+#: templates/cert/admin_cert_detail.html:16
+msgid "证书信息"
+msgstr ""
+
+#: templates/cdn/admin_https_configuration.html:9
+#: templates/cert/admin_cert_create.html:40
+#: templates/cert/admin_cert_detail.html:24
+msgid "证书名称"
+msgstr ""
+
+#: templates/cdn/admin_https_configuration.html:13
+#: templates/cert/admin_cert_detail.html:30
+msgid "证书来源"
+msgstr ""
+
+#: templates/cdn/admin_https_configuration.html:23
+#: templates/cert/admin_cert_detail.html:44
+msgid "到期时间"
+msgstr ""
+
+#: templates/cdn/admin_https_configuration.html:27
+#: templates/cert/admin_cert_detail.html:50
+msgid "证书状态"
+msgstr ""
+
+#: templates/cdn/admin_https_configuration.html:38
+msgid "证书备注"
+msgstr ""
+
+#: templates/cdn/admin_log_upload.html:7
+#: templates/online_help/log_download.html:21
+#: templates/online_help/log_download.html:27
+#: templates/online_help/log_download.html:79
+msgid "日志下载"
+msgstr ""
+
+#: templates/cdn/admin_log_upload.html:28
+msgid "选择域名"
+msgstr ""
+
+#: templates/cdn/admin_log_upload.html:64
+msgid "下载"
+msgstr ""
+
+#: templates/cdn/admin_refresh.html:9
+#: templates/online_help/strain_help.html:21
+msgid "预加载"
+msgstr ""
+
+#: templates/cdn/admin_refresh.html:11
+msgid "刷新"
+msgstr ""
+
+#: templates/cdn/admin_refresh.html:24
+msgid "user"
+msgstr ""
+
+#: templates/cdn/admin_refresh.html:38 templates/cdn/admin_refresh.html:40
+#: templates/cdn/admin_refresh.html:110
+msgid "操作类型"
+msgstr ""
+
+#: templates/cdn/admin_refresh.html:60
+msgid ""
+"每行一个URL，带域名和协议头，一行一个，例如http://www.novacdn.com/a.html"
+msgstr ""
+
+#: templates/cdn/admin_refresh.html:61
+msgid "每行一个URL，带域名和协议头，一行一个，例如http://www.novacdn.com/"
+msgstr ""
+
+#: templates/cdn/admin_refresh.html:112
+msgid "所有"
+msgstr ""
+
+#: templates/cdn/admin_refresh.html:154
+msgid "重置任务"
+msgstr ""
+
+#: templates/cdn/admin_state_code.html:6
+#: templates/safe_cdn/statistics_cc.html:5
+msgid "状态码"
+msgstr "状态码"
+
+#: templates/cdn/admin_state_code.html:9
+msgid "状态码饼图"
+msgstr ""
+
+#: templates/cdn/admin_state_code.html:10
+msgid "状态码趋势图"
+msgstr ""
+
+#: templates/cdn/admin_state_code.html:17
+#: templates/cdn/admin_state_code.html:44
+msgid "状态码数据分析"
+msgstr ""
+
+#: templates/cdn/admin_statistics.html:56
+#: templates/cdn/admin_statistics.html:58
+#: templates/safe_cdn/statistics_cc.html:14
+msgid "近24小时"
+msgstr "近24小时"
+
+#: templates/cdn/admin_statistics.html:63
+msgid "近30天"
+msgstr ""
+
+#: templates/cdn/admin_statistics.html:64
+msgid "上月"
+msgstr ""
+
+#: templates/cdn/admin_statistics.html:90
+msgid "流量带宽明细"
+msgstr ""
+
+#: templates/cdn/admin_statistics.html:93
+msgid "状态码分析"
+msgstr ""
+
+#: templates/cdn/client_cdn_overview.html:8
+msgid "CDN服务总览"
+msgstr ""
+
+#: templates/cdn/client_cdn_overview.html:17
+msgid "我的服务"
+msgstr ""
+
+#: templates/cdn/client_cdn_overview.html:20
+msgid "接入域名"
+msgstr ""
+
+#: templates/cdn/client_cdn_overview.html:21
+msgid "个"
+msgstr ""
+
+#: templates/cdn/client_cdn_overview.html:23
+msgid "新增域名"
+msgstr ""
+
+#: templates/cdn/client_cdn_overview.html:28
+msgid "本月总流量"
+msgstr ""
+
+#: templates/cdn/client_cdn_overview.html:34
+msgid "本月峰值带宽"
+msgstr ""
+
+#: templates/cdn/modify_admin_domain_configure.html:16
+#: templates/safe_cdn/admin_configure_waf.html:122
+#: templates/safe_cdn/client_configure_waf.html:10
+msgid "基础配置"
+msgstr ""
+
+#: templates/cdn/modify_admin_domain_configure.html:19
+msgid "缓存配置"
+msgstr ""
+
+#: templates/cdn/modify_admin_domain_configure.html:22
+#: templates/online_help/https_configure.html:21
+msgid "HTTPS配置"
+msgstr ""
+
+#: templates/cert/admin_cert_create.html:10
+#: templates/cert/admin_cert_ssl_manage.html:14
+#: templates/online_help/ssl_service.html:31
+#: templates/online_help/ssl_service.html:79
+msgid "上传证书"
+msgstr ""
+
+#: templates/cert/admin_cert_create.html:12
+#: templates/online_help/ssl_service.html:48
+#: templates/online_help/ssl_service.html:81
+msgid "更新证书"
+msgstr ""
+
+#: templates/cert/admin_cert_create.html:50
+#: templates/cert/admin_cert_detail.html:9
+msgid "证书"
+msgstr ""
+
+#: templates/cert/admin_cert_create.html:52
+msgid "请将证书内容(包含证书链)复制后粘贴在这里"
+msgstr ""
+
+#: templates/cert/admin_cert_create.html:58
+msgid "请将私钥内容复制后粘贴在这里"
+msgstr ""
+
+#: templates/cert/admin_cert_create.html:68
+#: templates/cert/admin_cert_detail.html:61
+#: templates/user/user_management_details.html:38
+#: templates/user_accounts/admin_parent_details_views.html:56
+#: templates/user_accounts/create_parent_user.html:51
+msgid "联系邮箱"
+msgstr ""
+
+#: templates/cert/admin_cert_create.html:74
+msgid "到期时间提醒"
+msgstr ""
+
+#: templates/cert/admin_cert_detail.html:75
+msgid "CDN服务"
+msgstr ""
+
+#: templates/cert/admin_cert_detail.html:84
+msgid "关联域名"
+msgstr ""
+
+#: templates/cert/admin_cert_detail.html:111
+msgid "时间"
+msgstr "时间"
+
+#: templates/cert/admin_cert_detail.html:113
+msgid "操作人"
+msgstr "操作人"
+
+#: templates/cert/admin_cert_detail.html:114
+msgid "操作状态"
+msgstr ""
+
+#: templates/cert/admin_cert_detail.html:115
+msgid "操作详情"
+msgstr ""
+
+#: templates/cert/admin_cert_ssl_manage.html:8
+#: templates/online_help/ssl_service.html:21
+msgid "证书管理"
+msgstr ""
+
+#: templates/cert/admin_cert_ssl_manage.html:16
+msgid "请输入证书名称"
+msgstr ""
+
+#: templates/cert/admin_cert_ssl_manage.html:34
+msgid "选择证书状态"
+msgstr ""
+
+#: templates/cert/admin_cert_ssl_manage.html:64
+msgid "更新"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:21
+msgid "Cache configuration"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:27
+#: templates/online_help/caching_rule.html:79
+msgid "什么是缓存配置"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:29
+msgid "缓存配置是指用户自定义指定资源内容的缓存过期时间规则。"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:32
+#: templates/online_help/caching_rule.html:83
+msgid "Filter parameters"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:34
+msgid "IgnoreCacheControl"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:35
+msgid "当Header中Cache-Control的值含有no-cache或private时"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:36
+msgid "开启此项：允许缓存"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:37
+msgid "关闭此项：不允许缓存"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:39
+msgid "IgnoreQueryString"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:40
+msgid "当请求URL带有参数时"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:41
+msgid "开启此项：只会缓存一个忽略参数后的URL"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:42
+msgid ""
+"关闭此项：不同参数会认为是不同的URL，分别缓存（如果每次请求参数都不同，那么就"
+"都需要回源）"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:46
+#: templates/online_help/caching_rule.html:87
+#: templates/online_help/https_configure.html:32
+#: templates/online_help/https_configure.html:57
+#: templates/online_help/refresh_help.html:38
+#: templates/online_help/refresh_help.html:78
+#: templates/online_help/source_configuration.html:33
+#: templates/online_help/source_configuration.html:84
+#: templates/online_help/ssl_service.html:30
+#: templates/online_help/ssl_service.html:77
+#: templates/online_help/strain_help.html:31
+#: templates/online_help/strain_help.html:59
+msgid "操作引导"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:48
+#: templates/online_help/caching_rule.html:89
+#: templates/online_help/source_configuration.html:35
+#: templates/online_help/source_configuration.html:86
+msgid "查看配置"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:49
+msgid "登录CDN控制台，选择左侧菜单栏的【域名列表】"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:54
+#: templates/online_help/caching_rule.html:90
+#: templates/online_help/source_configuration.html:40
+#: templates/online_help/source_configuration.html:87
+msgid "修改配置"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:55
+msgid "您可以根据自身业务需求"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:56
+msgid "按文件类型设置缓存过期时间"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:58
+msgid "Setting caching time based on file type"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:59
+msgid "按文件夹设置缓存过期时间"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:61
+msgid "Setting caching time based on folders"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:62
+msgid "按全路径设置缓存过期时间"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:64
+msgid "您可以为某一具体文件设置缓存时间"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:67
+#: templates/online_help/caching_rule.html:91
+msgid "优先级"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:68
+msgid "点击【调整优先级】可自定义调整已经添加的缓存过期配置顺序。"
+msgstr ""
+
+#: templates/online_help/caching_rule.html:69
+msgid "使用右侧上下箭头调整缓存过期时间配置的顺序，点击【保存】即可完成调整。"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:21
+#: templates/online_help/get_start.html:91
+msgid "CNAME配置"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:27
+msgid "在此以万网和新网为例说明"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:30
+#: templates/online_help/cna_configuration.html:63
+msgid "万网/阿里云解析设置CNAME"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:31
+msgid "您可通过如下步骤添加CNAME记录"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:32
+msgid "点击万网会员中心左侧导航栏中“产品管理>我的域名”，进入域名列表页"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:33
+#: templates/online_help/cna_configuration.html:46
+msgid "点击要解析的域名，进入解析记录页"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:35
+msgid "找到做加速的主机记录，点击修改"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:37
+msgid "将记录类型由A改为CNAME，在记录值填写由我们提供的CNAME值"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:39
+#: templates/online_help/cna_configuration.html:52
+msgid "填写完成后，点击保存按钮，完成解析设置"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:43
+#: templates/online_help/cna_configuration.html:67
+msgid "新网设置CNAME"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:44
+msgid "点击新网会员中心左侧导航栏中“域名管理>我的域名”"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:47
+msgid "选中要解析的域名，点击mydns解析设置，进入解析管理"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:49
+msgid ""
+"在“别名（CNAME）”中，点击“添加新的别名”，填写主机名和由我们提供的CNAME值。"
+msgstr ""
+
+#: templates/online_help/cna_configuration.html:50
+msgid "如果同一主机名已经存在A记录"
+msgstr ""
+
+#: templates/online_help/configuration_overview.html:21
+#: templates/online_help/configuration_overview.html:27
+#: templates/online_help/configuration_overview.html:70
+msgid "配置概览"
+msgstr ""
+
+#: templates/online_help/configuration_overview.html:28
+msgid ""
+"您的域名配置完成后，系统会给出域名对应的CNAME。CNAME不能正常访问，这时您需要"
+"到域名服务商配置CNAME，配置生效后即可享受CDN加速服务。在此以万网和新网为例说"
+"明。"
+msgstr ""
+
+#: templates/online_help/configuration_overview.html:34
+msgid "配置名称"
+msgstr ""
+
+#: templates/online_help/configuration_overview.html:37
+msgid "功能描述"
+msgstr ""
+
+#: templates/online_help/configuration_overview.html:44
+#: templates/online_help/log_download.html:54
+#: templates/online_help/source_configuration.html:21
+msgid "回源配置"
+msgstr ""
+
+#: templates/online_help/configuration_overview.html:47
+#: templates/online_help/log_download.html:57
+msgid "支持源站、回源HOST配置"
+msgstr ""
+
+#: templates/online_help/configuration_overview.html:55
+#: templates/online_help/log_download.html:65
+msgid "支持指定资源内容的缓存过期时间规则配置"
+msgstr ""
+
+#: templates/online_help/domain_management.html:21
+msgid "域名管理"
+msgstr ""
+
+#: templates/online_help/domain_management.html:27
+#: templates/online_help/domain_management.html:50
+msgid "查看域名"
+msgstr ""
+
+#: templates/online_help/domain_management.html:28
+msgid ""
+"登录CDN控制台，选择左侧菜单栏的【域名列表】进入相应页面。您可以看到并管理您的"
+"所有加速域名。"
+msgstr ""
+
+#: templates/online_help/domain_management.html:30
+msgid "点击操作列的【配置】，选择【基本信息】可查看域名的具体业务信息。"
+msgstr ""
+
+#: templates/online_help/domain_management.html:34
+#: templates/online_help/domain_management.html:54
+msgid "修改域名配置"
+msgstr ""
+
+#: templates/online_help/domain_management.html:35
+msgid ""
+"登录CDN控制台，选择左侧菜单栏的【域名列表】，点击操作列的【配置】进入自助配置"
+"域名页面。详细操作说明参见"
+msgstr ""
+
+#: templates/online_help/domain_management.html:35
+msgid "配置管理"
+msgstr ""
+
+#: templates/online_help/domain_management.html:36
+msgid "注意：处于“配置中”状态的域名不支持修改配置。"
+msgstr ""
+
+#: templates/online_help/domain_management.html:39
+#: templates/online_help/domain_management.html:58
+msgid "删除域名"
+msgstr ""
+
+#: templates/online_help/domain_management.html:40
+msgid ""
+"登录CDN控制台，选择左侧菜单栏的【域名列表】，点击操作列的【删除】确认后域名即"
+"被删除。域名被删除后，所有对域名的请求均转发至用户源站。"
+msgstr ""
+
+#: templates/online_help/domain_management.html:41
+msgid "注意：不能删除处于“配置中”状态的域名。"
+msgstr ""
+
+#: templates/online_help/flow_bandwidth.html:21
+#: templates/online_help/overview_help.html:28
+msgid "traffic bandwidth detail"
+msgstr ""
+
+#: templates/online_help/flow_bandwidth.html:27
+msgid ""
+"登陆CDN控制台，点击左侧导航栏【统计】，点击【流量带宽明细】进入页面查看。"
+msgstr ""
+
+#: templates/online_help/flow_bandwidth.html:31
+#: templates/online_help/flow_bandwidth.html:49
+#: templates/online_help/request_distribution.html:29
+#: templates/online_help/request_distribution.html:49
+#: templates/online_help/state_code.html:31
+#: templates/online_help/state_code.html:52
+msgid "查询条件"
+msgstr ""
+
+#: templates/online_help/flow_bandwidth.html:33
+#: templates/online_help/request_distribution.html:31
+#: templates/online_help/state_code.html:33
+msgid "时间区间"
+msgstr ""
+
+#: templates/online_help/flow_bandwidth.html:36
+#: templates/online_help/flow_bandwidth.html:53
+#: templates/online_help/request_distribution.html:34
+#: templates/online_help/request_distribution.html:50
+#: templates/online_help/state_code.html:37
+#: templates/online_help/state_code.html:56
+msgid "结果数据"
+msgstr ""
+
+#: templates/online_help/flow_bandwidth.html:37
+msgid "您可以查看所选时间区间内的总流量、回源流量、总请求数、回源请求数"
+msgstr ""
+
+#: templates/online_help/flow_bandwidth.html:39
+msgid "流量、带宽统计最小粒度均为5分钟。"
+msgstr ""
+
+#: templates/online_help/flow_bandwidth.html:40
+msgid "无法查询到尚未接入CDN服务或已接入并删除域名的流量带宽明细"
+msgstr ""
+
+#: templates/online_help/get_start.html:21
+msgid "快速入门"
+msgstr ""
+
+#: templates/online_help/get_start.html:27
+msgid "步骤预览"
+msgstr ""
+
+#: templates/online_help/get_start.html:33
+msgid "第一步"
+msgstr ""
+
+#: templates/online_help/get_start.html:33
+#: templates/online_help/get_start.html:112
+msgid "add domain"
+msgstr ""
+
+#: templates/online_help/get_start.html:35
+msgid "您可以通过以下任意两种方式添加域名："
+msgstr ""
+
+#: templates/online_help/get_start.html:36
+msgid "新用户登录CDN控制台，在总览页面点击【新增域名】"
+msgstr ""
+
+#: templates/online_help/get_start.html:38
+msgid "您也可以点击左侧菜单中的【域名列表】进入相应页面，点击【添加域名】"
+msgstr ""
+
+#: templates/online_help/get_start.html:42
+#: templates/online_help/get_start.html:115
+msgid "填写基本信息"
+msgstr ""
+
+#: templates/online_help/get_start.html:44
+msgid "您要加速的网站的域名，可以是如下形式："
+msgstr ""
+
+#: templates/online_help/get_start.html:45
+msgid "主域名："
+msgstr ""
+
+#: templates/online_help/get_start.html:46
+msgid "二级域名："
+msgstr ""
+
+#: templates/online_help/get_start.html:47
+msgid "多级域名："
+msgstr ""
+
+#: templates/online_help/get_start.html:48
+msgid "泛域名："
+msgstr ""
+
+#: templates/online_help/get_start.html:50
+msgid "根据国家及公司要求，对以下相关网站不会接入服务："
+msgstr ""
+
+#: templates/online_help/get_start.html:51
+msgid "未在工信部进行过备案的网站"
+msgstr ""
+
+#: templates/online_help/get_start.html:52
+msgid "出售药物和管制刀具类内容的网站"
+msgstr ""
+
+#: templates/online_help/get_start.html:53
+msgid "含有不法言论、信息的网站"
+msgstr ""
+
+#: templates/online_help/get_start.html:54
+msgid "游戏私服类网站"
+msgstr ""
+
+#: templates/online_help/get_start.html:55
+msgid "视频类，但无视听许可证的网站"
+msgstr ""
+
+#: templates/online_help/get_start.html:56
+msgid "论坛或社区类，但无BBS专项审批资质的网站"
+msgstr ""
+
+#: templates/online_help/get_start.html:58
+msgid "加速类型的选择："
+msgstr ""
+
+#: templates/online_help/get_start.html:59
+msgid "页面加速，适用于网站内容以网页、图片为主"
+msgstr ""
+
+#: templates/online_help/get_start.html:60
+msgid "下载加速，适用于网站内容以20M以上的大文件为主"
+msgstr ""
+
+#: templates/online_help/get_start.html:61
+msgid "视频点播，适用于网站内容以MP4、FLV等视频文件为主"
+msgstr ""
+
+#: templates/online_help/get_start.html:63
+msgid "注意：业务类型一经确认，无法再修改，请根据您的业务类型谨慎选择。"
+msgstr ""
+
+#: templates/online_help/get_start.html:65
+msgid "选择HTTPS协议加速，需要选择证书，详细可查阅"
+msgstr ""
+
+#: templates/online_help/get_start.html:65
+msgid "【HTTPS配置】"
+msgstr ""
+
+#: templates/online_help/get_start.html:65
+#: templates/online_help/get_start.html:71
+#: templates/online_help/get_start.html:75
+msgid "说明"
+msgstr ""
+
+#: templates/online_help/get_start.html:69
+#: templates/online_help/get_start.html:116
+msgid "填写源站信息"
+msgstr ""
+
+#: templates/online_help/get_start.html:71
+msgid ""
+"您可以根据业务的实际情况填写源站信息，可以是域名回源或者IP回源。更多详细说明"
+"可查阅"
+msgstr ""
+
+#: templates/online_help/get_start.html:71
+msgid "【回源配置】"
+msgstr ""
+
+#: templates/online_help/get_start.html:74
+#: templates/online_help/get_start.html:117
+msgid "填写缓存规则"
+msgstr ""
+
+#: templates/online_help/get_start.html:75
+msgid ""
+"我们根据您选择的业务类型为您设置了默认缓存规则，您可根据业务的实际情况进行修"
+"改，更多详细说明可查询"
+msgstr ""
+
+#: templates/online_help/get_start.html:75
+msgid "【缓存配置】"
+msgstr ""
+
+#: templates/online_help/get_start.html:78
+#: templates/online_help/get_start.html:118
+msgid "添加完成"
+msgstr ""
+
+#: templates/online_help/get_start.html:79
+msgid ""
+"提交后的域名会出现在域名列表中，域名配置会在10分钟内下发至全网节点，请耐心等"
+"待。"
+msgstr ""
+
+#: templates/online_help/get_start.html:83
+msgid "第二步"
+msgstr ""
+
+#: templates/online_help/get_start.html:83
+#: templates/online_help/get_start.html:90
+#: templates/online_help/get_start.html:123
+#: templates/online_help/get_start.html:126
+msgid "配置CNAME"
+msgstr ""
+
+#: templates/online_help/get_start.html:85
+#: templates/online_help/get_start.html:125
+msgid "查看CNAME"
+msgstr ""
+
+#: templates/online_help/get_start.html:86
+msgid ""
+"域名配置完成后，系统会给出域名对应的CNAME。这时您需要到域名服务商配置CNAME。"
+msgstr ""
+
+#: templates/online_help/get_start.html:91
+msgid "具体配置方法请查阅"
+msgstr ""
+
+#: templates/online_help/get_start.html:94
+#: templates/online_help/get_start.html:127
+msgid "验证CNAME是否生效"
+msgstr ""
+
+#: templates/online_help/get_start.html:95
+msgid "不同的DNS服务商CNAME生效时间略有不同"
+msgstr ""
+
+#: templates/online_help/get_start.html:100
+msgid "第三步"
+msgstr ""
+
+#: templates/online_help/get_start.html:100
+#: templates/online_help/get_start.html:132
+msgid "CDN加速生效"
+msgstr ""
+
+#: templates/online_help/get_start.html:103
+msgid "【域名列表】"
+msgstr ""
+
+#: templates/online_help/get_start.html:103
+msgid "【统计数据】"
+msgstr ""
+
+#: templates/online_help/get_start.html:103
+msgid "，进行"
+msgstr ""
+
+#: templates/online_help/get_start.html:103
+msgid "【刷新】"
+msgstr ""
+
+#: templates/online_help/get_start.html:114
+msgid "添加方式"
+msgstr ""
+
+#: templates/online_help/https_configure.html:27
+#: templates/online_help/https_configure.html:53
+msgid "什么是HTTPS"
+msgstr ""
+
+#: templates/online_help/https_configure.html:29
+msgid ""
+"HTTPS是一种在 HTTP 协议基础上进行传输加密的安全协议，能够有效保障数据传输安"
+"全。配置 HTTPS 时，需要您提供域名对应的证书，将其部署在全网 CDN 节点，实现全"
+"网数据加密传输功能。"
+msgstr ""
+
+#: templates/online_help/https_configure.html:34
+#: templates/online_help/https_configure.html:59
+msgid "查看HTTPS配置"
+msgstr ""
+
+#: templates/online_help/https_configure.html:35
+msgid ""
+"登录CDN控制台，单击左侧导航栏的 【域名列表】 进入。单击域名右侧【配置】按钮，"
+"进入域名配置页面。"
+msgstr ""
+
+#: templates/online_help/https_configure.html:37
+msgid "单击【HTTPS配置】，即可查看当前域名的HTTPS配置信息。"
+msgstr ""
+
+#: templates/online_help/https_configure.html:42
+msgid ""
+"单击【编辑】按钮，从证书列表中选择要使用的证书，若无可用证书，点击【SSL证书管"
+"理】上传需要使用的证书。证书状态为“正常”即出现在证书列表中。"
+msgstr ""
+
+#: templates/online_help/https_configure.html:44
+msgid "点击【提交】，完成域名与证书的绑定。"
+msgstr ""
+
+#: templates/online_help/log_download.html:28
+msgid "登陆CDN控制台，点击左侧导航栏【日志】，进入日志下载页面。"
+msgstr ""
+
+#: templates/online_help/log_download.html:30
+msgid "选择要获取日志的域名和时间，点击【查询】获取日志下载链接。"
+msgstr ""
+
+#: templates/online_help/log_download.html:32
+msgid "支持最近一个月的日志下载"
+msgstr ""
+
+#: templates/online_help/log_download.html:33
+msgid "提供按天打包的日志供下载"
+msgstr ""
+
+#: templates/online_help/log_download.html:34
+msgid "当天的日志需延迟到第二天才可下载"
+msgstr ""
+
+#: templates/online_help/log_download.html:37
+#: templates/online_help/log_download.html:83
+msgid "日志字段说明"
+msgstr ""
+
+#: templates/online_help/log_download.html:38
+msgid "日志中对应的字段顺序及含义如下表所示"
+msgstr ""
+
+#: templates/online_help/log_download.html:44
+msgid "顺序"
+msgstr ""
+
+#: templates/online_help/log_download.html:47
+msgid "日志内容"
+msgstr ""
+
+#: templates/online_help/log_download.html:102
+msgid "时间戳"
+msgstr ""
+
+#: templates/online_help/log_download.html:103
+msgid "响应时间，单位：毫秒"
+msgstr ""
+
+#: templates/online_help/log_download.html:104
+msgid "访问域名的客户端IP"
+msgstr ""
+
+#: templates/online_help/log_download.html:105
+msgid "边缘服务器状态／响应客户端的HTTP状态码"
+msgstr ""
+
+#: templates/online_help/log_download.html:106
+msgid "发送给客户端的响应字节数，单位：字节"
+msgstr ""
+
+#: templates/online_help/log_download.html:107
+msgid "请求方式"
+msgstr ""
+
+#: templates/online_help/log_download.html:108
+msgid "文件请求路径"
+msgstr ""
+
+#: templates/online_help/log_download.html:109
+msgid "客户端认证请求的username，一般是“-”"
+msgstr ""
+
+#: templates/online_help/log_download.html:110
+msgid "回源信息，没有回源是“NONE/-”；有回源是“DIRECT/{源站的IP地址或域名}”"
+msgstr ""
+
+#: templates/online_help/log_download.html:111
+msgid "响应数据类型"
+msgstr ""
+
+#: templates/online_help/log_download.html:112
+msgid "Refer信息"
+msgstr ""
+
+#: templates/online_help/log_download.html:113
+msgid "User-Agent信息"
+msgstr ""
+
+#: templates/online_help/log_download.html:114
+msgid "Cookie信息"
+msgstr ""
+
+#: templates/online_help/overview_help.html:21
+msgid "统计分析概览"
+msgstr ""
+
+#: templates/online_help/overview_help.html:27
+msgid ""
+"为了方便您了解用户侧对您资源的访问情况，现为您提供以下三种维度的用量查询工"
+"具。"
+msgstr ""
+
+#: templates/online_help/overview_help.html:28
+msgid "您可以查看各域名在CDN产生的流量、带宽消耗情况"
+msgstr ""
+
+#: templates/online_help/overview_help.html:29
+#: templates/online_help/state_code.html:21
+msgid "state code analysis"
+msgstr ""
+
+#: templates/online_help/overview_help.html:29
+msgid "您可以查看各域名针对用户请求返回的HTTP状态码统计"
+msgstr ""
+
+#: templates/online_help/overview_help.html:30
+#: templates/online_help/request_distribution.html:21
+msgid "state code request distribution"
+msgstr ""
+
+#: templates/online_help/overview_help.html:30
+msgid "您可以查看各域名在各省份、运营商产生的请求数统计"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:21
+msgid "Refresh"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:27
+#: templates/online_help/refresh_help.html:70
+msgid "什么是刷新"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:28
+msgid "刷新即强制清理CDN节点的缓存。包含以下两种方式："
+msgstr ""
+
+#: templates/online_help/refresh_help.html:29
+msgid ""
+"文件刷新：强制将刷新的URL在CDN节点上删除，当有新的请求时会重新回源抓取内容。"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:30
+msgid ""
+"目录刷新：在CDN节点上面把目录下的所有文件置为过期。当有新的请求时再回源校验，"
+"并根据文件过期处理的机制进行处理。"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:34
+#: templates/online_help/refresh_help.html:74
+msgid "为什么需要刷新"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:35
+msgid ""
+"当缓存到CDN节点的资源到期后，节点会将内容标志为过期，但是不删除也不主动回源。"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:39
+msgid "登录CDN控制台，点击左侧导航栏【刷新】进入刷新页面。"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:41
+#: templates/online_help/refresh_help.html:80
+msgid "提交刷新任务"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:42
+msgid "选择刷新类型："
+msgstr ""
+
+#: templates/online_help/refresh_help.html:44
+msgid "选择文件刷新"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:48
+#: templates/online_help/strain_help.html:38
+msgid "完成后点击【提交】即可。"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:49
+#: templates/online_help/strain_help.html:39
+msgid "您可以在刷新文本框下方查看今日剩余刷新量，注意："
+msgstr ""
+
+#: templates/online_help/refresh_help.html:50
+msgid "单次提交的文件刷新数量最多不超过20条，一天最多不超过500条；"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:51
+msgid "单次提交的目录刷新数量最多不超过20条，一天最多不超过500条；"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:52
+msgid "刷新任务一般10分钟生效。"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:53
+msgid "选择目录刷新"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:57
+msgid "完成后点击【提交】即可。您可以在刷新文本框下方查看今日剩余刷新量。"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:58
+#: templates/online_help/refresh_help.html:81
+msgid "查看刷新记录"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:59
+msgid "您可以在页面下发查看一段时间内的刷新记录"
+msgstr ""
+
+#: templates/online_help/refresh_help.html:61
+msgid "对于刷新失败的任务支持刷新重置"
+msgstr ""
+
+#: templates/online_help/request_distribution.html:27
+msgid "登陆CDN控制台，点击左侧导航栏【统计】，点击【请求分布】进入页面查看。"
+msgstr ""
+
+#: templates/online_help/request_distribution.html:35
+msgid "您可以查看用户请求区域分布和运营商分布的排名分析。"
+msgstr ""
+
+#: templates/online_help/request_distribution.html:38
+msgid "全网CDN边缘节点请求数量"
+msgstr ""
+
+#: templates/online_help/request_distribution.html:39
+msgid "请求量数据最小粒度均为5分钟。"
+msgstr ""
+
+#: templates/online_help/request_distribution.html:40
+#: templates/online_help/state_code.html:43
+msgid "无法查询到尚未接入CDN服务或已接入并删除域名的状态码统计数据"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:27
+#: templates/online_help/source_configuration.html:80
+msgid "您可以对域名的回源配置进行修改"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:29
+msgid "域名回源和IP回源"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:30
+msgid "您也可以根据自身业务情况配置自定义回源HOST"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:36
+msgid "登录CDN控制台"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:41
+msgid "即可修改回源配置"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:44
+msgid ""
+"注意：填写错误的回源域名或IP可能导致网站无法正常访问，请务必保证回源信息正"
+"确。"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:48
+#: templates/online_help/source_configuration.html:88
+msgid "配置案例"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:49
+msgid "用户访问"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:51
+msgid "未在节点命中"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:53
+#: templates/online_help/source_configuration.html:63
+msgid "若回源配置如下"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:55
+msgid "则节点会将成功获取到的内容反馈给请求客户端"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:57
+msgid "回源HOST默认为加速域名的情况"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:59
+msgid "获取的资源为"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:66
+msgid "回源HOST设置为"
+msgstr ""
+
+#: templates/online_help/source_configuration.html:68
+msgid "回源时实际请求发往1.1.1.1"
+msgstr ""
+
+#: templates/online_help/ssl_service.html:27
+#: templates/online_help/ssl_service.html:32
+#: templates/online_help/ssl_service.html:44
+#: templates/online_help/ssl_service.html:50
+msgid "SSL证书服务控制台"
+msgstr ""
+
+#: templates/online_help/ssl_service.html:34
+msgid "填写证书名称"
+msgstr ""
+
+#: templates/online_help/ssl_service.html:36
+#: templates/online_help/ssl_service.html:55
+#: templates/online_help/ssl_service.html:65
+msgid "注意"
+msgstr ""
+
+#: templates/online_help/ssl_service.html:37
+#: templates/online_help/ssl_service.html:56
+msgid "请上传有效期 >30天的证书"
+msgstr ""
+
+#: templates/online_help/ssl_service.html:39
+#: templates/online_help/ssl_service.html:58
+msgid "当您的证书有证书链时"
+msgstr ""
+
+#: templates/online_help/ssl_service.html:43
+#: templates/online_help/ssl_service.html:80
+msgid "查看证书详情"
+msgstr ""
+
+#: templates/online_help/ssl_service.html:49
+msgid "请及时更新证书"
+msgstr ""
+
+#: templates/online_help/ssl_service.html:52
+msgid "您可以选择性修改备注信息和到期提醒设置"
+msgstr ""
+
+#: templates/online_help/ssl_service.html:53
+msgid "CDN会将证书下发到边缘节点"
+msgstr ""
+
+#: templates/online_help/ssl_service.html:62
+#: templates/online_help/ssl_service.html:82
+msgid "删除证书"
+msgstr ""
+
+#: templates/online_help/ssl_service.html:63
+msgid "将您部署的证书在CDN上删除"
+msgstr ""
+
+#: templates/online_help/ssl_service.html:66
+msgid "暂时不能删除"
+msgstr ""
+
+#: templates/online_help/ssl_service.html:67
+msgid "若证书已无关联实例"
+msgstr ""
+
+#: templates/online_help/state_code.html:27
+msgid "登陆CDN控制台，点击左侧导航栏【统计】，点击【状态码分析】进入页面查看。"
+msgstr ""
+
+#: templates/online_help/state_code.html:38
+msgid "您可以查看返回状态码分布饼图和状态码的占比分析"
+msgstr ""
+
+#: templates/online_help/state_code.html:40
+msgid "上述以外的状态码统计用其他概括"
+msgstr ""
+
+#: templates/online_help/state_code.html:41
+msgid "查看状态码及其请求数明细、请求百分比"
+msgstr ""
+
+#: templates/online_help/state_code.html:42
+msgid "状态码统计数据最小粒度均为5分钟。"
+msgstr ""
+
+#: templates/online_help/strain_help.html:27
+#: templates/online_help/strain_help.html:55
+msgid "什么是预加载"
+msgstr ""
+
+#: templates/online_help/strain_help.html:28
+msgid "预加载即在所有CDN节点上模拟用户的首次请求"
+msgstr ""
+
+#: templates/online_help/strain_help.html:32
+msgid "登录CDN控制台，点击左侧导航栏【预加载】进入预加载页面。"
+msgstr ""
+
+#: templates/online_help/strain_help.html:34
+#: templates/online_help/strain_help.html:61
+msgid "提交预加载任务"
+msgstr ""
+
+#: templates/online_help/strain_help.html:35
+msgid "在文本框中输入需要预加载对象的url"
+msgstr ""
+
+#: templates/online_help/strain_help.html:40
+msgid "单次提交的预加载URL数量最多不超过30条"
+msgstr ""
+
+#: templates/online_help/strain_help.html:43
+#: templates/online_help/strain_help.html:62
+msgid "查看预加载记录"
+msgstr ""
+
+#: templates/online_help/strain_help.html:44
+msgid "您可以在页面下发查看一段时间内的预加载记录"
+msgstr ""
+
+#: templates/online_help/strain_help.html:46
+msgid "对于失败的任务支持重置，注意重置后会新生成一条预加载任务显示在列表中。"
+msgstr ""
+
+#: templates/safe_cdn/access_or_move_cdn.html:8
+msgid "WAF移出CDN检查确认"
+msgstr ""
+
+#: templates/safe_cdn/access_or_move_cdn.html:10
+msgid "WAF接入CDN检查确认"
+msgstr ""
+
+#: templates/safe_cdn/access_or_move_cdn.html:12
+msgid "接入模式："
+msgstr ""
+
+#: templates/safe_cdn/access_or_move_cdn.html:13
+msgid "接入点："
+msgstr ""
+
+#: templates/safe_cdn/access_or_move_cdn.html:18
+msgid "在移出 WAF 前，请先确认 CDN 服务是否正常！"
+msgstr ""
+
+#: templates/safe_cdn/access_or_move_cdn.html:25
+msgid "在接入 WAF 前，请先确认 CDN 服务是否正常！"
+msgstr ""
+
+#: templates/safe_cdn/access_or_move_cdn.html:34
+msgid "确认移出CDN"
+msgstr ""
+
+#: templates/safe_cdn/access_or_move_cdn.html:38
+msgid "返回"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:5
+#: templates/safe_cdn/admin_create_waf.html:5
+msgid "WAF基本信息"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:11
+#: templates/safe_cdn/admin_create_waf.html:11
+msgid "服务类型"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:15
+#: templates/safe_cdn/admin_binding_waf.html:118
+#: templates/safe_cdn/admin_create_waf.html:15
+#: templates/safe_cdn/admin_create_waf.html:110
+#: templates/safe_cdn/client_basic_waf.html:8
+#: templates/safe_cdn/client_basic_waf.html:10
+msgid "WAF防护/服务域名"
+msgstr "WAF防护/服务域名"
+
+#: templates/safe_cdn/admin_binding_waf.html:31
+#: templates/safe_cdn/admin_binding_waf.html:33
+#: templates/safe_cdn/admin_create_waf.html:31
+#: templates/safe_cdn/admin_create_waf.html:33
+#: templates/safe_cdn/admin_domain_waf_binding.html:12
+msgid "WAF接入CDN方式"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:40
+#: templates/safe_cdn/admin_create_waf.html:40
+#: templates/safe_cdn/admin_domain_waf_binding.html:20
+msgid "WAF接入点"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:57
+#: templates/safe_cdn/admin_create_waf.html:57
+msgid "WAF回源配置"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:58
+#: templates/safe_cdn/admin_create_waf.html:58
+msgid "WAF回上层配置"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:60
+#: templates/safe_cdn/admin_create_waf.html:65
+msgid "WAF回源方式"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:83
+#: templates/safe_cdn/admin_create_waf.html:88
+#: templates/safe_cdn/station_access_cdn.html:206
+#: templates/safe_cdn/station_move_cdn.html:180
+msgid "WAF回源地址"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:97
+#: templates/safe_cdn/admin_create_waf.html:95
+#: templates/safe_cdn/station_access_cdn.html:210
+#: templates/safe_cdn/station_move_cdn.html:184
+msgid "WAF回源端口"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:116
+#: templates/safe_cdn/admin_create_waf.html:108
+#: templates/safe_cdn/client_basic_waf.html:5
+msgid "WAF防御配置"
+msgstr "WAF防御配置"
+
+#: templates/safe_cdn/admin_binding_waf.html:131
+#: templates/safe_cdn/admin_create_waf.html:117
+#: templates/safe_cdn/client_basic_waf.html:17
+#: templates/safe_cdn/client_basic_waf.html:19
+msgid "WAF服务协议"
+msgstr "WAF服务协议"
+
+#: templates/safe_cdn/admin_binding_waf.html:134
+#: templates/safe_cdn/admin_create_waf.html:120
+#, fuzzy
+#| msgid "启用"
+msgid "不启用"
+msgstr "启用"
+
+#: templates/safe_cdn/admin_binding_waf.html:141
+#: templates/safe_cdn/admin_binding_waf.html:143
+#: templates/safe_cdn/admin_create_waf.html:127
+#: templates/safe_cdn/admin_create_waf.html:129
+msgid "启用HTTPS"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:150
+#: templates/safe_cdn/admin_binding_waf.html:173
+#: templates/safe_cdn/admin_create_waf.html:138
+#, fuzzy
+#| msgid "WAF服务协议"
+msgid "WAF服务证书"
+msgstr "WAF服务协议"
+
+#: templates/safe_cdn/admin_binding_waf.html:195
+#: templates/safe_cdn/admin_create_waf.html:152
+#: templates/safe_cdn/client_basic_waf.html:29
+#: templates/safe_cdn/client_basic_waf.html:31
+msgid "WAF默认规则防御模式"
+msgstr "WAF默认规则防御模式"
+
+#: templates/safe_cdn/admin_binding_waf.html:221
+#: templates/safe_cdn/admin_create_waf.html:174
+#: templates/safe_cdn/client_basic_waf.html:58
+#: templates/safe_cdn/client_basic_waf.html:60
+msgid "WAF自定义规则防御模式"
+msgstr "WAF自定义规则防御模式"
+
+#: templates/safe_cdn/admin_binding_waf.html:250
+#: templates/safe_cdn/admin_create_waf.html:200
+msgid "上层回WAF配置"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:252
+#: templates/safe_cdn/admin_create_waf.html:202
+msgid "边缘回WAF配置"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:254
+#: templates/safe_cdn/admin_binding_waf.html:260
+#: templates/safe_cdn/admin_binding_waf.html:264
+#: templates/safe_cdn/admin_create_waf.html:204
+#: templates/safe_cdn/admin_create_waf.html:210
+#: templates/safe_cdn/admin_create_waf.html:214
+msgid "上层回WAF地址-CNAME"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:262
+#: templates/safe_cdn/admin_create_waf.html:212
+msgid "边缘回WAF地址-CNAME"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:281
+#: templates/safe_cdn/admin_create_waf.html:242
+msgid "WAF管理"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:287
+#: templates/safe_cdn/admin_create_waf.html:248
+#, fuzzy
+#| msgid "启用"
+msgid "停用"
+msgstr "启用"
+
+#: templates/safe_cdn/admin_binding_waf.html:289
+#: templates/safe_cdn/admin_create_waf.html:250
+msgid "移出CDN"
+msgstr ""
+
+#: templates/safe_cdn/admin_binding_waf.html:297
+#: templates/safe_cdn/admin_create_waf.html:256
+#: templates/safe_cdn/alarm_cc.html:94 templates/safe_cdn/alarm_cc.html:102
+#: templates/safe_cdn/alarm_waf.html:93 templates/safe_cdn/alarm_waf.html:101
+#: templates/safe_cdn/client_configure_waf.html:40
+#: templates/safe_cdn/client_configure_waf.html:48
+#: templates/safe_cdn/configure_cc.html:72
+#: templates/safe_cdn/configure_cc.html:80
+#: templates/safe_cdn/statistics_cc.html:91
+#: templates/safe_cdn/statistics_cc.html:99
+msgid "保存"
+msgstr "保存"
+
+#: templates/safe_cdn/admin_configure_waf.html:5
+#: templates/safe_cdn/client_configure_waf.html:6
+#: templates/safe_cdn/safe_channel_list.html:57
+msgid "开通WAF"
+msgstr ""
+
+#: templates/safe_cdn/admin_configure_waf.html:18
+#: templates/safe_cdn/admin_configure_waf.html:20
+msgid "创建完成"
+msgstr ""
+
+#: templates/safe_cdn/admin_configure_waf.html:22
+#, fuzzy
+msgid "创建中"
+msgstr "创建中"
+
+#: templates/safe_cdn/admin_configure_waf.html:28
+#: templates/safe_cdn/admin_configure_waf.html:30
+msgid "绑定完成"
+msgstr ""
+
+#: templates/safe_cdn/admin_configure_waf.html:32
+msgid "绑定中"
+msgstr ""
+
+#: templates/safe_cdn/admin_configure_waf.html:55
+#: templates/safe_cdn/admin_configure_waf.html:74
+msgid "已启用"
+msgstr "已启用"
+
+#: templates/safe_cdn/admin_configure_waf.html:64
+msgid "已接入"
+msgstr ""
+
+#: templates/safe_cdn/admin_configure_waf.html:83
+#: templates/safe_cdn/admin_configure_waf.html:102
+msgid "未接入"
+msgstr ""
+
+#: templates/safe_cdn/admin_configure_waf.html:93
+msgid "未启用"
+msgstr "未启用"
+
+#: templates/safe_cdn/admin_configure_waf.html:123
+#: templates/safe_cdn/client_configure_waf.html:11
+msgid "默认规则"
+msgstr "默认规则"
+
+#: templates/safe_cdn/admin_configure_waf.html:124
+#: templates/safe_cdn/client_configure_waf.html:12
+msgid "自定义规则"
+msgstr "自定义规则"
+
+#: templates/safe_cdn/admin_domain_waf_binding.html:5
+#: templates/safe_cdn/admin_domain_waf_create.html:5
+msgid "选择服务商"
+msgstr ""
+
+#: templates/safe_cdn/admin_domain_waf_binding.html:8
+#: templates/safe_cdn/admin_domain_waf_create.html:8
+msgid "青松"
+msgstr ""
+
+#: templates/safe_cdn/admin_domain_waf_binding.html:9
+msgid "已有WAF服务"
+msgstr "WAF服务协议"
+
+#: templates/safe_cdn/admin_domain_waf_binding.html:10
+msgid "WAF服务状态"
+msgstr "WAF服务协议"
+
+#: templates/safe_cdn/admin_domain_waf_binding.html:33
+msgid "绑定"
+msgstr ""
+
+#: templates/safe_cdn/admin_domain_waf_binding.html:38
+#: templates/safe_cdn/admin_domain_waf_create.html:17
+msgid "F5"
+msgstr ""
+
+#: templates/safe_cdn/admin_domain_waf_binding.html:39
+#: templates/safe_cdn/admin_domain_waf_create.html:18
+msgid "即将上线，敬请期待"
+msgstr ""
+
+#: templates/safe_cdn/admin_domain_waf_create.html:12
+msgid "创建waf"
+msgstr ""
+
+#: templates/safe_cdn/alarm.html:10 templates/safe_cdn/alarm.html:11
+#: templates/safe_cdn/alarm.html:12 templates/safe_cdn/alarm.html:19
+#: templates/safe_cdn/alarm.html:20 templates/safe_cdn/alarm.html:21
+#: templates/safe_cdn/alarm.html:22
+msgid "暂未开放"
+msgstr "暂未开放"
+
+#: templates/safe_cdn/alarm_cc.html:6
+msgid "CC部署"
+msgstr "CC部署"
+
+#: templates/safe_cdn/alarm_cc.html:9
+msgid "1、请在CMS3中，进行安全收条配置，以确保CC功能生效。 "
+msgstr "1、请在CMS3中，进行安全收条配置，以确保CC功能生效。"
+
+#: templates/safe_cdn/alarm_cc.html:11
+msgid "前往CMS3配置 "
+msgstr "前往CMS3配置"
+
+#: templates/safe_cdn/alarm_cc.html:13
+msgid "确认安全收条已在CMS3中配置成功并生效"
+msgstr "确认安全收条已在CMS3中配置成功并生效"
+
+#: templates/safe_cdn/alarm_cc.html:18
+msgid "2、请测试Elestic Search是否生效。"
+msgstr "2、请测试Elestic Search是否生效。"
+
+#: templates/safe_cdn/alarm_cc.html:20
+msgid "检测ES"
+msgstr "检测ES"
+
+#: templates/safe_cdn/alarm_cc.html:22
+msgid "确认Elestic Search已经生效"
+msgstr "确认Elestic Search已经生效"
+
+#: templates/safe_cdn/alarm_cc.html:30 templates/safe_cdn/alarm_waf.html:29
+#: templates/safe_cdn/configure_cc.html:8
+msgid "CC防御配置"
+msgstr "CC防御配置"
+
+#: templates/safe_cdn/alarm_cc.html:33 templates/safe_cdn/alarm_waf.html:32
+#: templates/safe_cdn/configure_cc.html:11
+msgid "说明：“动态”是指post或带有参数的请求；“静态”是指除动态之外的请求。"
+msgstr "说明：“动态”是指post或带有参数的请求；“静态”是指除动态之外的请求。"
+
+#: templates/safe_cdn/alarm_cc.html:36 templates/safe_cdn/alarm_waf.html:35
+#: templates/safe_cdn/configure_cc.html:14
+msgid "启动阙值"
+msgstr "启动阙值"
+
+#: templates/safe_cdn/alarm_cc.html:52 templates/safe_cdn/alarm_waf.html:51
+#: templates/safe_cdn/configure_cc.html:30
+msgid "IP识别规则"
+msgstr "IP识别规则"
+
+#: templates/safe_cdn/alarm_cc.html:68 templates/safe_cdn/alarm_waf.html:67
+#: templates/safe_cdn/configure_cc.html:46
+#: templates/safe_cdn/statistics_cc.html:66
+msgid "告警配置"
+msgstr "告警配置"
+
+#: templates/safe_cdn/alarm_cc.html:86 templates/safe_cdn/alarm_waf.html:85
+#: templates/safe_cdn/configure_cc.html:64
+#: templates/safe_cdn/statistics_cc.html:84
+msgid "下发CC防御配置"
+msgstr "下发CC防御配置"
+
+#: templates/safe_cdn/alarm_cc.html:87 templates/safe_cdn/alarm_waf.html:86
+#: templates/safe_cdn/configure_cc.html:65
+#: templates/safe_cdn/statistics_cc.html:85
+msgid "还原"
+msgstr "还原"
+
+#: templates/safe_cdn/alarm_waf.html:6 templates/safe_cdn/default_waf.html:40
+msgid "告警"
+msgstr "告警"
+
+#: templates/safe_cdn/base_tab.html:10 templates/safe_cdn/safe_base.html:18
+msgid "WAF"
+msgstr "WAF"
+
+#: templates/safe_cdn/base_tab.html:16 templates/safe_cdn/safe_base.html:24
+msgid "拦截时间"
+msgstr "拦截时间"
+
+#: templates/safe_cdn/base_tab.html:17 templates/safe_cdn/safe_base.html:25
+msgid "处理结果"
+msgstr "处理结果"
+
+#: templates/safe_cdn/base_tab.html:18 templates/safe_cdn/safe_base.html:26
+msgid "攻击类型"
+msgstr "攻击类型"
+
+#: templates/safe_cdn/base_tab.html:19 templates/safe_cdn/safe_base.html:27
+msgid "攻击百分比"
+msgstr "攻击百分比"
+
+#: templates/safe_cdn/base_tab.html:20 templates/safe_cdn/safe_base.html:28
+msgid "攻击数"
+msgstr "攻击数"
+
+#: templates/safe_cdn/base_tab.html:21 templates/safe_cdn/safe_base.html:29
+msgid "日志详情"
+msgstr "日志详情"
+
+#: templates/safe_cdn/base_tab.html:22 templates/safe_cdn/safe_base.html:30
+#: templates/safe_cdn/statistics_waf.html:59
+msgid "Top5被攻击URL"
+msgstr "Top5被攻击URL"
+
+#: templates/safe_cdn/base_tab.html:23 templates/safe_cdn/safe_base.html:31
+#: templates/safe_cdn/statistics_waf.html:34
+msgid "TOP10攻击IP"
+msgstr "TOP10攻击IP"
+
+#: templates/safe_cdn/base_tab.html:24 templates/safe_cdn/safe_base.html:32
+msgid "攻击次数（单位：次）"
+msgstr ""
+
+#: templates/safe_cdn/base_tab.html:25 templates/safe_cdn/safe_base.html:33
+msgid "攻击类型分布"
+msgstr "攻击类型分布"
+
+#: templates/safe_cdn/base_tab.html:26 templates/safe_cdn/default_waf.html:8
+#: templates/safe_cdn/safe_base.html:34
+msgid "规则ID"
+msgstr "规则ID"
+
+#: templates/safe_cdn/base_tab.html:27 templates/safe_cdn/custom_waf.html:8
+#: templates/safe_cdn/default_waf.html:11 templates/safe_cdn/safe_base.html:35
+msgid "规则名"
+msgstr "规则名"
+
+#: templates/safe_cdn/base_tab.html:28 templates/safe_cdn/safe_base.html:36
+msgid "规则开关"
+msgstr "规则开关"
+
+#: templates/safe_cdn/base_tab.html:29 templates/safe_cdn/safe_base.html:37
+msgid "匹配内容"
+msgstr "匹配内容"
+
+#: templates/safe_cdn/base_tab.html:30 templates/safe_cdn/safe_base.html:38
+msgid "后续动作"
+msgstr "后续动作"
+
+#: templates/safe_cdn/base_tab.html:31 templates/safe_cdn/safe_base.html:39
+msgid "直接阻断"
+msgstr "直接阻断"
+
+#: templates/safe_cdn/base_tab.html:32 templates/safe_cdn/safe_base.html:40
+msgid "直接放行"
+msgstr "直接放行"
+
+#: templates/safe_cdn/base_tab.html:35 templates/safe_cdn/safe_base.html:43
+msgid "防止利用多个“script”重叠标签进行xss跨站攻击的规则"
+msgstr "防止利用多个“script”重叠标签进行xss跨站攻击的规则"
+
+#: templates/safe_cdn/base_tab.html:36 templates/safe_cdn/safe_base.html:44
+msgid "确定开启全部默认规则？"
+msgstr "确定开启全部默认规则？"
+
+#: templates/safe_cdn/base_tab.html:37 templates/safe_cdn/safe_base.html:45
+msgid "确定关闭全部默认规则？"
+msgstr "确定关闭全部默认规则？"
+
+#: templates/safe_cdn/base_tab.html:38 templates/safe_cdn/safe_base.html:46
+msgid "确定开启默认规则？"
+msgstr "确定开启默认规则？"
+
+#: templates/safe_cdn/base_tab.html:39 templates/safe_cdn/safe_base.html:47
+msgid "确定关闭默认规则？"
+msgstr "确定关闭默认规则？"
+
+#: templates/safe_cdn/base_tab.html:40 templates/safe_cdn/safe_base.html:48
+msgid "确定开启自定义规则？"
+msgstr "确定开启自定义规则？"
+
+#: templates/safe_cdn/base_tab.html:41 templates/safe_cdn/safe_base.html:49
+msgid "确定关闭自定义规则？"
+msgstr "确定关闭自定义规则？"
+
+#: templates/safe_cdn/base_top.html:4 templates/safe_cdn/cms_base.html:4
+#: templates/safe_cdn/safe_cdn_configure.html:6
+msgid "安全CDN"
+msgstr "安全CDN"
+
+#: templates/safe_cdn/configure_cc.html:5
+msgid "创建WAF"
+msgstr ""
+
+#: templates/safe_cdn/custom_waf.html:12
+#: templates/safe_cdn/default_waf.html:15
+msgid "规则状态"
+msgstr "规则状态"
+
+#: templates/safe_cdn/custom_waf.html:13
+#: templates/safe_cdn/default_waf.html:16
+msgid "开启"
+msgstr "开启"
+
+#: templates/safe_cdn/default_waf.html:26
+msgid "开启全部规则"
+msgstr "开启全部规则"
+
+#: templates/safe_cdn/default_waf.html:27
+msgid "关闭全部规则"
+msgstr "关闭全部规则"
+
+#: templates/safe_cdn/safe_cdn_configure.html:7
+#: templates/safe_cdn/safe_channel_list.html:8
+msgid "安全CDN频道列表"
+msgstr "安全CDN频道列表"
+
+#: templates/safe_cdn/safe_cdn_configure.html:8
+#: templates/safe_cdn/safe_cdn_configure.html:12
+#: templates/safe_cdn/safe_cdn_list.html:38
+msgid "安全服务配置"
+msgstr ""
+
+#: templates/safe_cdn/safe_cdn_configure.html:13
+msgid "青松WAF"
+msgstr ""
+
+#: templates/safe_cdn/safe_cdn_configure.html:14
+msgid "Token"
+msgstr ""
+
+#: templates/safe_cdn/safe_cdn_configure.html:20
+msgid "指定"
+msgstr ""
+
+#: templates/safe_cdn/safe_cdn_list.html:7
+msgid "安全CDN客户列表"
+msgstr "安全CDN客户列表"
+
+#: templates/safe_cdn/safe_cdn_list.html:13
+#: templates/safe_cdn/safe_channel_list.html:15
+#: templates/safe_cdn/statistics_cc.html:48
+msgid "客户账号/账号ID"
+msgstr "客户账号/账号ID"
+
+#: templates/safe_cdn/safe_cdn_list.html:16
+#: templates/safe_cdn/safe_channel_list.html:18
+#: templates/safe_cdn/statistics_cc.html:51
+msgid "CMS客户ID"
+msgstr "CMS客户ID"
+
+#: templates/safe_cdn/safe_cdn_list.html:24
+msgid "添加安全客户"
+msgstr "添加安全客户"
+
+#: templates/safe_cdn/safe_channel_list.html:22
+#: templates/safe_cdn/safe_channel_list.html:70
+msgid "频道名"
+msgstr "频道名"
+
+#: templates/safe_cdn/safe_channel_list.html:41
+#: templates/safe_cdn/safe_channel_list.html:71
+msgid "添加安全频道"
+msgstr "添加安全频道"
+
+#: templates/safe_cdn/safe_channel_list.html:67
+msgid "安全频道名"
+msgstr "安全频道名"
+
+#: templates/safe_cdn/safe_channel_list.html:68
+msgid "中央鉴权"
+msgstr "中央鉴权"
+
+#: templates/safe_cdn/safe_channel_list.html:69
+msgid "融合客户账号/CMS客户ID"
+msgstr "融合客户账号/CMS客户ID"
+
+#: templates/safe_cdn/station_access_cdn.html:9
+#: templates/safe_cdn/station_move_cdn.html:9
+msgid "确认 WAF 回源 IP，已经添加到源站侧相应白名单"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:10
+#: templates/safe_cdn/station_move_cdn.html:10
+msgid "请在 CMS3 中查询最新的CDN上层节点IP列表。"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:11
+#: templates/safe_cdn/station_move_cdn.html:11
+#, fuzzy
+#| msgid "前往CMS3配置 "
+msgid "前往CMS3 "
+msgstr "前往CMS3配置"
+
+#: templates/safe_cdn/station_access_cdn.html:14
+msgid "确认CDN回源 IP，已经添加到 WAF 侧相应白名单"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:15
+msgid "请在 CMS3 中查询最新的WAF节点IP列表。"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:16
+#, fuzzy
+#| msgid "前往CMS3配置 "
+msgid "前往CMS3"
+msgstr "前往CMS3配置"
+
+#: templates/safe_cdn/station_access_cdn.html:18
+#: templates/safe_cdn/station_access_cdn.html:193
+msgid "确认 WAF 服务已经正常服务"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:20
+#: templates/safe_cdn/station_move_cdn.html:15
+msgid "确认频道"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:23
+#: templates/safe_cdn/station_move_cdn.html:18
+msgid "和"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:27
+#: templates/safe_cdn/station_move_cdn.html:21
+msgid "的CDN上层回源信息，已经从指向客户源站改为指向WAF"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:30
+#: templates/safe_cdn/station_move_cdn.html:24
+msgid "请在 CMS3 中，修改相应的回源配置。"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:31
+#: templates/safe_cdn/station_access_cdn.html:220
+#: templates/safe_cdn/station_move_cdn.html:25
+#: templates/safe_cdn/station_move_cdn.html:194
+#, fuzzy
+#| msgid "前往CMS3配置 "
+msgid "前往CMS3配置"
+msgstr "前往CMS3配置"
+
+#: templates/safe_cdn/station_access_cdn.html:39
+#: templates/safe_cdn/station_access_cdn.html:110
+#: templates/safe_cdn/station_move_cdn.html:33
+#: templates/safe_cdn/station_move_cdn.html:104
+msgid " WAF 回源地址"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:43
+#: templates/safe_cdn/station_access_cdn.html:114
+#: templates/safe_cdn/station_move_cdn.html:37
+#: templates/safe_cdn/station_move_cdn.html:108
+msgid "WAF 回源端口"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:184
+msgid "确认 WAF  IP，已经添加到上层相应白名单"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:185
+msgid "请在 HOPE 中查找WAF IP 列表。"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:186
+msgid "前往HOPE "
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:189
+msgid "确认边缘 IP，已经添加到 WAF 侧相应白名单"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:190
+msgid "请在 CMS3 中查询边缘IP列表。"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:191
+#, fuzzy
+#| msgid "前往CMS3配置 "
+msgid "前往CMS 3 "
+msgstr "前往CMS3配置"
+
+#: templates/safe_cdn/station_access_cdn.html:194
+msgid "调整上下层的X-Forwar-For字段，边缘开启，上层开启"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:195
+#: templates/safe_cdn/station_move_cdn.html:174
+msgid "在CMS中将分层配置的第1分层，由WAF的服务CNAME,改为原来的第1分层"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:197
+msgid "WAF服务CNAME为："
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:199
+#: templates/safe_cdn/station_access_cdn.html:201
+#: templates/safe_cdn/station_move_cdn.html:176
+msgid "的分层配置的第1分层，已经指向原来的第1分层"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:203
+#: templates/safe_cdn/station_move_cdn.html:177
+msgid "【参考】当前WAF的回源配置为"
+msgstr ""
+
+#: templates/safe_cdn/station_access_cdn.html:219
+#: templates/safe_cdn/station_move_cdn.html:193
+msgid "请在CMS3中，进行边缘回源WAF的配置。"
+msgstr ""
+
+#: templates/safe_cdn/statistics_cc.html:13
+#: templates/safe_cdn/statistics_cc.html:30
+msgid "近1小时"
+msgstr "近1小时"
+
+#: templates/safe_cdn/statistics_cc.html:25
+msgid "TOP URL"
+msgstr "TOP URL"
+
+#: templates/safe_cdn/statistics_cc.html:29
+msgid "近10分钟"
+msgstr "近10分钟"
+
+#: templates/safe_cdn/statistics_cc.html:34
+msgid "国内"
+msgstr "国内"
+
+#: templates/safe_cdn/statistics_cc.html:39
+msgid "省"
+msgstr "省"
+
+#: templates/safe_cdn/statistics_waf.html:21
+msgid "WAF拦截攻击数"
+msgstr "WAF拦截攻击数"
+
+#: templates/safe_cdn/statistics_waf.html:31
+msgid "攻击来源"
+msgstr "攻击来源"
+
+#: templates/safe_cdn/statistics_waf.html:44
+msgid "攻击方式"
+msgstr "攻击方式"
+
+#: templates/safe_cdn/statistics_waf.html:49
+msgid "Top5攻击类型说明"
+msgstr "Top5攻击类型说明"
+
+#: templates/safe_cdn/statistics_waf.html:56
+msgid "被攻击URL"
+msgstr "被攻击URL"
+
+#: templates/safe_cdn/statistics_waf.html:71
+msgid "拦截日志"
+msgstr "拦截日志"
+
+#: templates/safe_cdn/statistics_waf.html:83
+msgid "IP"
+msgstr "IP"
+
+#: templates/user/create_user_management.html:9
+#: templates/user/user_management_list.html:13
+#: templates/user_accounts/admin_parent_list_views.html:14
+#: templates/user_accounts/create_parent_user.html:9
+msgid "新建用户"
+msgstr "新建用户"
+
+#: templates/user/create_user_management.html:17
+#: templates/user_accounts/create_parent_user.html:17
+msgid "填写用户信息"
+msgstr ""
+
+#: templates/user/create_user_management.html:24
+#: templates/user/create_user_management.html:94
+#: templates/user/user_management_details.html:17
+#: templates/user_accounts/admin_parent_details_views.html:18
+#: templates/user_accounts/create_parent_user.html:24
+#: templates/user_accounts/create_parent_user.html:125
+msgid "用户信息"
+msgstr ""
+
+#: templates/user/create_user_management.html:29
+msgid "长度1-64个字符，允许输入大小写英文字母、数字或\"-\""
+msgstr "长度1-64个字符，允许输入大小写英文字母、数字或\"-\""
+
+#: templates/user/create_user_management.html:33
+msgid "邮箱"
+msgstr "邮箱"
+
+#: templates/user/create_user_management.html:39
+msgid "电话"
+msgstr ""
+
+#: templates/user/create_user_management.html:51
+#: templates/user_accounts/create_parent_user.html:71
+msgid "访问类型"
+msgstr ""
+
+#: templates/user/create_user_management.html:54
+#: templates/user_accounts/create_parent_user.html:74
+msgid "启用密钥，支持API编程访问"
+msgstr ""
+
+#: templates/user/create_user_management.html:58
+#: templates/user_accounts/create_parent_user.html:78
+msgid "启用密码，允许用户登录到控制台"
+msgstr ""
+
+#: templates/user/create_user_management.html:62
+#: templates/user/strategy_management_details.html:70
+#: templates/user/user_management_details.html:118
+#: templates/user_accounts/admin_parent_details_views.html:119
+#: templates/user_accounts/create_parent_user.html:82
+msgid "控制台密码"
+msgstr ""
+
+#: templates/user/create_user_management.html:68
+msgid "需要重置密码"
+msgstr ""
+
+#: templates/user/create_user_management.html:103
+#: templates/user/strategy.html:20
+msgid "策略名"
+msgstr ""
+
+#: templates/user/parent_create_perm_strategy_views.html:8
+#: templates/user/parent_get_perm_strategy_views.html:13
+msgid "新建策略"
+msgstr ""
+
+#: templates/user/parent_create_perm_strategy_views.html:16
+#: templates/user/strategy_management_details.html:19
+msgid "策略名称"
+msgstr ""
+
+#: templates/user/parent_create_perm_strategy_views.html:32
+msgid "添加策略内容"
+msgstr ""
+
+#: templates/user/parent_create_perm_strategy_views.html:39
+#: templates/user/parent_create_perm_strategy_views.html:74
+#: templates/user/strategy_management_details.html:49
+msgid "资源"
+msgstr ""
+
+#: templates/user/parent_create_perm_strategy_views.html:67
+msgid "选择服务"
+msgstr ""
+
+#: templates/user/parent_create_perm_strategy_views.html:69
+msgid "所有操作"
+msgstr ""
+
+#: templates/user/parent_create_perm_strategy_views.html:70
+msgid "特定操作"
+msgstr ""
+
+#: templates/user/parent_create_perm_strategy_views.html:71
+msgid "所有资源"
+msgstr ""
+
+#: templates/user/parent_create_perm_strategy_views.html:72
+msgid "特定资源"
+msgstr ""
+
+#: templates/user/parent_create_perm_strategy_views.html:75
+msgid "服务不能为空"
+msgstr ""
+
+#: templates/user/parent_create_perm_strategy_views.html:77
+msgid "操作名称不能为空"
+msgstr ""
+
+#: templates/user/parent_create_perm_strategy_views.html:78
+msgid "资源不能为空"
+msgstr ""
+
+#: templates/user/parent_get_perm_strategy_views.html:8
+#: templates/user/parent_get_perm_strategy_views.html:20
+msgid "策略管理"
+msgstr ""
+
+#: templates/user/strategy.html:4
+msgid "选择权限策略"
+msgstr ""
+
+#: templates/user/strategy.html:8
+msgid "筛选策略"
+msgstr ""
+
+#: templates/user/strategy.html:21
+msgid "已选择"
+msgstr ""
+
+#: templates/user/strategy_management_details.html:38
+msgid "策略内容"
+msgstr ""
+
+#: templates/user/strategy_management_details.html:41
+msgid "修改策略内容"
+msgstr ""
+
+#: templates/user/user_change_password.html:9
+msgid "修改密码"
+msgstr ""
+
+#: templates/user/user_change_password.html:16
+msgid "当前密码"
+msgstr ""
+
+#: templates/user/user_change_password.html:23
+#, fuzzy
+#| msgid "密码"
+msgid "新密码"
+msgstr "密码"
+
+#: templates/user/user_change_password.html:26
+msgid "6-20位数字、字母组合，区分大小写"
+msgstr ""
+
+#: templates/user/user_info_details.html:9
+msgid "账号信息"
+msgstr ""
+
+#: templates/user/user_info_details.html:17
+msgid "账号名称"
+msgstr ""
+
+#: templates/user/user_info_details.html:29
+msgid "最近登录时间"
+msgstr ""
+
+#: templates/user/user_management_details.html:29
+msgid "联系手机"
+msgstr ""
+
+#: templates/user/user_management_details.html:73
+#: templates/user_accounts/admin_parent_details_views.html:82
+msgid "登录管理"
+msgstr ""
+
+#: templates/user/user_management_details.html:74
+#: templates/user_accounts/admin_parent_details_views.html:83
+msgid "API密钥管理"
+msgstr ""
+
+#: templates/user/user_management_details.html:102
+#: templates/user_accounts/admin_parent_details_views.html:103
+msgid "上次登录时间"
+msgstr ""
+
+#: templates/user/user_management_details.html:106
+#: templates/user_accounts/admin_parent_details_views.html:107
+msgid "控制台登录"
+msgstr ""
+
+#: templates/user/user_management_details.html:125
+#: templates/user/user_secret_info_details.html:13
+#: templates/user_accounts/admin_parent_details_views.html:126
+msgid "新建密钥"
+msgstr ""
+
+#: templates/user/user_management_list.html:8
+msgid "用户管理"
+msgstr ""
+
+#: templates/user/user_management_list.html:36
+msgid "编辑权限"
+msgstr ""
+
+#: templates/user/user_secret_info_details.html:8
+msgid "访问密钥"
+msgstr ""
+
+#: templates/user_accounts/admin_bind_cms_parent.html:8
+msgid "CMS客户绑定关系"
+msgstr ""
+
+#: templates/user_accounts/admin_bind_cms_parent.html:14
+#, fuzzy
+#| msgid "创建绑定关系"
+msgid "创建绑定关系"
+msgstr "创建绑定关系"
+
+#: templates/user_accounts/admin_bind_cms_parent.html:21
+#, fuzzy
+#| msgid "CMS客户ID"
+msgid "请输入CMS客户ID"
+msgstr "CMS客户ID"
+
+#: templates/user_accounts/admin_bind_cms_parent.html:43
+#: templates/user_accounts/create_binding.html:114
+msgid "解绑"
+msgstr "解绑"
+
+#: templates/user_accounts/admin_parent_details_views.html:20
+msgid "客户账号"
+msgstr "客户账号"
+
+#: templates/user_accounts/admin_parent_details_views.html:29
+#: templates/user_accounts/create_binding.html:64
+#: templates/user_accounts/create_parent_user.html:33
+msgid "公司名称"
+msgstr ""
+
+#: templates/user_accounts/admin_parent_details_views.html:38
+#: templates/user_accounts/create_parent_user.html:39
+msgid "联系人"
+msgstr ""
+
+#: templates/user_accounts/admin_parent_details_views.html:47
+#: templates/user_accounts/create_parent_user.html:45
+msgid "联系电话"
+msgstr ""
+
+#: templates/user_accounts/admin_parent_list_views.html:8
+msgid "用户账号列表"
+msgstr "用户账号列表"
+
+#: templates/user_accounts/admin_parent_list_views.html:21
+#, fuzzy
+#| msgid "用户状态"
+msgid "选择用户状态"
+msgstr "用户状态"
+
+#: templates/user_accounts/admin_parent_list_views.html:29
+#, fuzzy
+#| msgid "用户类型"
+msgid "选择用户类型"
+msgstr "用户类型"
+
+#: templates/user_accounts/admin_parent_list_views.html:42
+msgid "Add account"
+msgstr ""
+
+#: templates/user_accounts/admin_parent_opt_log.html:7
+msgid "用户操作记录"
+msgstr ""
+
+#: templates/user_accounts/create_binding.html:12
+#, fuzzy
+#| msgid "创建绑定关系"
+msgid "创建CMS绑定关系"
+msgstr "创建绑定关系"
+
+#: templates/user_accounts/create_binding.html:22
+msgid "融合平台账号"
+msgstr ""
+
+#: templates/user_accounts/create_binding.html:37
+msgid "账号ID"
+msgstr ""
+
+#: templates/user_accounts/create_binding.html:42
+msgid "账号类型"
+msgstr ""
+
+#: templates/user_accounts/create_binding.html:76
+msgid "CMS账号"
+msgstr ""
+
+#: templates/user_accounts/create_binding.html:78
+#, fuzzy
+#| msgid "CMS客户ID"
+msgid "客户ID"
+msgstr "CMS客户ID"
+
+#: templates/user_accounts/create_binding.html:87
+msgid "Salesforce合同信息"
+msgstr ""
+
+#: templates/user_accounts/create_binding.html:88
+msgid "为使客户的CDN域名配置正常下发和计费，请录入合同编号及对应的产品名称"
+msgstr ""
+
+#: templates/user_accounts/create_binding.html:92
+msgid "合同编号"
+msgstr ""
+
+#: templates/user_accounts/create_binding.html:93
+msgid "产品名称"
+msgstr ""
+
+#: templates/user_accounts/create_binding.html:94
+msgid "合同开始日期"
+msgstr ""
+
+#: templates/user_accounts/create_binding.html:95
+msgid "合同结束日期"
+msgstr ""
+
+#: templates/user_accounts/create_binding.html:96
+msgid "合同状态"
+msgstr ""
+
+#: templates/user_accounts/create_binding.html:104
+msgid "新增合同信息"
+msgstr ""
+
+#: templates/user_accounts/create_parent_user.html:73
+msgid "为用户自动生成AccessKey"
+msgstr ""
+
+#: templates/user_accounts/create_parent_user.html:77
+msgid "控制台访问"
+msgstr ""
+
+#~ msgid "domain enable"
+#~ msgstr "开启"
+
+#~ msgid "WAF防御模式"
+#~ msgstr "WAF防御模式"

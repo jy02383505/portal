@@ -1,0 +1,39 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+<div class="mianbaoxie">
+    <a href="javascript:;">{% trans '安全CDN' %} > </a>
+    <a href="javascript:;">{% trans '安全CDN频道列表' %} > </a>
+    <a href="javascript:;">{% trans '安全服务配置' %}</a>
+</div>
+<div class="main main_in layui-form">
+    <div class="list">
+        <h5 class="mian_h5">{% trans "安全服务配置" %}</h5>
+        <h5 class="mian_h5" style="padding-left: 20px;">{% trans "青松WAF" %}</h5>
+        <h5 class="mian_h5" style="padding-left: 40px;">{% trans "Token" %}</h5>
+        <div class="layui-form-item">
+            <div class="layui-input-block service_provider" style="padding-left: 50px;">
+                <input type="radio" name="back_source_type" lay-filter="back_source_type" value="{% trans "默认" %}" title="{% trans "默认" %}" checked>
+            </div>
+            <div class="layui-input-block service_provider" style="padding-left: 50px;">
+                <input type="radio" name="back_source_type" lay-filter="back_source_type" value="{% trans "指定" %}" title="{% trans "指定" %}" >
+                <input type="text" id="appoint_token" style="margin:10px 0 0 25px;" name="appoint_token" lay-verify="appoint_token" autocomplete="off" placeholder="" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item user_add">
+            <label class="layui-form-label" style="width:75px;"></label>
+            <button class="checkBtn fl" lay-submit lay-filter="sure_service_con">{% trans '确定' %}</button>
+            <button class="checkBtn fl btn_cancel" lay-submit lay-filter="cancel_service_con">{% trans '取消' %}</button>
+        </div>
+    </div>
+</div>
+<script>
+
+    {#console.log('{{ res | safe }}')#}
+    document.write('<script src="{% static 'js/cms/safe_cdn_configure.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}
+
+
+

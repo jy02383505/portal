@@ -1,0 +1,44 @@
+{%  extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+<div class="con">
+    <div class="mianbaoxie">
+        <i class="layui-icon layui-icon-return fl"></i>
+        <a href="javascript:;">
+            {% trans '账号信息' %}
+        </a>
+	</div>
+    <!--查询头-->
+	<div class="main main_in layui-form">
+        <div class="list layui-form tab_border">
+            <h5 class="mian_h5">{% trans "基本信息" %}</h5>
+            <div class="layui-form-item">
+                <label class="layui-form-label">{% trans "账号名称" %}</label>
+                <div class="layui-input-block">
+                    {{ user.username }}
+                </div>
+            </div>
+            <div class="layui-form-item" >
+                <label class="layui-form-label" style="z-index:100;" id="que_tips"><i>*</i>{% trans "创建时间" %}</label>
+                <div class="layui-input-block">
+                    {{ user.date_joined|date:'Y-m-d H:i:s' }} (UTC+08:00)
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">{% trans "最近登录时间" %}</label>
+                <div class="layui-input-block">
+                    {{ user.last_login|date:'Y-m-d H:i:s' }} (UTC+08:00)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    if(lan == 'en'){
+        $('.layui-form-label').width(128)
+    }else{
+        $('.layui-form-label').width(95)
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block body_public %}
+<div class="con">
+
+    <div class="layui-tab layui-tab-card" lay-filter="test1" id="tab">
+      <div class="mianbaoxie layui-form">
+        <a href="javascript:;">{% trans '安全CDN' %} > </a>
+        <a href="javascript:;" id="domain">{{ domain.domain }}</a>
+    </div>
+    {% include "safe_cdn/base_tab.html" %}
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">
+            <div class="main" style="padding-top: 0;">
+                <div class="list">
+                    <div class="time_line" id="create_time_line" style="display: none;">
+                        <span class="line fl" style="left:0;width:30%;"></span>
+                        <ul class="line_ul fl">
+                            <li class="line_li fl active">
+                                <div>
+                                    <i class="layui-icon layui-icon-ok"></i>
+                                    <p id="waf_status">
+                                        {% trans "创建失败" %}
+                                    </p>
+                                </div>
+                                <p class="line_p">
+                                    <span class="line_span">
+                                        {% if status == 0 %}
+                                            <span style="width:50%;"></span>
+                                        {% elif status == 2 or status == 3 %}
+                                            <span style="width:100%;"></span>
+                                        {% else %}
+                                            <span style="width:50%;"></span>
+                                        {% endif %}
+
+                                    </span>
+                                </p>
+                            </li>
+                            {% if status == 3 %}
+                                <li class="line_li fl active">
+                                    <div>
+                                        <i class="layui-icon layui-icon-ok"></i>
+                                        <p>{% trans "已启用" %}</p>
+                                    </div>
+                                    <p class="line_p">
+                                        <span class="line_span"><span style="width:100%;"></span></span>
+                                    </p>
+                                </li>
+                                <li class="line_li fl active">
+                                    <div>
+                                        <i class="layui-icon layui-icon-ok"></i>
+                                        <p>{% trans "已接入" %}</p>
+                                    </div>
+                                    <p class="line_p">
+                                        <span class="line_span"></span>
+                                    </p>
+                                </li>
+                            {% elif  status == 2 %}
+                                <li class="line_li fl active">
+                                    <div>
+                                        <i class="layui-icon layui-icon-ok"></i>
+                                        <p>{% trans "已启用" %}</p>
+                                    </div>
+                                    <p class="line_p">
+                                        <span class="line_span"></span>
+                                    </p>
+                                </li>
+                                <li class="line_li fl">
+                                    <div>
+                                        <i class="layui-icon">03</i>
+                                        <p>{% trans "未接入" %}</p>
+                                    </div>
+                                    <p class="line_p">
+                                        <span class="line_span"></span>
+                                    </p>
+                                </li>
+                            {% else %}
+                                <li class="line_li fl">
+                                    <div>
+                                        <i class="layui-icon">02</i>
+                                        <p>{% trans "未启用" %}</p>
+                                    </div>
+                                    <p class="line_p">
+                                        <span class="line_span"></span>
+                                    </p>
+                                </li>
+                                <li class="line_li fl">
+                                    <div>
+                                        <i class="layui-icon">03</i>
+                                        <p>{% trans "未接入" %}</p>
+                                    </div>
+                                    <p class="line_p">
+                                        <span class="line_span"></span>
+                                    </p>
+                                </li>
+                            {% endif %}
+
+
+                        </ul>
+                        <span class="line fl" style="right:0;padding-left: 20px;width:20%;box-sizing: border-box"></span>
+                    </div>
+                    <div id="waf_fail" class="fail" style="display: none;">
+                        <img src="/static/image/create_fail.jpg" alt="">
+                        <p>{% trans "糟糕 ！WAF  创建失败！" %}<br>
+                        {% trans "请联系管理员！" %}</p>
+                    </div>
+                    <div id="waf_loading" class="fail" style="display: none;">
+                        <img src="/static/image/create.jpg" alt="">
+                        <p>{% trans "WAF  创建中..." %}<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+<script>
+    document.write(
+    '<script src="{% static 'js/cms/fail.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}

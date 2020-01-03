@@ -1,0 +1,182 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+<div class="con">
+    <div class="mianbaoxie">
+        <a href="javascript:;">
+            {% if refresh_type == undefined %}
+                {% trans '预加载' %}
+            {% else %}
+                {% trans '刷新' %}
+            {% endif %}
+        </a>
+	</div>
+   {% comment %} <div id="show_tip" style="display: none;border: 1px solid #b1ddca;height: 50px;background-color: #f2fcf8;margin: 0 20px 16px 20px;">
+        <img alt="nova portal" style="display: inline-block;margin-left: 20px;margin-right: 10px;" src="/media/image/right2.png" alt="">
+        <p style="display: inline-block;font-size: 14px;color: #a9d4c1;line-height: 50px;">{% trans 'Refresh success' %}</p>
+    </div>{% endcomment %}
+	<!--查询头-->
+    <div class="search layui-form pt_20">
+        {% if user.is_staff == True %}
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:auto;">{% trans 'user' %}</label>
+                <div class="layui-input-block" >
+                    <select name="username" lay-verify="username" lay-filter="username">
+                        <option value="">{% trans "请输入" %}</option>
+                        {% for user in user_list %}
+                            <option value="{{ user.id }}">{{ user.username }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        {% endif %}
+        {% if refresh_type != undefined %}
+            <div class="layui-form-item">
+                {% if not user_list  %}
+                    <label class="layui-form-label" style="width:auto;">{% trans '操作类型' %}</label>
+                {% else %}
+                    <label class="layui-form-label" style="width:auto;">{% trans '操作类型' %}</label>
+                {% endif %}
+
+                <div class="layui-input-block">
+                    {% for opt_type in refresh_type %}
+                        {% if opt_type.id == 'url' %}
+                            {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                                <input type="radio" name="opt_type" lay-filter="opt_type" id="{{ opt_type.id }}" value="{{ opt_type.id }}" title="File" />
+                            {% else %}
+                                <input type="radio" name="opt_type" lay-filter="opt_type" id="{{ opt_type.id }}" value="{{ opt_type.id }}" title="{% trans opt_type.name %}" />
+                            {% endifequal %}
+                        {% else %}
+                            <input type="radio" name="opt_type" lay-filter="opt_type" id="{{ opt_type.id }}" value="{{ opt_type.id }}" title="{% trans opt_type.name %}" />
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+        {% endif %}
+
+        <div class="layui-form-item">
+            {% if refresh_type != undefined %}
+                <label class="layui-form-label" style="width:auto;"></label>
+                <div class="layui-input-block" style="margin-left: 94px;">
+            {% else %}
+                <div class="layui-input-block" style="margin-left: 0px;">
+            {% endif %}
+
+                <textarea name="" class="layui-textarea lay_textarea" id="url_text_first" placeholder="{% trans '每行一个URL，带域名和协议头，一行一个，例如http://www.novacdn.com/a.html' %}" onblur="this.placeholder='{% trans "每行一个URL，带域名和协议头，一行一个，例如http://www.novacdn.com/a.html" %}'" onfocus="this.placeholder=''"></textarea>
+                <textarea name="" class="layui-textarea lay_textarea" id="url_text_last" style="display:none;" placeholder="{% trans '每行一个URL，带域名和协议头，一行一个，例如http://www.novacdn.com/' %}" onblur="this.placeholder='{% trans "每行一个URL，带域名和协议头，一行一个，例如http://www.novacdn.com/" %}'" onfocus="this.placeholder=''"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            {% if refresh_type != undefined %}
+                <label class="layui-form-label" style="width:auto;"></label>
+                <div class="layui-input-block" style="margin-left: 94px;">
+            {% else %}
+                <div class="layui-input-block" style="margin-left: 0px;">
+            {% endif %}
+                <button class="layui-btn layui-btn-blue" lay-submit lay-filter="lay_submit">{% trans '提交' %}</button>
+            </div>
+        </div>
+        {% comment %}<p>{% trans 'Remainder of the day' %}<span>100</span>{% trans 'strip' %}</p>{% endcomment %}
+    </div>
+	<div class="main">
+        <div class=" list" >
+            <div class="layui-form" style="position: relative;">
+                <div class="layui-form-item">
+                    {% if user.is_staff == True %}
+                        <div class="layui-inline">
+                            <label class="layui-form-label">{% trans "用户" %}</label>
+                            <div class="layui-input-inline">
+                                <select name="choice_user" lay-verify="choice_user" lay-filter="choice_user">
+                                    <option value="">{% trans "请选择" %}</option>
+                                    <option value="">{% trans "全部" %}</option>
+                                    {% for user in user_list %}
+                                        <option value="{{ user.id }}">{{ user.username }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="layui-inline">
+                        <label class="layui-form-label">URL</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="refresh_url" lay-verify="refresh_url" autocomplete="off" placeholder="{% trans "请输入" %}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">{% trans "选择日期" %}</label>
+                        <div class="layui-input-inline input-group">
+                            <input type="text" placeholder="{% trans "请选择日期" %}" style="width:208px;" class="form-control daterange data_time" name="code_data" id="code_data">
+                        </div>
+                    </div>
+                </div>
+                {% if refresh_type != undefined %}
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width:auto;">{% trans "操作类型" %}</label>
+                        <div class="layui-input-inline" style="width:auto;">
+                            <input type="radio" name="opt_type" lay-filter="opt_type" value="" title="{% trans "所有" %}" />
+                            {% for opt_type in refresh_type %}
+                                {% if opt_type.id == 'url' %}
+                                    {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                                        <input type="radio" name="opt_type" lay-filter="opt_type" id="{{ opt_type.id }}" value="{{ opt_type.id }}" title="File" />
+                                    {% else %}
+                                        <input type="radio" name="opt_type" lay-filter="opt_type" id="{{ opt_type.id }}" value="{{ opt_type.id }}" title="{% trans opt_type.name %}" />
+                                    {% endifequal %}
+                                {% else %}
+                                    <input type="radio" name="opt_type" lay-filter="opt_type" id="{{ opt_type.id }}" value="{{ opt_type.id }}" title="{% trans opt_type.name %}" />
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:auto;">{% trans "状态" %}</label>
+                    <div class="layui-input-inline">
+                        <select name="lay_status" lay-verify="lay_status" lay-filter="lay_status">
+                            <option value="">{% trans "请选择" %}</option>
+                            <option value="">{% trans "全部" %}</option>
+                        {% if refresh_type == undefined %}
+                            {% for preload_status in preload_status %}
+                                <option value="{{ preload_status.id }}">{% trans preload_status.name %}</option>
+                            {% endfor %}
+                        {% else %}
+                            {% for refresh_status in refresh_status %}
+                                <option value="{{ refresh_status.id }}">{% trans refresh_status.name %}</option>
+                            {% endfor %}
+                        {% endif %}
+
+                        </select>
+                    </div>
+                    <button class="layui-btn layui-btn-blue fr layui-query" lay-submit lay-filter="lay_query">{% trans '查询' %}</button>
+                </div>
+            </div>
+            <div class="conlist refresh_list" style="min-height: 250px;">
+{#                <button class="checkBtn addbtn fl" 　id="reset_task" onclick="reset()">{% trans 'Reset task' %}</button>#}
+                <table id="lay_table" class="layui-hide" lay-filter="lay_table">
+
+                </table>
+                <div id="page"></div>
+            </div>
+
+	    </div>
+    </div>
+</div>
+<script type="text/html" id="toolbar_table">
+    <div class="layui-btn-container layui_button">
+        <button class="layui-btn" lay-event="lay_reset">{% trans '重置任务' %}</button>
+    </div>
+</script>
+<script type="text/javascript">
+    refresh_type={{ refresh_type | safe }}
+    user_list={{ user_list | safe }}
+    preload_status={{ preload_status | safe }}
+    refresh_status={{ refresh_status | safe }}
+   {% comment %} console.log(refresh_status)
+    console.log(preload_status){% endcomment %}
+    document.write(
+        '<script src="{% static 'js/cdn/admin_refresh.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}
+

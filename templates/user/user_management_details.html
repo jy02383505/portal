@@ -1,0 +1,161 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+
+<div class="con">
+    <div class="mianbaoxie">
+        <a href="javascript:;">
+            {% trans user.username %}
+        </a>
+	</div>
+    <!--查询头-->
+    <div class="search">
+        <div class="search_in layui-form" >
+            <!--lay_first-->
+            <div class="layui-form" id="form_details">
+                <h5 class="mian_h5">{% trans "用户信息" %} <a class="a_click" id="edit" href="javascript:;"> {% trans "编辑" %}</a></h5>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "用户名" %}</label>
+                    <div class="layui-input-block" id="username">{% trans user.username %}</div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "创建时间" %}</label>
+                    <div class="layui-input-block">
+                       {{ user.date_joined }}
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "联系手机" %}</label>
+                    <div class="layui-input-block user_details">
+                       {% trans user.mobile %}
+                    </div>
+                    <div class="layui-input-block user_add">
+                      <input id="mobile" type="text" name="mobile"  value="{% trans user.mobile %}" lay-verify="mobile" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "联系邮箱" %}</label>
+                    <div class="layui-input-block user_details">
+                       {% trans user.email %}
+                    </div>
+                    <div class="layui-input-block user_add">
+                      <input id="email" type="text" name="email"  value="{% trans user.email %}" lay-verify="email" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "备注" %}</label>
+                    <div class="layui-input-block user_details">
+                       {% trans user.remark %}
+                    </div>
+                    <div class="layui-input-block user_add">
+                      <input id="remark" type="text" name="remark"  value="{% trans user.remark %}" lay-verify="remark" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item user_add">
+                    <label class="layui-form-label"></label>
+                    <div class="layui-input-block">
+                        <button class="checkBtn fl" id="user_sure" onclick="user_sure()">{% trans '确定' %}</button>
+                        <button class="checkBtn fl btn_cancel" id="user_cancel" onclick="user_cancel()">{% trans '取消' %}</button>
+                    </div>
+                </div>
+            </div>
+            <!--lay_first-->
+        </div>
+    </div>
+    <div class="main">
+        <div class="list">
+            <!--lay_second-->
+            <div class="layui-form" id="lay_authority">
+                <div class="layui-tab">
+                  <ul class="layui-tab-title">
+                    <li class="layui-this">{% trans "操作权限" %}</li>
+                    <li>{% trans "登录管理" %}</li>
+                    <li>{% trans "API密钥管理" %}</li>
+                  </ul>
+                  <div class="layui-tab-content" style="padding:10px 0;">
+                    <div class="layui-tab-item layui-show">
+                        <button class="checkBtn" id="add_operation" onclick="add_operation()">{% trans '添加权限策略' %}</button>
+                        <table class="layui-table" id="permissions_table"  lay-filter="add_permissions_table">
+                            <thead>
+                                <tr>
+                                  <th lay-data="{field:'services'}">策略名</th>
+                                  <th lay-data="{field:'operation_name'}">策略类型</th>
+                                  <th lay-data="{field:'city',toolbar: '#list_button'}">操作</th>
+                                </tr>
+                            </thead>
+                             <tbody id="server_tbody">
+                                 {% for user_perm in user_perm_strategy_list %}
+                                     <tr id="{{ user_perm.id }}">
+                                        <td class="server_td">{{ user_perm.name }}</td>
+                                        <td class="server_td">{{ user_perm.strategy_type_name }}</td>
+                                        <td class="server_td">
+                                            <a class="layui-btn layui-btn-danger layui-btn-xs del" lay-event="del">{% trans "删除" %}</a>
+                                        </td>
+                                     </tr>
+                                 {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="layui-tab-item">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">{% trans "上次登录时间" %}</label>
+                            <label class="layui-form-label user_details">{{ user.parent_username }}</label>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">{% trans "控制台登录" %}</label>
+                            <div class="layui-input-block">
+
+                                {% if user.active_type == '启用' %}
+                                    <input type="checkbox" name="close" lay-skin="switch" lay-filter="switch_login" checked lay-text="ON|OFF">
+                                {% else %}
+                                    <input type="checkbox" name="close" lay-skin="switch" lay-filter="switch_login" lay-text="ON|OFF">
+                                {% endif %}
+
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">{% trans "控制台密码" %}</label>
+                            <div class="layui-input-block a_click" id="reset_password">
+                              {% trans "重置密码" %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item">
+                        <button class="checkBtn" id="add_operation" onclick="add_operation()">{% trans '新建密钥' %}</button>
+                        <table class="layui-table" id="permissions_table"  lay-filter="add_permissions_table">
+                            <thead>
+                                <tr>
+                                  <th lay-data="{field:'services'}">Access Key</th>
+                                  <th lay-data="{field:'operation_name'}">Secret Key</th>
+                                    <th lay-data="{field:'operation_name'}">{% trans "创建时间" %}</th>
+                                    <th lay-data="{field:'operation_name'}">{% trans "状态" %}</th>
+                                    <th lay-data="{field:'operation_name'}">{% trans "类型" %}</th>
+
+                                  <th lay-data="{field:'city',toolbar: '#list_button'}">{% trans "操作" %}</th>
+                                </tr>
+                            </thead>
+                             <tbody id="server_tbody">
+
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!--lay_second-->
+        </div>
+    </div>
+</div>
+{% include 'user/strategy.html' %}
+<script>
+
+    perm_strategy_list={{ perm_strategy_list | safe }};
+    user_perm={{ user_perm_strategy_list | safe }};
+    strategy_type_dict={{ strategy_type_dict | safe }};
+    document.write('<script src="{% static 'js/user/strategy.js' %}?v='+Math.random()+'"><\/script>'+
+        '<script src="{% static 'js/user/user_details.js' %}?v='+Math.random()+'"><\/script>');
+
+</script>
+{% endblock %}
+

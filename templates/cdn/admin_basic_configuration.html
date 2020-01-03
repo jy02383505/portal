@@ -1,0 +1,167 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="main main_in layui-form">
+    <div class="list layui-form tab_border">
+
+        <h5 class="mian_h5">{% trans "基本信息" %}</h5>
+        {% if user.is_staff == True %}
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:95px;">{% trans "用户" %}</label>
+                <div class="layui-input-block" >{{ domain.user.username }}</div>
+                <div class="layui-input-block" style="display: none;" id="user_id">{{ domain.user.id }}</div>
+            </div>
+        {% else %}
+            <div class="layui-input-block" style="display: none;" id="user_id"></div>
+        {% endif %}
+
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:95px;">{% trans "加速域名" %}</label>
+            <div class="layui-input-block" id="domain">{{ domain.domain }}</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:95px;">{% trans "创建时间" %}</label>
+            <div class="layui-input-block">{{ domain.create_time }}</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:95px;">{% trans "CNAME" %}</label>
+            <div class="layui-input-block">{{ domain.cname }}</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:95px;">{% trans "加速类型" %}</label>
+            <div class="layui-input-block">{% trans domain.cdn_type %}</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:95px;">{% trans "协议类型" %}</label>
+            <div class="layui-input-block">{% trans domain.protocol %}</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:95px;">{% trans "状态" %}</label>
+            <div class="layui-input-block" id="domain_status">{% trans domain.status %}</div>
+        </div>
+    </div>
+    <div class="list layui-form lay_configure">
+        <h5 class="mian_h5">
+            {% trans "源站信息" %}
+        {% if 'admin_cdn_create_domain' in user_perm or 'client_cdn_create_domain' in user_perm %}
+            {% if domain.status == '已启动' %}
+                <button class="layui-btn layui-btn-xs conf_edit" style="margin-left:20px;" lay-submit lay-filter="https_edit">{% trans '编辑' %}</button>
+            {% else %}
+                <button class="layui-btn layui-btn-xs conf_edit layui-btn-gray" disabled style="margin-left:20px;" lay-submit lay-filter="https_edit">{% trans '编辑' %}</button>
+            {% endif %}
+        {% endif %}
+        </h5>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:95px;">{% trans "回源方式" %}</label>
+            <div class="layui-input-block user_details" id="src_type">{% trans domain.src_type %}</div>
+            <div class="layui-input-block user_add">
+                {% for src_type in src_type %}
+                    {% if domain.src_type == src_type.name %}
+                        <input type="radio" name="src_type" checked lay-filter="src_type" id="{{ src_type.id }}" value="{{ src_type.id }}" title="{% trans src_type.name  %}">
+                    {% else %}
+                        <input type="radio" name="src_type" lay-filter="src_type" id="{{ src_type.id }}" value="{{ src_type.id }}" title="{% trans src_type.name  %}">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:95px;">{% trans "源站地址" %}</label>
+            <div class="layui-input-block user_details" id="src_type_details">{{ domain.src_value }}</div>
+            <div class="layui-input-block user_add">
+                {% if domain.src_type == 'IP回源' %}
+                    <input type="text" id="src_type_input" value="" style="display: none;" name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input">
+                    <textarea id="src_type_text" placeholder=""  class="layui-textarea">{{ domain.src_value }}</textarea>
+                {% else %}
+                    <input type="text" id="src_type_input"  value="{{ domain.src_value }}" name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input">
+                    <textarea id="src_type_text" placeholder=""  style="display: none;" class="layui-textarea"></textarea>
+                {% endif %}
+
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:95px;">{% trans "备份源站类型" %}</label>
+            <div class="layui-input-block user_details" id="src_back_type">
+{#                {% trans domain.src_back_type %}#}
+                {% if not domain.src_back_type %}
+                    {% trans "无" %}
+                {% else %}
+                    {% trans domain.src_back_type %}
+                {% endif %}
+            </div>
+            <div class="layui-input-block user_add">
+                {% for src_back_type in src_back_type %}
+                    {% if domain.src_back_type == src_back_type.name %}
+                        <input type="radio" checked data-check="true" name="src_back_type" lay-filter="src_back_type" id="{{ src_back_type.id }}" value="{{ src_back_type.id }}" title="{% trans src_back_type.name %}">
+                    {% else %}
+                        <input type="radio" name="src_back_type" data-check="false" lay-filter="src_back_type" id="{{ src_back_type.id }}" value="{{ src_back_type.id }}" title="{% trans src_back_type.name %}">
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:95px;">{% trans "备份源站地址" %}</label>
+            <div class="layui-input-block user_details" id="src_back_details">
+                {% if not domain.src_back_value %}
+                    {% trans "无" %}
+                {% else %}
+                    {% trans domain.src_back_value %}
+                {% endif %}
+
+            </div>
+            <div class="layui-input-block user_add">
+                {% if domain.src_back_type == 'IP' %}
+                    <input type="text" id="src_back_input" style="display: none;"  name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input">
+                    <textarea id="src_back_text" placeholder="" class="layui-textarea">{{ domain.src_back_value }}</textarea>
+                {% else %}
+                    <input type="text" id="src_back_input" name="title" value="{{ domain.src_back_value }}" lay-verify="title" autocomplete="off" placeholder="" class="layui-input">
+                    <textarea id="src_back_text" placeholder="" style="display: none;" class="layui-textarea"></textarea>
+                {% endif %}
+
+            </div>
+        </div>
+        <div class="layui-form-item" >
+            <label class="layui-form-label" style="width:95px;z-index:100;" id="que_tips">{% trans "回源host" %}
+                <span class="hover_span">
+                    <i class="layui-icon layui-icon-help" style=""></i>
+                    <span class="remarks_span">{% trans "回源host是CDN回源到源站时的访问域名，默认回源host是您的加速域名" %}</span>
+                </span>
+            </label>
+            <div class="layui-input-block user_details">
+                {% if domain.domain == domain.src_host %}
+                    {% trans "默认" %}
+                {% else %}
+                    {% trans "自定义" %}
+                {% endif %}
+            </div>
+            <div class="layui-input-block user_add">
+                {% if domain.domain == domain.src_host %}
+                    <input type="radio" name="source_host_type" checked lay-filter="source_host_type" value="0" title="{% trans "默认" %}">
+                    <input type="radio" name="source_host_type" lay-filter="source_host_type" value="1" title="{% trans "自定义" %}">
+                {% else %}
+                    <input type="radio" name="source_host_type" lay-filter="source_host_type" value="0" title="{% trans "默认" %}">
+                    <input type="radio" name="source_host_type" checked lay-filter="source_host_type" value="1" title="{% trans "自定义" %}">
+                {% endif %}
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:95px;"></label>
+            <div class="layui-input-block user_details">{{ domain.src_host }}</div>
+            <div class="layui-input-block user_add">
+                {% if domain.domain == domain.src_host %}
+                    <input type="text" class="layui-input layui-disabled" disabled="" name="domain_src_host" value="{{ domain.src_host }}" lay-verify="domain_src_host" autocomplete="off" placeholder="" >
+                {% else %}
+                    <input type="text" class="layui-input" name="domain_src_host" value="{{ domain.src_host }}" lay-verify="domain_src_host" autocomplete="off" placeholder="" >
+                {% endif %}
+
+            </div>
+        </div>
+        <div class="list layui-form user_add">
+            <div class="layui-form-item">
+                <button class="layui-btn layui-btn-blue" id="lay_submit" lay-submit lay-filter="lay_submit_basic">{% trans '确定' %}</button>
+                <button class="layui-btn layui-btn-blue lay_cancel" lay-submit lay-filter="lay_cancel_basic">{% trans '取消' %}</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>

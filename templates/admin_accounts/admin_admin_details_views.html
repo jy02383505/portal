@@ -1,0 +1,77 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+<div class="con">
+    <div class="mianbaoxie">
+        <a href="javascript:;">
+            {% trans client.username %}
+        </a>
+	</div>
+
+
+    <div class="main main_in">
+        <div class="list">
+            <div class="layui-form" id="form_details">
+                <h5 class="mian_h5">{% trans "管理员信息" %}</h5>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "管理员" %}</label>
+                    <div class="layui-input-block" id="username">{% trans client.username %}</div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "创建时间" %}</label>
+                    <div class="layui-input-block">
+                        {{ client.date_joined }}
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "账号状态" %}</label>
+                    <div class="layui-input-block">
+                        <select name="" id="select_status" lay-filter="select_status">
+                            {% if client.is_active %}
+                                <option value="1" selected>{% trans '启用' %}</option>
+                                <option value="0">{% trans '禁用' %}</option>
+                            {% else %}
+                                <option value="1">{% trans '启用' %}</option>
+                                <option value="0" selected>{% trans '禁用' %}</option>
+                            {% endif %}
+
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "角色" %}</label>
+                    <div class="layui-input-block">
+                        <select name="" id="role" lay-filter="role">
+                            {% for user_type in group_type %}
+                                {% if user_type.name == client.group_name  %}
+                                    <option id="{{ user_type.id }}" value="{{ user_type.group_id }}" selected>{% trans user_type.name %}</option>
+                                {% else %}
+                                    <option id="{{ user_type.id }}" value="{{ user_type.group_id }}">{% trans user_type.name %}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"></label>
+                    <div class="layui-input-block">
+                        <button class="layui-btn layui-btn-blue" lay-submit lay-filter="user_sure">{% trans '确定' %}</button>
+                        <button class="layui-btn" lay-submit lay-filter="user_cancel">{% trans '取消' %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    if(lan == 'en'){
+        $('.layui-form-label').width(100)
+    }
+    perm={{ group_type | safe }};
+    document.write(
+        '<script src="{% static 'js/accounts/admin_details.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}
+

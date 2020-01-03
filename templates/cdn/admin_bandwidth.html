@@ -1,0 +1,74 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="main main_alarm layui-form">
+    <div class="list top_border">
+        <h6 class="mian_h6" style="height:40px;line-height: 30px;">
+            {% if not user_list %}
+                {% trans "CDN带宽趋势" %}
+                <div class="layui-inline fr" id="overview_time" style="display: none;">
+                    <select name="client_time" id="client_time" lay-verify="choice_time" lay-filter="choice_time">
+                        <option value="24">{% trans "最近24小时" %}</option>
+                        <option value="today">{% trans "今天" %}</option>
+                        <option value="yesterday">{% trans "昨天" %}</option>
+                        <option value="seven">{% trans "近7天" %}</option>
+                        <option value="this_month" selected>{% trans "本月" %}</option>
+                    </select>
+                    <input style="display: none;" type="text" style="border: 0;" class="form-control daterange data_time" name="code_data" id="code_data">
+                </div>
+            {% else %}
+                {% trans "带宽统计" %}
+            {% endif %}
+        </h6>
+        <div class="layui-container">
+           <div class="layui-row layui-col-space20">
+            <div class="layui-col-xs3">
+              <div class="grid-demo">
+                  <span>{% trans "峰值带宽" %}</span>
+                  <p><a class="blue" id="max_cdn" href="javascript:;">0.00</a><span class="cdn_sta_company" id="max_cdn_company">Mbps</span></p>
+              </div>
+            </div>
+            <div class="layui-col-xs3">
+              <div class="grid-demo">
+                  <span>{% trans "总流量" %}</span>
+                  <p><a class="blue" id="sum_cdn_flux" href="javascript:;">0.00</a><span class="cdn_sta_company" id="cdn_flux_company">MB</span> </p>
+              </div>
+            </div>
+            <div class="layui-col-xs3">
+              <div class="grid-demo">
+                  <span>{% trans "回源流量" %}</span>
+                  <p><a class="blue" id="sum_src_flux" href="javascript:;">0.00</a> <span class="cdn_sta_company" id="sum_src_company">MB</span></p>
+              </div>
+            </div>
+            <div class="layui-col-xs3">
+              <div class="grid-demo">
+                  <span class="que_tips">
+                      {% trans "流量命中率" %}
+                      <span class="hover_span" style="display: inline-block;">
+                            <i class="layui-icon layui-icon-help" style=""></i>
+                            <span class="remarks_span remarks_top" style="display: none;width:160px;">{% trans "计算方式：（HIT请求数/总请求数）*100%" %}</span>
+                      </span>
+                  </span>
+
+                  <p><a class="blue" id="request_ratio" href="javascript:;">0.00</a> %</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="band_echart" style="width:100%;height:350px;"></div>
+    </div>
+    <div class="list layui-form top_border">
+        <h6 class="mian_h6">{% trans "详细带宽数据" %}</h6>
+        <div class="layui-tab-content">
+            <i class="layui-icon layui-icon-export" style="top:-44px;display: block" id="bandwidth_data_upload"></i>
+            <div class="layui-tab-item layui-show default_div">
+                <table id="lay_table" class="layui-hide" lay-filter="lay_table">
+                </table>
+{#                <div id="page"></div>#}
+{#                <div style="height:300px;"></div>#}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

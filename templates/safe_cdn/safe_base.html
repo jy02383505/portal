@@ -1,0 +1,66 @@
+{% load i18n %}
+{% load staticfiles %}
+<ul class="layui-tab-title" id="comprehensive">
+    {% comment %}    <li class="layui-nav-item">
+            <a href="javascript:;"><img src="" class="layui-nav-img">{% trans "综合" %}</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;"><img src="" class="layui-nav-img">{% trans "CDN" %}</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;"><img src="" class="layui-nav-img">{% trans "中央鉴权" %}</a>
+        </li>
+        <li class="layui-nav-item layui-this">
+            <a href="javascript:;" id="cc.html"><img src="" class="layui-nav-img">{% trans "CC" %}</a>
+        </li>{% endcomment %}
+        <li class="layui-nav-item layui-this">
+            <a href="javascript:;" id=""><img src="" class="layui-nav-img">{% trans "WAF" %}</a>
+        </li>
+  </ul>
+<script type="text/html" id="list_button">
+</script>
+<script>
+    internation_trans.intercept_time='{% trans "拦截时间" %}';
+    internation_trans.results='{% trans "处理结果" %}';
+    internation_trans.attack_status='{% trans "攻击类型" %}';
+    internation_trans.attack_pro='{% trans "攻击百分比" %}';
+    internation_trans.attack_number='{% trans "攻击数" %}';
+    internation_trans.log_details='{% trans "日志详情" %}';
+    internation_trans.top_five_url="{% trans "Top5被攻击URL" %}";
+    internation_trans.top_ten_url='{% trans "TOP10攻击IP" %}';
+    internation_trans.number_of_attacks='{% trans "攻击次数（单位：次）" %}';
+    internation_trans.attack_status='{% trans "攻击类型分布" %}';
+    internation_trans.inter_rule_id='{% trans "规则ID" %}';
+    internation_trans.inter_rule_info='{% trans "规则名" %}';
+    internation_trans.inter_rule_status='{% trans "规则开关" %}';
+    internation_trans.inter_content='{% trans "匹配内容" %}';
+    internation_trans.inter_action='{% trans "后续动作" %}';
+    internation_trans.inter_interruption='{% trans "直接阻断" %}';
+    internation_trans.inter_release='{% trans "直接放行" %}';
+    internation_trans.turn_on_all_default_rules='{% trans "确定开启全部默认规则？" %}';
+    internation_trans.turn_off_all_default_rules='{% trans "确定关闭全部默认规则？" %}';
+    internation_trans.turn_on_default_rules='{% trans "确定开启默认规则？" %}';
+    internation_trans.turn_off_default_rules='{% trans "确定关闭默认规则？" %}';
+    internation_trans.turn_on_custom_rules='{% trans "确定开启自定义规则？" %}';
+    internation_trans.turn_off_custom_rules='{% trans "确定关闭自定义规则？" %}';
+    var lan=parent.document.getElementById('lang').value;
+    if(lan == 'zh'){
+    }else{
+        internation_trans.top_five_url="TOP5 URL's attacked";
+        internation_trans.top_ten_url='TOP 10 attack IP';
+        internation_trans.open_https='Enable https';
+        internation_trans.close_https='Https not enabled';
+        internation_trans.turn_on_all_default_rules='Are you sure you want to turn on all default rules?';
+        internation_trans.turn_off_all_default_rules='Are you sure you want to turn off all default rules?';
+        internation_trans.turn_on_default_rules='Are you sure you want to open default rules?';
+        internation_trans.turn_off_default_rules='Are you sure you want to close default rules?';
+        internation_trans.turn_on_custom_rules='Are you sure you want to open custom rules?';
+        internation_trans.turn_off_custom_rules='Are you sure you want to close the custom rule?';
+        internation_trans.number_of_attacks="Number of attacks (Unit: times)"
+    }
+    document.write('<script src="{% static 'layui/layui.js' %}"><\/script>'+
+        '<script src="{% static 'js/cms/safe_base.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+
+
+

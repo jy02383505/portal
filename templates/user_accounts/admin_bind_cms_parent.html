@@ -1,0 +1,55 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+
+<div class="con">
+    <div class="mianbaoxie">
+        <a href="javascript:;">{% trans 'CMS客户绑定关系' %}</a>
+	</div>
+    <!--查询头-->
+	<div class="search">
+        <div class="search_in layui-form" >
+            <div class="fl position">
+                <button class="checkBtn" style="margin:0;" lay-submit lay-filter="create_binding_cms">{% trans '创建绑定关系' %}</button>
+            </div>
+            <div class="fl layui_user" style="position:relative;">
+                <input type="text" class="search_input" id="customer_account" name="customer_account" lay-verify="customer_account" autocomplete="off" placeholder="{% trans '请输入用户名' %}">
+                <span class="search_user"></span>
+            </div>
+            <div class="fl layui_user" style="position:relative;">
+                <input type="text" class="search_input" id="cms_username" name="cms_username" lay-verify="cms_username" autocomplete="off" placeholder="{% trans '请输入CMS客户ID' %}">
+                <span class="search_user"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+	<!--显示列表-->
+        <div class="list">
+            <div class="conlist">
+
+                <table id="accounts_list" class="layui-hide" lay-filter="parse-table-demo">
+
+                </table>
+                <div id="page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="hid_input"  value="Cookie" id="hide" name="Timestamp" />
+<script type="text/html" id="list_button">
+  <a class="layui-btn layui-btn-xs" lay-event="details">{% trans "详情" %}</a>
+  <a class="layui-btn layui-btn-xs" lay-event="untying">{% trans "解绑" %}</a>
+</script>
+<script>
+document.write('<script src="{% static 'js/accounts/cms_binding _list.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}
+
+
+
+
+
+
+

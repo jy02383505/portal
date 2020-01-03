@@ -1,0 +1,85 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="main main_in layui-form lay_configure">
+    <div class="list https_configuration">
+        <h5 class="mian_h5">{% trans "HTTPS设置" %}
+            {% if 'client_cdn_create_domain' in user_perm or 'admin_cdn_create_domain' in user_perm  %}
+                {% if domain.status == '已启动' %}
+                    <button class="layui-btn layui-btn-xs conf_edit" style="margin-left:20px;" lay-submit lay-filter="https_edit">{% trans '编辑' %}</button>
+                {% else %}
+                    <button class="layui-btn layui-btn-xs conf_edit layui-btn-gray" disabled style="margin-left:20px;" lay-submit lay-filter="https_edit">{% trans '编辑' %}</button>
+                {% endif %}
+            {% endif %}
+        </h5>
+        <h6 class="mian_h6">{% trans "证书信息" %}</h6>
+        <div class="user_details">
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:95px;">{% trans "证书名称" %}</label>
+                <div class="layui-input-block" id="cert_name">{{ domain.cert_info.cert_name }}</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:95px;">{% trans "证书来源" %}</label>
+                <div class="layui-input-block">
+                    {% for status in cert_from %}
+                        {% if domain.cert_info.cert_from == status.id %}
+                            {% trans status.name %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:95px;">{% trans "到期时间" %}</label>
+                <div class="layui-input-block">{{ domain.cert_info.end_time }}</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:95px;">{% trans "证书状态" %}</label>
+                <div class="layui-input-block">
+                    {% for cert in cert_status %}
+                        {% for id  in cert.id %}
+                            {% if  id == domain.cert_info.status %}
+                                {% trans cert.name %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:95px;">{% trans "证书备注" %}</label>
+                <div class="layui-input-block">{{ domain.cert_info.cert_name }}</div>
+            </div>
+        </div>
+        <div class="user_add">
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:95px;">{% trans "选择证书" %}</label>
+                <div class="layui-input-block ">
+                    <select name="cert" lay-verify="cert" lay-filter="cert" lay-search="">
+                        <option value="">{% trans "请选择" %}</option>
+                        {% for cert in cert_list %}
+                            {% if domain.cert_info.cert_name == cert %}
+                                <option selected value="{{ cert }}">{{ cert }}</option>
+                            {% else %}
+                                <option value="{{ cert }}">{{ cert }}</option>
+                            {% endif %}
+
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="layui-input-block ">
+                    <p class="title_p">
+                        {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                      Click the <a href="javascript:;" class="blue ssl_cert">SSL certificate</a> management to upload.
+                    {% else %}
+                        点击<a href="javascript:;" class="blue ssl_cert">SSL证书管理</a>查看托管证书详情
+                    {% endifequal %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list layui-form user_add">
+        <div class="layui-form-item">
+            <button class="layui-btn layui-btn-blue lay_submit" lay-submit lay-filter="lay_submit_conf_cert">{% trans '确定' %}</button>
+            <button class="layui-btn layui-btn-blue lay_cancel" lay-submit lay-filter="lay_cancel_cert">{% trans '取消' %}</button>
+        </div>
+    </div>
+</div>

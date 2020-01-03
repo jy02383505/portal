@@ -1,0 +1,213 @@
+{% load i18n %}
+{% load staticfiles %}
+{% if access_type == 1 %}
+    {% comment %}上层>waf>源站   接入cdn{% endcomment %}
+    <div id="cms_access">
+        <div class="access_in">
+            <p class="move_cdn_txt">
+            1、<input type="checkbox" name="sure_cdn" lay-skin="primary" title="" >{% trans "确认 WAF 回源 IP，已经添加到源站侧相应白名单" %}</p>
+            <p class="waf_txt" style="padding-top:10px;">{% trans "请在 CMS3 中查询最新的CDN上层节点IP列表。" %}</p>
+            <p class="waf_txt"><a class="blue" style="text-decoration: underline;" target="_blank" href="http://cms3.chinacache.com" >{% trans "前往CMS3" %}</a></p>
+        </div>
+        <div class="access_in">
+            <p class="move_cdn_txt">2、<input type="checkbox" name="sure_cdn" lay-skin="primary" title="" >{% trans "确认CDN回源 IP，已经添加到 WAF 侧相应白名单" %}</p>
+            <p class="waf_txt" style="padding-top:10px;">{% trans "请在 CMS3 中查询最新的WAF节点IP列表。" %}</p>
+            <p class="waf_txt"><a class="blue" style="text-decoration: underline;" target="_blank" href="http://cms3.chinacache.com" >{% trans "前往CMS3" %}</a></p>
+        </div>
+        <p class="move_cdn_txt">3、<input type="checkbox" name="sure_cdn" lay-skin="primary" title="" >{% trans "确认 WAF 服务已经正常服务" %}</p>
+        <p class="move_cdn_txt">4、<input type="checkbox" name="sure_cdn" lay-skin="primary" title="" >
+            {% trans "确认频道" %}
+            <a class="blue" id="domain_status" href="javascript:;" >{{ access_point_cname }}</a>
+            {% if waf_conf.ssl_status == 1 %}
+                {% trans "和" %}
+                <a class="blue" id="domain_status" href="javascript:;" >{{ access_point_cname }}</a>
+            {% endif %}
+
+            {% trans "的CDN上层回源信息，已经从指向客户源站改为指向WAF" %}
+            </p>
+        <div class="move_infor">
+            <p class="waf_txt">{% trans "请在 CMS3 中，修改相应的回源配置。" %}</p>
+            <p class="waf_txt"><a class="blue" style="text-decoration: underline;" target="_blank" href="http://cms3.chinacache.com" >{% trans "前往CMS3配置" %}</a></p>
+            {% comment %} http {% endcomment %}
+            <div class="conf_channel">
+                <div class="conf_http">
+                    <p class="waf_txt"><a class="blue" id="domain_status" href="javascript:;" >{{ domain.domain }}</a></p>
+                    <table class="layui-table" style="min-width:300px;width:100%;">
+                        <tr>
+                            <th width="130">{% trans " WAF 回源地址" %}</th>
+                            <th class="waf_address">{{ waf_conf.source_addr }}</th>
+                        </tr>
+                        <tr style="background: #f2f2f2;">
+                            <th width="130">{% trans "WAF 回源端口" %}</th>
+                            <th class="waf_port">{{ waf_conf.port }}</th>
+                        </tr>
+                        {% comment %}<tr>
+                            <th width="130">{% trans "WAF 回源Host" %}</th>
+                            <th class="waf_host"></th>
+                        </tr>{% endcomment %}
+                    </table>
+                    {% comment %}<div class="conf_table">
+                        <table class="layui-table" style="min-width:300px;width:100%;">
+                            <tr>
+                                <th width="220">{% trans "上层回 WAF 地址—主" %}</th>
+                                <th class="waf_address"></th>
+                                <th class=""></th>
+                                <th class="waf_address"></th>
+                            </tr>
+                            <tr style="background: #f2f2f2;">
+                                <th width="220">{% trans "上层回 WAF 地址—备" %}</th>
+                                <th class="waf_port"></th>
+                                <th class=""></th>
+                                <th class="waf_address"></th>
+                            </tr>
+                            <tr>
+                                <th width="220">{% trans "上层回 WAF 端口" %}</th>
+                                <th class="waf_host"></th>
+                                <th class=""></th>
+                                <th class="waf_address"></th>
+                            </tr>
+                            <tr>
+                                <th width="220">{% trans "上层回 WAF Host" %}</th>
+                                <th class="waf_host"></th>
+                                <th class=""></th>
+                                <th class="waf_address"></th>
+                            </tr>
+                        </table>
+                    </div>{% endcomment %}
+
+                </div>
+                {% comment %}<div class="conf_https">
+                    <p class="waf_txt">{% trans "【参考】当前 WAF 回源配置为" %}</p>
+                    <table class="layui-table" style="min-width:300px;width:100%;">
+                        <tr>
+                            <th width="130">{% trans " WAF 回源地址" %}</th>
+                            <th class="waf_address"></th>
+                        </tr>
+                        <tr style="background: #f2f2f2;">
+                            <th width="130">{% trans "WAF 回源端口" %}</th>
+                            <th class="waf_port"></th>
+                        </tr>
+                        <tr>
+                            <th width="130">{% trans "WAF 回源Host" %}</th>
+                            <th class="waf_host"></th>
+                        </tr>
+                    </table>
+                </div>{% endcomment %}
+            </div>
+            {% comment %}https  {% endcomment %}
+            {% if waf_conf.ssl_status == 1 %}
+                <div class="conf_channel">
+                    <div class="conf_http">
+                        <p class="waf_txt"><a class="blue" id="domain_status" href="javascript:;" >{{ domain.domain }}</a></p>
+                        <table class="layui-table" style="min-width:300px;width:100%;">
+                            <tr>
+                                <th width="130">{% trans " WAF 回源地址" %}</th>
+                                <th class="waf_address">{{ waf_conf.source_addr }}</th>
+                            </tr>
+                            <tr style="background: #f2f2f2;">
+                                <th width="130">{% trans "WAF 回源端口" %}</th>
+                                <th class="waf_port">{{ waf_conf.ssl_port }}</th>
+                            </tr>
+                            {% comment %}<tr>
+                                <th width="130">{% trans "WAF 回源Host" %}</th>
+                                <th class="waf_host"></th>
+                            </tr>{% endcomment %}
+                        </table>
+                        {% comment %}<div class="conf_table">
+                            <table class="layui-table" style="min-width:300px;width:100%;">
+                                <tr>
+                                    <th width="220">{% trans "上层回 WAF 地址—主" %}</th>
+                                    <th class="waf_address"></th>
+                                    <th class=""></th>
+                                    <th class="waf_address"></th>
+                                </tr>
+                                <tr style="background: #f2f2f2;">
+                                    <th width="220">{% trans "上层回 WAF 地址—备" %}</th>
+                                    <th class="waf_port"></th>
+                                    <th class=""></th>
+                                    <th class="waf_address"></th>
+                                </tr>
+                                <tr>
+                                    <th width="220">{% trans "上层回 WAF 端口" %}</th>
+                                    <th class="waf_host"></th>
+                                    <th class=""></th>
+                                    <th class="waf_address"></th>
+                                </tr>
+                                <tr>
+                                    <th width="220">{% trans "上层回 WAF Host" %}</th>
+                                    <th class="waf_host"></th>
+                                    <th class=""></th>
+                                    <th class="waf_address"></th>
+                                </tr>
+                            </table>
+                        </div>{% endcomment %}
+
+                    </div>
+                    {% comment %}<div class="conf_https">
+                        <p class="waf_txt">{% trans "【参考】当前 WAF 回源配置为" %}</p>
+                        <table class="layui-table" style="min-width:300px;width:100%;">
+                            <tr>
+                                <th width="130">{% trans " WAF 回源地址" %}</th>
+                                <th class="waf_address"></th>
+                            </tr>
+                            <tr style="background: #f2f2f2;">
+                                <th width="130">{% trans "WAF 回源端口" %}</th>
+                                <th class="waf_port"></th>
+                            </tr>
+                            <tr>
+                                <th width="130">{% trans "WAF 回源Host" %}</th>
+                                <th class="waf_host"></th>
+                            </tr>
+                        </table>
+                    </div>{% endcomment %}
+
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+{% elif access_type == 2 %}
+    {% comment %}边缘>waf>上层   接入cdn{% endcomment %}
+    <div id="cms_access">
+        <div class="access_in">
+            <p class="move_cdn_txt">
+            1、<input type="checkbox" name="sure_cdn" lay-skin="primary" title="" >{% trans "确认 WAF  IP，已经添加到上层相应白名单" %}</p>
+            <p class="waf_txt" style="padding-top:10px;">{% trans "请在 HOPE 中查找WAF IP 列表。" %}</p>
+            <p class="waf_txt"><a class="blue" style="text-decoration: underline;" target="_blank" href="http://j.hope.chinacache.com" >{% trans "前往HOPE " %}</a></p>
+        </div>
+        <div class="access_in">
+            <p class="move_cdn_txt">2、<input type="checkbox" name="sure_cdn" lay-skin="primary" title="" >{% trans "确认边缘 IP，已经添加到 WAF 侧相应白名单" %}</p>
+            <p class="waf_txt" style="padding-top:10px;">{% trans "请在 CMS3 中查询边缘IP列表。" %}</p>
+            <p class="waf_txt"><a class="blue" style="text-decoration: underline;" target="_blank" href="http://cms3.chinacache.com" >{% trans "前往CMS3" %}</a></p>
+        </div>
+        <p class="move_cdn_txt">3、<input type="checkbox" name="sure_cdn" lay-skin="primary" title="" >{% trans "确认 WAF 服务已经正常服务" %}</p>
+        <p class="move_cdn_txt">4、<input type="checkbox" name="sure_cdn" lay-skin="primary" title="" >{% trans "调整上下层的X-Forwar-For字段，边缘开启，上层开启" %}</p>
+        <p class="move_cdn_txt">5、{% trans "在CMS中将分层配置的第1分层，由WAF的服务CNAME,改为原来的第1分层" %}</p>
+        <div class="move_infor">
+            <p class="waf_txt"><input type="checkbox" name="sure_cdn" lay-skin="primary" title="" >{% trans "WAF服务CNAME为：" %}<a class="blue" id="domain_status" href="javascript:;" >{{ access_point_cname }}</a></p>
+
+            <p class="waf_txt"><input type="checkbox" name="sure_cdn" lay-skin="primary" title="" ><a class="blue" id="domain_status" href="javascript:;" >http://{{ domain.domain }}</a>{% trans "的分层配置的第1分层，已经指向原来的第1分层" %}</p>
+            {% if waf_conf.ssl_status == 1 %}
+                <p class="waf_txt"><input type="checkbox" name="sure_cdn" lay-skin="primary" title="" ><a class="blue" id="domain_status" href="javascript:;" >https://{{ domain.domain }}</a>{% trans "的分层配置的第1分层，已经指向原来的第1分层" %}</p>
+            {% endif %}
+            <p class="waf_txt">{% trans "【参考】当前WAF的回源配置为" %}</p>
+            <table class="layui-table" style="min-width:300px;width:50%;">
+                <tr>
+                    <th width="120">{% trans "WAF回源地址" %}</th>
+                    <th class="waf_address">{{ waf_conf.source_addr }}</th>
+                </tr>
+                <tr style="background: #f2f2f2;">
+                    <th width="120">{% trans "WAF回源端口" %}</th>
+                    <th class="waf_port">{{ waf_conf.port }}</th>
+                </tr>
+                {% comment %}<tr>
+                    <th width="120">{% trans "WAF回源HOST" %}</th>
+                    <th class="waf_host"></th>
+                </tr>{% endcomment %}
+            </table>
+            <p class="waf_txt" style="padding-top:10px;">{% trans "请在CMS3中，进行边缘回源WAF的配置。" %}</p>
+            <p class="waf_txt"><a class="blue" style="text-decoration: underline;" target="_blank" href="http://cms3.chinacache.com" >{% trans "前往CMS3配置" %}</a></p>
+        </div>
+    </div>
+
+{% endif %}

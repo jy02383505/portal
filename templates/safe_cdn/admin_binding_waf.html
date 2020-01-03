@@ -1,0 +1,328 @@
+{% load i18n %}
+{% load staticfiles %}
+<div id="basic_configure">
+    <div class="list layui-form user_details">
+        <h5 class="mian_h5">{% trans "WAF基本信息" %}</h5>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:175px;">{% trans "服务商" %}</label>
+            <div class="layui-input-block" id="service">{{ waf_conf.provider_name }}</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:175px;">{% trans "服务类型" %}</label>
+            <div class="layui-input-block" id="service_type">WAF</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:175px;">{% trans "WAF防护/服务域名" %}</label>
+            <div class="layui-input-block waf_service">{{ waf_conf.domain }}</div>
+        </div>
+        {% comment %}<div class="layui-form-item">
+            <label class="layui-form-label" style="width:160px;">{% trans "服务商侧实例ID" %}</label>
+            <div class="layui-input-block" ></div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:160px;">{% trans "服务状态" %}</label>
+            <div class="layui-input-block">
+                <a href="javascript:;" class="blue"></a>
+            </div>
+        </div>{% endcomment %}
+    </div>
+
+    <div class="list layui-form top_border cdn_conf" >
+        <h5 class="mian_h5">{% trans "WAF接入CDN方式" %}</h5>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:175px;">{% trans "WAF接入CDN方式" %}</label>
+            <div class="layui-input-block user_details waf_cdn">
+                {% for access in access_type_conf %}
+                    {% if access.id == access_type %}
+                        {% trans access.name %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="layui-input-block user_add" id="access_type_conf">
+                {% for access in access_type_conf %}
+                    {% if access.id == access_type  %}
+                        <input type="radio" name="waf_mode" disabled checked lay-filter="waf_mode" value="{{ access.id }}" title="{% trans access.name %}">
+                    {% elif access_type.id ==  1 %}
+                        <input type="radio" name="waf_mode" disabled checked lay-filter="waf_mode" value="{{ access_type.id }}" title="{% trans access_type.name %}">
+                    {% else %}
+                        <input type="radio" name="waf_mode" disabled lay-filter="waf_mode" value="{{ access.id }}" title="{% trans access.name %}">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:175px;">{% trans "WAF接入点" %}</label>
+            <div class="layui-input-block waf_point_address user_details">{{ waf_conf.access_point }}</div>
+            <div class="layui-input-block user_add">
+                <select name="" id="waf_short_name" lay-filter="waf_short_name" lay-search>
+                    {% for access_point_conf in access_point_conf %}
+                        {% if waf_conf.access_point == access_point_conf.name %}
+                            <option label="" selected value="{{ access_point_conf.short_name }}/{{ access_point_conf.cname }}">{% trans access_point_conf.name %}</option>
+                        {% else %}
+                            <option label="" value="{{ access_point_conf.short_name }}/{{ access_point_conf.cname }}">{% trans access_point_conf.name %}</option>
+                        {% endif %}
+
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+
+<div class="waf_conf">
+    <div class="list layui-form top_border">
+        <h5 class="mian_h5" id="access_type_name">
+            {% if access_type == 1 %}
+                {% trans "WAF回源站配置" %}
+            {% elif access_type == 2 %}
+                {% trans "WAF回上层配置" %}
+            {% else %}
+                {% trans "WAF回源站配置" %}
+            {% endif %}
+        </h5>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:175px;">{% trans "WAF回源方式" %}</label>
+            <div class="layui-input-block user_details" id="waf_host">
+                {% for src_type in src_type_conf %}
+                    {% if waf_conf.source_is_ip == True and  src_type.id == 1 %}
+                        {{ src_type.name }}
+                    {% elif waf_conf.source_is_ip == False and  src_type.id == 2 %}
+                        {{ src_type.name }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% if waf_conf.source_is_ip != True and waf_conf.source_is_ip != False %}
+                <div class="layui-input-block user_add">
+                    {% for src_type_conf in src_type_conf %}
+                        {% if waf_conf.source_is_ip == True and  src_type_conf.id == 1 %}
+                            <input type="radio" checked id="waf_host_type" name="domain_back_source" lay-filter="domain_back_source" value="{{ src_type_conf.id }}" title="{% trans src_type_conf.name %}">
+                        {% elif waf_conf.source_is_ip == False and  src_type_conf.id == 2 %}
+                            <input type="radio" checked id="waf_host_type" name="domain_back_source" lay-filter="domain_back_source" value="{{ src_type_conf.id }}" title="{% trans src_type_conf.name %}">
+                        {% else %}
+                            <input type="radio" id="waf_host_type" name="domain_back_source" lay-filter="domain_back_source" value="{{ src_type_conf.id }}" title="{% trans src_type_conf.name %}">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:175px;">{% trans "WAF回源地址" %}</label>
+            <div class="layui-input-block waf_address user_details">
+                {% if not waf_conf.source_addr %}
+                    {% trans "无" %}
+                {% else %}
+                    {{ waf_conf.source_addr }}
+                {% endif %}
+
+            </div>
+            <div class="layui-input-block user_add">
+                <textarea id="waf_address" placeholder="" class="layui-textarea waf_address">{{ waf_conf.source_addr }}</textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:175px;">{% trans "WAF回源端口" %}</label>
+            <div class="layui-input-block waf_port user_details">
+                {% if not waf_conf.port %}
+                    {% trans "无" %}
+                {% else %}
+                    {{ waf_conf.port }}
+                {% endif %}
+            </div>
+            <div class="layui-input-block user_add">
+                <input type="text" id="waf_port" value="{{ waf_conf.port }}" name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input waf_port">
+            </div>
+        </div>
+    {% comment %}    <div class="layui-form-item">
+            <label class="layui-form-label" style="width:160px;">{% trans "WAF回源Host" %}</label>
+            <div class="layui-input-block"></div>
+        </div>{% endcomment %}
+    </div>
+    <div class="list layui-form top_border">
+        <h5 class="mian_h5">{% trans "WAF防御配置" %}</h5>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:175px;">{% trans "WAF服务协议" %}</label>
+            <div class="layui-input-block user_details" id="waf_agreement">
+                {% if waf_conf.ssl_status == 0 %}
+                    {% trans "不启用" %}
+                {% else %}
+                    {% trans "启用" %}
+                {% endif %}
+            </div>
+            <div class="layui-input-block user_add">
+                {% if waf_conf.ssl_status == 0 %}
+                    <input type="checkbox" name="open_https" lay-filter="open_https" lay-skin="primary" value="" title="{% trans "启用HTTPS" %}">
+                {% else %}
+                    <input type="checkbox" checked name="open_https" lay-filter="open_https" lay-skin="primary" value="" title="{% trans "启用HTTPS" %}">
+                {% endif %}
+            </div>
+        </div>
+        {% if waf_conf.ssl_status == 0 %}
+            <div class="layui-form-item certificate" style="display: none;">
+            <div class="layui-form-item" style="margin-bottom: 0;">
+                <label class="layui-form-label" style="width:175px;">{% trans "WAF服务证书" %}</label>
+                <div class="layui-input-block user_details" id="waf_certificate">
+                    {% if not waf_conf.cert_name %}
+                        {% trans "无" %}
+                    {% else %}
+                        {{ waf_conf.cert_name }}
+                    {% endif %}
+
+                </div>
+                <div class="layui-input-block user_add">
+                    <input id="{{ waf_conf.cert_id }}" value="{{ waf_conf.cert_name }}" type="text" name="title" style="display: inline-block;" lay-verify="title" autocomplete="off" placeholder="" class="layui-input service_cert">
+                </div>
+            </div>
+            <div class="layui-form-item ">
+                <label class="layui-form-label" style="width:175px;"></label>
+                <div class="layui-input-block user_add">
+                    <button class="layui-btn layui-btn_up" lay-submit lay-filter="up_new_cert" >{% trans '上传新证书' %}</button>
+                </div>
+            </div>
+        </div>
+        {% else %}
+            <div class="layui-form-item certificate">
+                <div class="layui-form-item" style="margin-bottom: 0;">
+                    <label class="layui-form-label" style="width:175px;">{% trans "WAF服务证书" %}</label>
+                    <div class="layui-input-block user_details" id="waf_certificate">
+                        {% if not waf_conf.cert_name %}
+                            {% trans "无" %}
+                        {% else %}
+                            {{ waf_conf.cert_name }}
+                        {% endif %}
+                    </div>
+                    <div class="layui-input-block user_add">
+                        <input id="{{ waf_conf.cert_id }}" value="{{ waf_conf.cert_name }}" type="text" name="title" style="display: inline-block;" lay-verify="title" autocomplete="off" placeholder="" class="layui-input service_cert">
+                    </div>
+                </div>
+                <div class="layui-form-item ">
+                    <label class="layui-form-label" style="width:175px;"></label>
+                    <div class="layui-input-block user_add">
+                        <button class="layui-btn layui-btn_up" lay-submit lay-filter="up_new_cert" >{% trans '上传新证书' %}</button>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:175px;">{% trans "WAF默认规则防御模式" %}</label>
+            <div class="layui-input-block user_details" id="waf_default_cname">
+                {% if not waf_conf.default_waf_mode %}
+                    {% trans "无" %}
+                {% else %}
+                    {% for waf_default_mode_conf in waf_default_mode_conf %}
+                        {% if waf_conf.default_waf_mode == waf_default_mode_conf.id %}
+                            {{ waf_default_mode_conf.cname }}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+            <div class="layui-input-block user_add">
+                <select name="" id="waf_default" lay-filter="waf_point" lay-search>
+                    {% for waf_default_mode_conf in waf_default_mode_conf %}
+                        {% if waf_conf.default_waf_mode == waf_default_mode_conf.id %}
+                            <option selected value="{{ waf_default_mode_conf.id }}">{% trans waf_default_mode_conf.cname %}</option>
+                        {% else %}
+                            <option value="{{ waf_default_mode_conf.id }}">{% trans waf_default_mode_conf.cname %}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width:175px;">{% trans "WAF自定义规则防御模式" %}</label>
+            <div class="layui-input-block user_details" id="waf_self_cname">
+                {% if not waf_conf.self_waf_mode %}
+                    {% trans "无" %}
+                {% else %}
+                    {% for waf_self_mode_conf in waf_self_mode_conf %}
+                        {% if waf_conf.self_waf_mode == waf_self_mode_conf.id %}
+                            {{ waf_self_mode_conf.cname }}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+            <div class="layui-input-block user_add">
+                <select name="" id="waf_custom" lay-filter="waf_point" lay-search>
+                    {% for waf_self_mode_conf in waf_self_mode_conf %}
+                        {% if waf_conf.self_waf_mode == waf_self_mode_conf.id %}
+                            <option selected value="{{ waf_self_mode_conf.id }}">{% trans waf_self_mode_conf.cname %}</option>
+                        {% else %}
+                            <option value="{{ waf_self_mode_conf.id }}">{% trans waf_self_mode_conf.cname %}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="list layui-form top_border">
+        <h5 class="mian_h5" id="waf_conf_h5">
+            {% if access_type == '1' %}
+                {% trans "上层回WAF配置" %}
+            {% elif access_type == '2' %}
+                {% trans "边缘回WAF配置" %}
+            {% else %}
+                {% trans "上层回WAF地址-CNAME" %}
+            {% endif %}
+        </h5>
+        <div class="layui-form-item">
+            <label class="layui-form-label" id="waf_conf_label" style="width:175px;">
+                {% if access_type == '1' %}
+                    {% trans "上层回WAF地址-CNAME" %}
+                {% elif access_type == '2' %}
+                    {% trans "边缘回WAF地址-CNAME" %}
+                {% else %}
+                    {% trans "上层回WAF地址-CNAME" %}
+                {% endif %}
+            </label>
+            <div class="layui-input-block user_details waf_cname" id="">
+                {{ waf_conf.access_point_cname}}({{ waf_conf.access_point }})
+            </div>
+            <div class="layui-input-block user_add">
+                {% if status == 3 or status == 2 or status == 0 %}
+                    <input type="text" id="waf_cname_type" readonly value="{{ waf_conf.access_point_cname}}({{ waf_conf.access_point }})" style="width:320px;background: #f8f8f8;" name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input waf_cname">
+                {% else %}
+                    <input type="text" id="waf_cname_type" readonly value="{{ access_point_conf.0.cname }}({{ access_point_conf.0.name }})" style="width:320px;background: #f8f8f8;" name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input waf_cname">
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+    <div class="list layui-form top_border">
+        <h5 class="mian_h5">{% trans "WAF管理" %}</h5>
+        <div class="layui-form-item user_details">
+            {% if status == 0 %}
+                <button class="fl layui-btn layui-btn-blue" lay-submit lay-filter="open_waf">{% trans '启用' %}</button>
+                <button class="fl layui-btn layui-btn-danger" lay-submit lay-filter="delete_waf">{% trans '删除' %}</button>
+            {% elif  status == 2 %}
+                <button class="fl layui-btn layui-btn-blue" lay-submit lay-filter="access_in_cdn">{% trans '再接入CDN' %}</button>
+                <button class="fl layui-btn layui-btn-danger" lay-submit lay-filter="stop_waf">{% trans '停用' %}</button>
+            {% elif status == 3 %}
+                <button class="fl layui-btn layui-btn-danger" lay-submit lay-filter="move_out_cdn">{% trans '移出CDN' %}</button>
+            {% endif %}
+            <button class="fl layui-btn" lay-submit lay-filter="edit_cdn">{% trans '编辑' %}</button>
+        </div>
+        <div class="layui-form-item user_add">
+            <button class="fl layui-btn" id="preservation" lay-submit class="create_button" lay-filter="preservation">{% trans '保存' %}</button>
+            <div id="confirm_access" style="display: none;">
+                <button class="fl layui-btn layui-btn-blue"  lay-submit class="create_button" lay-filter="confirm_access">{% trans '确认接入' %}</button>
+                <button class="fl layui-btn" lay-submit class="create_button" lay-filter="back_access">{% trans '返回' %}</button>
+            </div>
+            <div id="pre_again">
+                <button class="fl layui-btn pre_again"  lay-submit lay-filter="pre_again">{% trans '保存' %}</button>
+                <button class="fl layui-btn create_button" lay-submit lay-filter="cancel_submit">{% trans '取消' %}</button>
+            </div>
+        </div>
+        {% comment %}<div class="layui-form-item user_add">
+            {% if status == 1 %}
+                <button class="fl layui-btn layui-btn-blue" id="create_button" lay-submit lay-filter="establish">{% trans '创建' %}</button>
+            {% else %}
+                <button class="fl layui-btn" lay-submit class="create_button" lay-filter="preservation">{% trans '保存' %}</button>
+                <button class="fl layui-btn" lay-submit class="create_button" lay-filter="cancel_submit">{% trans '取消' %}</button>
+            {% endif %}
+        </div>{% endcomment %}
+    </div>
+</div>
+</div>

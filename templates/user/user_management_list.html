@@ -1,0 +1,50 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+
+<div class="con">
+    <div class="mianbaoxie">
+        <a href="javascript:;">{% trans '用户管理' %}</a>
+	</div>
+    <!--查询头-->
+	<div class="search">
+        <div class="search_in layui-form" >
+            <button class="checkBtn fl" id="add_user">{% trans '新建用户' %}</button>
+            <div class="fl layui_user" style="position:relative;">
+                <input class="search_input" type="text" id="username" name="username" lay-verify="username" autocomplete="off" placeholder="请输入用户名">
+                <span class="search_user"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+	<!--显示列表-->
+        <div class="list">
+            <div class="conlist">
+
+                <table id="accounts_list" class="layui-hide" lay-filter="parse-table-demo">
+
+                </table>
+                <div id="page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'user/strategy.html' %}
+<script type="text/html" id="list_button">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">{% trans "编辑权限" %}</a>
+</script>
+<script>
+
+    internation_trans.system_strategy='{% trans "系统策略" %}';
+
+    perm_strategy_list={{ perm_strategy_list | safe }};
+    strategy_type_dict={{ strategy_type_dict | safe }};
+    document.write('<script src="{% static 'js/user/strategy.js' %}?v='+Math.random()+'"><\/script>' +
+        '<script src="{% static 'js/user/user_management_list.js' %}?v='+Math.random()+'"><\/script>');
+
+</script>
+
+{% endblock %}
+

@@ -1,0 +1,68 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+
+<div class="con">
+    <div class="mianbaoxie">
+        <a href="javascript:;">{% trans '安全CDN频道列表' %}</a>
+	</div>
+    <!--查询头-->
+	<div class="search">
+        <div class="search_in layui-form" >
+            {% if user.is_staff == True %}
+                <div class="fl layui_user" style="position:relative;">
+                    <input type="text" id="customer_account" name="customer_account" lay-verify="customer_account" autocomplete="off" placeholder="{% trans '客户账号/账号ID' %}">
+                </div>
+                <div class="fl layui_user" style="position:relative;">
+                    <input type="text" id="cms_id" name="cms_id" lay-verify="cms_id" autocomplete="off" placeholder="{% trans 'CMS客户ID' %}">
+                </div>
+            {% endif %}
+            <div class="fl layui_user" style="position:relative;">
+                <input type="text" id="channel_name" name="channel_name" lay-verify="channel_name" autocomplete="off" placeholder="{% trans '频道名' %}">
+            </div>
+            <button class="checkBtn" style="margin-bottom:20px;" id="search_channel" lay-submit lay-filter="search_channel">{% trans '查询' %}</button>
+
+        </div>
+    </div>
+
+    <div class="main">
+	<!--显示列表-->
+        <div class="list">
+            {% if user.is_staff == True %}
+                <button class="layui-btn layui-btn-blue" lay-submit lay-filter="lay_add">{% trans '添加安全频道' %}</button>
+            {% endif %}
+            <div class="conlist">
+
+                <table id="accounts_list" class="layui-hide" lay-filter="parse-table-demo">
+
+                </table>
+                <div id="page"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="list_button">
+
+
+{% comment %}{% if user.is_staff == True %}
+    <a class="layui-btn layui-btn-xs create_waf" lay-event="create_waf">{% trans "开通WAF" %}</a>
+    <a class="layui-btn layui-btn-xs" lay-event="statistics">{% trans "统计" %}</a>
+    <a class="layui-btn layui-btn-xs" lay-event="configure">{% trans "配置" %}</a>
+{% else %}
+    <a class="layui-btn layui-btn-xs" lay-event="client_statistics">{% trans "统计" %}</a>
+    <a class="layui-btn layui-btn-xs" lay-event="client_configure">{% trans "配置" %}</a>
+{% endif %}{% endcomment %}
+</script>
+<script>
+
+    internation_trans.security_channel_name='{% trans "安全频道名" %}';
+    internation_trans.authentication='{% trans "中央鉴权" %}';
+    internation_trans.customer_id='{% trans "融合客户账号/CMS客户ID" %}';
+    internation_trans.channel_name='{% trans "频道名" %}';
+    internation_trans.add_security_channel='{% trans "添加安全频道" %}';
+    cms_user_list = {{ cms_user_list | safe }}
+    document.write('<script src="{% static 'js/cms/safe_channel_list.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}
+

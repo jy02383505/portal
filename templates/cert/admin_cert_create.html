@@ -1,0 +1,111 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+
+<div class="con">
+    <div class="mianbaoxie">
+        <i class="layui-icon layui-icon-return fl"></i>
+        {% if  not cert_detail.cert_name %}
+            <a href="javascript:;">{% trans '上传证书' %}</a>
+        {% else %}
+            <a href="javascript:;">{% trans '更新证书' %}</a>
+        {% endif %}
+	</div>
+    <!--查询头-->
+
+    <div class="main main_in">
+        <div class="list">
+        <!--lay_first-->
+            <div class="layui-form cert_form">
+{#                <h5 class="mian_h5">{% trans "管理员信息" %}</h5>#}
+                {% if user.is_staff == True %}
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width:auto;"><i class="red">*</i>{% trans "用户" %}</label>
+                        <div class="layui-input-block user_details">
+                            {% trans cert_detail.username %}
+                        </div>
+                        <div class="layui-input-block user_add">
+                           <select name="username" lay-verify="username" lay-filter="username" lay-search>
+                                <option value="">{% trans "请选择或搜索" %}</option>
+                                {% for user in user_list %}
+                                    <option value="{{ user.username }}">{{ user.username }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:auto;"><i class="red">*</i>{% trans "证书名称" %}</label>
+                    <div class="layui-input-block user_details">
+                        {% trans cert_detail.cert_name %}
+                    </div>
+                    <div class="layui-input-block user_add">
+                        <input style="display: none;" type="text" name="username" />
+                        <input type="text" id="cert_name" name="cert_name"  lay-verify="cert_name" value="{{ cert_detail.cert_name }}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:auto;"><i class="red">*</i>{% trans "证书" %}</label>
+                    <div class="layui-input-block">
+                       <textarea class="layui-textarea" style="height:200px;width:70%;" name="certificate" lay-verify="certificate"  placeholder="{% trans '请将证书内容(包含证书链)复制后粘贴在这里' %}" onblur="this.placeholder='{% trans "请将证书内容(包含证书链)复制后粘贴在这里" %}'" onfocus="this.placeholder=''"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:auto;"><i class="red">*</i>{% trans "私钥" %}</label>
+                    <div class="layui-input-block">
+                       <textarea class="layui-textarea" style="height:200px;width:70%;" name="private_key" lay-verify="private_key"  placeholder="{% trans '请将私钥内容复制后粘贴在这里' %}" onblur="this.placeholder='{% trans "请将私钥内容复制后粘贴在这里" %}'" onfocus="this.placeholder=''"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:auto;">{% trans "备注" %}</label>
+                    <div class="layui-input-block">
+                       <input type="text" name="remarks" id="remarks" lay-verify="remarks"  value="{% trans cert_detail.remark %}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:auto;"><i class="red">*</i>{% trans "联系邮箱" %}</label>
+                    <div class="layui-input-block">
+                       <input type="text" name="lay_email" id="lay_email" lay-verify="lay_email"  value="{% trans cert_detail.email %}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "到期时间提醒" %}</label>
+                    <div class="layui-input-block">
+                        <select name="times" lay-verify="times" lay-filter="times">
+                            {% for remind in remind_time %}
+                                <option value="{{ remind.id }}">{% trans remind.name %}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:auto;"></label>
+                    <div class="layui-input-block">
+                        <button class="layui-btn layui-btn-blue" lay-submit lay-filter="lay_submit">{% trans '提交' %}</button>
+                    </div>
+                </div>
+            </div>
+            <!--lay_first-->
+        </div>
+    </div>
+</div>
+<script>
+    if(lan == 'en'){
+        $('.layui-form-label').width(130)
+    }else{
+        $('.layui-form-label').width(95)
+    }
+    user_list={{ user_list | safe }}
+    remind_time={{ remind_time | safe }}
+    cert_detail={{ cert_detail | safe }}
+
+    console.log(user_list);
+    console.log(remind_time);
+    console.log(cert_detail);
+    document.write(
+        '<script src="{% static 'js/cert/create_admin_cert.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}
+

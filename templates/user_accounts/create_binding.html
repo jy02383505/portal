@@ -1,0 +1,125 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+<div class="con">
+    <div class="mianbaoxie">
+        <i class="layui-icon layui-icon-return fl"></i>
+        <a href="javascript:;">
+            {% if client.user_id %}
+                {% trans client.username %}
+            {% else %}
+                {% trans "创建CMS绑定关系" %}
+            {% endif %}
+
+        </a>
+	</div>
+    <!--查询头-->
+    <div class="main main_in" autocomplete="off">
+        <div class="list">
+            <!--lay_first-->
+            <div class="layui-form form_cms tab_border" id="form_details">
+                <h5 class="mian_h5">{% trans "融合平台账号" %}</h5>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "用户" %}</label>
+                    <div class="layui-input-block" id="user_name">
+                        {% if property == 'is_create' %}
+                            <select name="" id="customer_account" name="customer_account" lay-filter="customer_account" lay-search>
+
+                                {% if not user_list %}
+                                    <option value="">{% trans "暂无可绑定用户" %}</option>
+                                {% else %}
+                                    <option value="">{% trans "请选择或搜索" %}</option>
+                                    {% for user in user_list %}
+                                        <option value="{{ user.user_id }}">{% trans user.username %}</option>
+                                    {% endfor %}
+                                {% endif %}
+                            </select>
+                        {% else %}
+                            <span>{% trans client.username %}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "账号ID" %}</label>
+                    <div class="layui-input-block" id="user_id">{% if not property == 'is_create' %}{% trans client.user_id %}{% endif %}</div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "账号状态" %}</label>
+                    <div class="layui-input-block" id="is_active">
+                        {% if property != 'is_create' %}
+                           {% if client.is_active %}
+                                {% trans "启用" %}
+                           {% else %}
+                                {% trans "禁用" %}
+                           {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "公司名称" %}</label>
+                    <div class="layui-input-block" id="company">
+                        {% if property != 'is_create' %}
+                            {% trans client.company %}
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+            <!--lay_first-->
+            <!--lay_first-->
+            <div class="layui-form form_cms tab_border" id="form_details" style="margin-top: 30px;">
+                <h5 class="mian_h5">{% trans "CMS账号" %}</h5>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "客户ID" %}</label>
+                    <div class="layui-input-block" id="cms_user_text">
+                        {% if property == 'is_create' %}
+                            <input id="cms_username" type="text" name="cms_username"  value="" lay-verify="username" placeholder="" autocomplete="off" class="layui-input">
+                        {% else %}{% trans client.cms_username %}{% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form form_cms " id="form_details" style="margin-top: 30px;">
+                <h5 class="mian_h5">{% trans "Salesforce合同信息" %}</h5>
+                <p class="remark_p">{% trans "为使客户的CDN域名配置正常下发和计费，请录入合同编号及对应的产品名称" %}</p>
+                <table class="layui-table mt_20" id="permissions_table"  lay-filter="add_permissions_table">
+                    <thead>
+                        <tr>
+                          <th lay-data="{field:'services'}">{% trans "合同编号" %}</th>
+                          <th lay-data="{field:'operation_name'}">{% trans "产品名称" %}</th>
+                          <th lay-data="{field:'services'}">{% trans "合同开始日期" %}</th>
+                          <th lay-data="{field:'operation_name'}">{% trans "合同结束日期" %}</th>
+                          <th lay-data="{field:'services'}">{% trans "合同状态" %}</th>
+                          <th lay-data="{field:'city',toolbar: '#list_button'}">{% trans "操作" %}</th>
+                        </tr>
+                    </thead>
+                     <tbody id="server_tbody">
+
+                    </tbody>
+                </table>
+                <button class="layui-btn add_contract" lay-submit lay-filter="lay_add_contract">+ {% trans '新增合同信息' %}</button>
+            </div>
+            {% if property == 'is_create' %}
+                <button class="layui-btn layui-btn-blue mt_20" lay-submit lay-filter="lay_submit">{% trans '提交' %}</button>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+<script type="text/html" id="list_button">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">{% trans "解绑" %}</a>
+</script>
+<script>
+    if(lan == 'en'){
+        $('.layui-form-label').width(115)
+    }
+    user_list={{ user_list | safe }}
+    contract={{ contract | safe }}
+    document.write(
+        '<script src="{% static 'js/accounts/create_binding.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}
+

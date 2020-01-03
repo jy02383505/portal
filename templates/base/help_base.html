@@ -1,0 +1,218 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  {% comment %}<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />{% endcomment %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>NovaCDN</title>
+  <script>
+        document.write('<link rel="stylesheet" type="text/css" href="{% static 'layui/css/layui.css' %}">' +
+            '<link rel="stylesheet" href="{% static 'css/base.css' %}?v='+Math.random()+'">');
+  </script>
+<script>
+    if (typeof Array.prototype.forEach != 'function') {
+        Array.prototype.forEach = function(callback){
+          for (var i = 0; i < this.length; i++){
+            callback.apply(this, [this[i], i, this]);
+          }
+        };
+    }
+    $(document).on('click','#user_help',function(){
+        location.href='/service/account_general_view/?0,0';
+        //alert('location:'+location.href);
+    });
+    //改变左侧栏选中样式
+	var url = location.href;
+    var paraString = url.substring(url.indexOf("?")+1,url.length).split("&");
+    var tag = paraString.pop();
+	// console.log(tag);
+	var tit = $("#all_menus").find("h1").eq(tag[0]);
+
+	if(tag[0]=='h'){
+		$('#mCSB_1_container div:nth-child(1) .more_menu li:nth-child(1)').addClass('active');
+	}
+	var li = tit.next("ul").find("li").eq(tag[2]);
+	/*if(tag=='?'){
+		$('#mCSB_1_container div:nth-child(1) .more_menu li:nth-child(1)').addClass('active');
+	}else{
+		//$('#mCSB_1_container div:nth-child(1) .more_menu li:nth-child(1)').addClass('active');
+	}*/
+	li.css("backgroundColor","none");
+	li.addClass('active');
+</script>
+{% block media %}
+{% endblock %}
+</head>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">
+        <img src="/static/image/logo_in.png" alt="">
+    </div>
+    <div style="display: none;">
+        <form name="testform" id="testform" method='post'><input type='hidden' name='csrfmiddlewaretoken' value='5S6OmSJo7IZHh7Dknfd8fYbWh0I3LjVs' />
+            {% csrf_token %}
+            <select id="language" name="language" onchange="selectlang(this)">
+                <option value="en" >English</option>
+                <option value="zh-Hans" >中文简体</option>
+            </select>
+        </form>
+    </div>
+    <ul class="layui-nav layui-layout-right" style="margin-top:18px;">
+{#        <li class="layui-nav-item"><a title="{% trans "退出" %}" href="javascript:;"></a></li>#}
+        {% if user.is_staff == False %}
+        {% endif %}
+   {% comment %}     <li class="user-name layui-nav-item" >
+            {%  ifequal request.LANGUAGE_CODE  'en'  %}
+            {% else %}
+            {% endifequal %}
+            <a id="user_help" href="/online_help/get_start/" style="color:#fff;display:block;line-height: 24px;margin-right: 10px;">{% trans "在线帮助" %}</a>
+        </li>{% endcomment %}
+        <li class="layui-nav-item" id="user_name">
+            <a id="user_help" href="/base/base/">{% trans "控制台" %} </a>
+        </li>
+        <li class="user-name layui-nav-item">
+            <img alt="nova portal" src="/static/image/convert_lang.png"/>
+            <a id="user_lang" href="javascript:selectlang()" style="padding-left: 0;">
+                {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                <span id="user_lang_en">中文</span>
+                {% else %}
+                    English
+                {% endifequal %}
+            </a>
+        </li>
+        <li class="layui-nav-item" id="user_name">
+            <a id="userName" href="javascript:;">{{user.username}} </a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="/base/logout/" style="border:0;" id="log_out"><img alt="nova portal" style="" src="/static/image/out.png" alt=""></a>
+        </li>
+    </ul>
+  </div>
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul id="layui-nav" class="layui-nav layui-nav-tree"  lay-filter="navigation">
+
+      </ul>
+    </div>
+  </div>
+  <div class="layui-body" id="LAY_app_body">
+      <iframe url="0,0" frameborder="0" class="layadmin-iframe" id="iframe_admin"></iframe>
+  </div>
+</div>
+{% comment %}    <div id="empty" style="position:absolute;">&nbsp;</div>
+    <div class="con">
+        <div class="nav-top">
+            <div class="nt-logo fl">
+                <a class="logo" target="_blank" href="http://www.chinacache.com/"><img alt="nova portal" src="/media/image/logo.png" width="100%"/></a>
+            </div>
+            <div class="fr nt-right" style="position: relative;">
+                <ul class="nt-con fr">
+                    <li class="user-name" id="user_name" style="margin-top: 13px;">
+                        <a id="user_help" href="javascript:;" style="color:#fff;display:block;line-height: 24px;margin-right: 10px;">{% trans "控制台" %}</a>
+                    </li>
+                    <li class="user-name" id="user_name" style="margin-top: 13px;margin-left:36px;">
+                        <a id="userName" href="javascript:;" style="display:block;line-height: 24px;margin-right: 10px;">{{all_username}}</a>
+                    </li>
+                    <input type="hidden" value="{{ all_userid }}">
+                    <li style="padding:13px 18px;height: 50px;" onmouseover="this.style.background='none'" onmouseout="this.style.background='none'">
+    {#                    <a href="{% url 'logout_page' %}"><img alt="nova portal" style="" src="/media/image/out.png" alt=""></a>#}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--左导航-->
+        <div class="nav-left fl scrollBar" id="all_menus">
+            {% block help_left_menu %}
+                <div>
+                    <h1 class="menu_btn one_mean" style="cursor: pointer;"><a href="/online_help/get_start/?0">快速入门</a></h1>
+                </div>
+                <div>
+                    <h1 class="menu_btn one_mean" style="cursor: pointer;"><a href="/online_help/domain_management/?1">域名管理</a></h1>
+                </div>
+                <div>
+                    <h1 class="menu_btn one_mean" style="cursor: pointer;"><a href="/online_help/cna_configuration/?2">CNAME配置</a></h1>
+                </div>
+                <div>
+                    <h1 class="menu_btn" style="cursor: pointer;"><a href="javascript:;">配置管理</a><i class="tubiao"></i></h1>
+                    <ul class="more_menu" style="display:none;">
+                        <li>
+                            <a href="/online_help/source_configuration/?3,0" class="click_url " target="_top">
+                                <span class="text">回源配置</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/online_help/caching_rule/?3,1" class="click_url " target="_top">
+                                <span class="text">缓存配置</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/online_help/https_configure/?3,2" class="click_url " target="_top">
+                                <span class="text">HTTPS配置</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h1 class="menu_btn one_mean" style="cursor: pointer;"><a href="/online_help/refresh_help/?3">刷新</a></h1>
+                </div>
+                <div>
+                    <h1 class="menu_btn one_mean" style="cursor: pointer;"><a href="/online_help/strain_help/?4">预加载</a></h1>
+                </div>
+                <div>
+                    <h1 class="menu_btn" style="cursor: pointer;"><a href="JavaScript:;">统计分析</a><i class="tubiao"></i></h1>
+                    <ul class="more_menu" style="display:none;">
+                        <li>
+                            <a href="/online_help/overview_help/?6,0" class="click_url " target="_top">
+                                <span class="text">统计分析概览</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/online_help/flow_bandwidth/?6,1" class="click_url " target="_top">
+                                <span class="text">流量带宽明细</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/online_help/state_code/?6,2" class="click_url " target="_top">
+                                <span class="text">状态码分析</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/online_help/request_distribution/?6,3" class="click_url " target="_top">
+                                <span class="text">请求分布</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h1 class="menu_btn one_mean" style="cursor: pointer;"><a href="/online_help/log_download/?5">日志下载</a></h1>
+                </div>
+                <div>
+                    <h1 class="menu_btn one_mean" style="cursor: pointer;"><a href="/online_help/ssl_service/?6">SSL证书服务</a></h1>
+                </div>
+            {% endblock %}
+        </div>
+        <!--左导航结束-->
+        <!--主要内容-->
+        <div class="fl main main_Out" style="margin-bottom: 26px;">
+            {% block main_body %}
+            {% endblock %}
+        </div>
+        <!--主要内容结束-->
+        <!--弹出菜单(可选)-->
+        {% block popup %}
+        {% endblock %}
+        <!--弹出菜单结束-->
+    </div>{% endcomment %}
+</body>
+</html>
+<script>
+    document.write('<script src="{% static 'js/jquery-2.1.0.min.js' %}"><\/script>'+
+    '<script src="{% static 'layui/layui.js' %}"><\/script>'+
+    '<script src="{% static 'js/public.js' %}?v='+Math.random()+'"><\/script>'+
+    '<script src="{% static 'online_help/online_help.js' %}"><\/script>');
+</script>
+

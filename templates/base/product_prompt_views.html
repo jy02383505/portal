@@ -1,0 +1,10 @@
+{% load i18n %}
+{% load staticfiles %}
+{% block media %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% if menu_code == 'access_manage_menu' %}
+    <h2>{% trans "您无权使用该功能,请使用正确方式操作"　%}</h2>
+{% endif %}
+
+

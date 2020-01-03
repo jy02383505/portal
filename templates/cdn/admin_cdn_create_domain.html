@@ -1,0 +1,208 @@
+{%  extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+
+<div class="con">
+    <div class="mianbaoxie">
+        <i class="layui-icon layui-icon-return fl"></i>
+        <a href="javascript:;">
+            {% trans '添加域名' %}
+        </a>
+	</div>
+    <!--查询头-->
+	<div class="main main_in layui-form">
+        <div class="list layui-form tab_border">
+            <h5 class="mian_h5">{% trans "基本信息" %}</h5>
+            {% if user.is_staff == True %}
+                <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans "用户" %}</label>
+                    <div class="layui-input-block user_add">
+                        <select name="username" lay-verify="username" lay-filter="username" lay-search="">
+                            <option value="">{% trans "请选择或搜索" %}</option>
+                            {% for user in user_list %}
+                                <option value="{{ user.id }}">{% trans user.username %}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">{% trans "加速域名" %}</label>
+                <div class="layui-input-block user_add">
+                    <input type="text" id="domain" name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input domain">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">{% trans "加速类型" %}</label>
+                <div class="layui-input-block user_add" id="cdn_type_id">
+                    {% for cdn in cdn_type %}
+                        {% if cdn.id == 'web' %}
+                            <input type="radio" checked name="cdn_type" lay-filter="cdn_type" lay-skin="primary" id="{{ cdn.id }}" value="{{ cdn.check_name }}" title="{% trans cdn.name %}">
+                        {% else %}
+                            <input type="radio" name="cdn_type" lay-filter="cdn_type" lay-skin="primary" id="{{ cdn.id }}" value="{{ cdn.check_name }}" title="{% trans cdn.name %}">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:95px;">{% trans "协议类型" %}</label>
+                <div class="layui-input-block user_add">
+                    {% for protocol_type in protocol_type %}
+                        <input type="checkbox" name="protocol_type" lay-filter="protocol_type" lay-skin="primary" id="{{ protocol_type.id }}" value="{{ protocol_type.id }}" title="{% trans protocol_type.name %}">
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="layui-form-item" style="display: none;" id="selection_cert">
+                <label class="layui-form-label">{% trans "选择证书" %}</label>
+                <div class="layui-input-block user_add">
+                    <select name="cert" lay-verify="cert" lay-filter="cert">
+                        <option value="">{% trans "请选择" %}</option>
+                        {% comment %}{% for user in user_list %}
+                            <option value="{{ user.id }}">{{ user.username }}</option>
+                        {% endfor %}{% endcomment %}
+                    </select>
+                    {%  ifequal request.LANGUAGE_CODE  'en'  %}
+                        <p class="click_p">Click the <a href="javascript:;" class="blue ssl_cert">SSL certificate</a> management to upload.</p>
+
+                    {% else %}
+                        <p class="click_p">点击<a href="javascript:;" class="blue ssl_cert">SSL证书管理</a>查看托管证书详情</p>
+                    {% endifequal %}
+
+                </div>
+            </div>
+        </div>
+        <div class="list layui-form tab_border">
+            <h5 class="mian_h5">{% trans "源站信息" %}</h5>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:95px;"><i>*</i>{% trans "回源方式" %}</label>
+                <div class="layui-input-block user_add">
+                    {% for src_type in src_type %}
+                        <input type="radio" name="src_type" lay-filter="src_type" id="{{ src_type.id }}" value="{{ src_type.id }}" title="{% trans src_type.name %}">
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><i>*</i>{% trans "源站地址" %}</label>
+                <div class="layui-input-block user_add">
+                    <input type="text" id="src_type_input" name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input">
+                    <textarea id="src_type_text" placeholder="{% trans '支持多个IP源站设置，一行一个' %}" style="display: none;" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">{% trans "备份源站类型" %}</label>
+                <div class="layui-input-block user_add">
+                    {% for src_back_type in src_back_type %}
+                        <input type="radio" name="src_back_type" data-check="false" lay-filter="src_back_type" id="{{ src_back_type.id }}" value="{{ src_back_type.id }}" title="{% trans src_back_type.name %}">
+                    {% endfor %}
+                </div>
+
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">{% trans "备份源站地址" %}</label>
+                <div class="layui-input-block user_add">
+                    <input type="text" id="src_back_input" name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input">
+                    <textarea id="src_back_text" placeholder="{% trans '支持多个IP源站设置，一行一个' %}" style="display: none;" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item" >
+                <label class="layui-form-label" style="z-index:100;" id="que_tips"><i>*</i>{% trans "回源host" %}
+{#                     <i class="layui-icon layui-icon-help " style=""></i>#}
+                    <span class="hover_span">
+                        <i class="layui-icon layui-icon-help" style=""></i>
+                        <span class="remarks_span">{% trans "回源host是CDN回源到源站时的访问域名，默认回源host是您的加速域名" %}</span>
+                    </span>
+                </label>
+                <div class="layui-input-block user_add">
+                    <input type="radio" name="source_host_type" lay-filter="source_host_type" value="{% trans "默认" %}" title="{% trans "默认" %}">
+                    <input type="radio" name="source_host_type" lay-filter="source_host_type" value="{% trans "自定义" %}" title="{% trans "自定义" %}">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"></label>
+                <div class="layui-input-block user_add">
+                    <input type="text" id="source_host" name="domain_src_host" lay-verify="domain_src_host" autocomplete="off" placeholder="" class="layui-input domain">
+                </div>
+            </div>
+        </div>
+        <div class="list layui-form tab_border">
+            <h5 class="mian_h5">{% trans "缓存设置" %}</h5>
+            <div class="layui-form-item">
+                <label class="layui-form-label">{% trans "header配置" %}</label>
+                <div class="layui-input-block user_add" style="z-index:100;">
+                    <input class="que_tips" type="checkbox" name="ignore_cache_control" lay-filter="ignore_cache_control" lay-skin="primary" value="{% trans "忽略CacheControl" %}" title="{% trans "忽略CacheControl" %}">
+                    <span class="hover_span">
+                        <i class="layui-icon layui-icon-help" style=""></i>
+                        <span class="remarks_span">{% trans "是否忽略返回头中的cache-control头部对请求内容进行缓存" %}</span>
+                    </span>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">{% trans "参数配置" %}</label>
+                <div class="layui-input-block user_add">
+                    <input class="que_tips" type="checkbox" name="ignore_query_string" lay-filter="ignore_query_string" lay-skin="primary" value="{% trans "忽略URL参数" %}" title="{% trans "忽略URL参数" %}">
+                    <span class="hover_span">
+                        <i class="layui-icon layui-icon-help" style=""></i>
+                        <span class="remarks_span">{% trans "是否忽略用户请求URL中“？”之后的参数" %}</span>
+                    </span>
+
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">{% trans "缓存规则" %}</label>
+                <div class="layui-input-block user_add">
+                    <button class="fl layui-btn" id="add_cache_id" style="margin-bottom: 20px;" lay-submit lay-filter="add_cache">{% trans '添加' %}</button>
+                    <button class="fl layui-btn" lay-submit lay-filter="priority_adjust">{% trans '调整优先级' %}</button>
+                    <table class="layui-table mt_20" id="permissions_table"  lay-filter="add_permissions_table">
+                        <thead>
+                            <tr>
+                              <th lay-data="{field:'type'}">{% trans "类型" %}</th>
+                              <th lay-data="{field:'content'}" width="60%">{% trans "内容" %}</th>
+                              <th lay-data="{field:'caching_time'}">{% trans "缓存时间" %}</th>
+                              <th lay-data="{field:'operation',toolbar: '#list_button'}">{% trans "操作" %}</th>
+                            </tr>
+                        </thead>
+                         <tbody id="cache_tbody">
+
+                        </tbody>
+                    </table>
+                    <div class="cache_sort prioritization">
+                        <p class="p6">{% trans "根据列表中配置项的顺序来确定优先级，列表底部的优先级大于列表顶部" %}</p>
+                        <button class="fr layui-btn layui-btn-xs" lay-submit lay-filter="cancel_sort">{% trans '取消' %}</button>
+                        <button class="fr layui-btn layui-btn-xs" style="margin-right:20px;" lay-submit lay-filter="sure_sort">{% trans '确定' %}</button>
+                    </div>
+
+                </div>
+            </div>
+            <button class="layui-btn layui-btn-blue mt_20" lay-submit lay-filter="lay_submit">{% trans '提交' %}</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    is_staff='{{ user.is_staff | safe }}'
+    user_list = {{ user_list | safe }}
+    cdn_type = {{ cdn_type | safe }}
+    protocol_type = {{ protocol_type | safe }}
+    src_type = {{ src_type | safe }}
+    src_back_type = {{ src_back_type | safe }}
+    cache_type = {{ cache_type | safe }}
+    default_cache={{ default_cache | safe }}
+    src_back_type={{ src_back_type | safe }}
+
+    if(is_staff == 'False'){
+        user_id='{{ user_list.id | safe }}'
+    }
+    if(lan == 'en'){
+        $('.layui-form-label').width(170)
+        $('.layui-input-block').css('margin-left','180px');
+    }else{
+        $('.layui-form-label').width(95)
+    }
+
+    document.write(
+        '<script src="{% static 'js/cdn/cdn.js' %}?v='+Math.random()+'"><\/script>'+
+        '<script src="{% static 'js/cdn/add_cdn_create_domain.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}

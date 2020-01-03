@@ -1,0 +1,59 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block body_public %}
+<div class="con" style="position: relative;">
+    <div class="mianbaoxie">
+        <a href="javascript:;">
+            {% trans 'CDN服务总览' %}
+            {{ contract }}
+        </a>
+	</div>
+    <div class="search" style="padding:20px;box-sizing: border-box;">
+        <div class="search_in layui-form">
+		{% comment %}<div class="upload_title service_title" >
+            <p>{% trans 'My service' %}</p>
+        </div>{% endcomment %}
+        <h6 class="mian_h6">{% trans "我的服务" %}</h6>
+        <ul class="my_service" style="height:132px;">
+            <li class="">
+                <p class="service_first">{% trans "接入域名" %}</p>
+                <p class="service_second"><span id="domain_count">{{ domain_list | length }}</span>{% trans "个" %}</p>
+                {% if 'client_cdn_create_domain' in user_perm or 'admin_cdn_create_domain' in user_perm  %}
+                    <p class="service_last">
+                        <button class="layui-btn" lay-submit lay-filter="add_domain">{% trans "新增域名" %}</button>
+                    </p>
+                {% endif %}
+            </li>
+            <li class="">
+                <p class="service_first">{% trans "本月总流量" %}</p>
+                <p class="service_second"><span id="flow_month">0.00</span><span id="flow_company">MB</span></p>
+                {% comment %}<p class="service_last" style="font-size: 10px">{% trans "较上月同时段 增加" %}<span id="flow_proportion"><img alt="nova portal" src="" alt=""><a href="javascript:;"></a></span></p>{% endcomment %}
+            </li>
+            <li class="">
+                <p class="service_first">{% trans "本月峰值带宽" %}</p>
+                <p class="service_second"><span id="bandwidth_month">0.00</span><span id="bandwidth_company">Mbps</span></p>
+                {% comment %}<p class="service_last" style="font-size: 10px">{% trans "较上月同时段 降低" %}<span id="bandwidth_proportion"><img alt="nova portal" src="" alt=""><a href="javascript:;"></a></span></p>{% endcomment %}
+            </li>
+        </ul>
+            </div>
+    </div>
+    {% include "cdn/admin_bandwidth.html" %}
+
+</div>
+<script type="text/javascript">
+
+    domain_list = {{ domain_list | safe }}
+    contract = {{ contract | safe }}
+    document.write('<script src="{% static 'js/public/echarts.min.js' %}"><\/script>'+
+            '<script src="{% static 'formSelects/formSelects-v4.js' %}"><\/script>'+
+            '<script src="{% static 'js/cdn/admin_statistics.js' %}?v='+Math.random()+'"><\/script>'+
+            '<script src="{% static 'js/cdn/client_overview.js' %}?v='+Math.random()+'"><\/script>'+
+            '<script src="{% static 'js/public/en_width.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% comment %}<script type="text/javascript">
+    document.write('<script src="{% static 'js/public/echarts.min.js' %}"><\/script>'+
+        '<script src="{% static 'js/cdn/client_overview.js' %}?v='+Math.random()+'"><\/script>'+
+    '<script src="{% static 'js/cdn/admin_bandwidth.js' %}?v='+Math.random()+'"><\/script>');
+</script>{% endcomment %}
+{% endblock %}

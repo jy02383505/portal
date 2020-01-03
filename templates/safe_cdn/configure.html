@@ -1,0 +1,31 @@
+{% extends "base/public.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block body_public %}
+<div class="con">
+    {% include "safe_cdn/base_top.html" %}
+    <div class="layui-tab layui-tab-card" lay-filter="test1" id="tab">
+      {% include "safe_cdn/base_tab.html" %}
+      <div class="layui-tab-content">
+     {% comment %}
+        <div class="layui-tab-item layui-show">
+            {% include "safe_cdn/configure_cc.html" %}
+        </div>{% endcomment %}
+        <div class="layui-tab-item layui-show">
+            {% if user.is_staff == True %}
+                {% include "safe_cdn/admin_configure_waf.html" %}
+            {% else %}
+                {% include "safe_cdn/client_configure_waf.html" %}
+            {% endif %}
+        </div>
+      </div>
+    </div>
+</div>
+<script>
+    document.write('<script src="{% static 'js/cms/safe_base.js' %}?v='+Math.random()+'"><\/script>'+
+        '<script src="{% static 'js/cms/configure.js' %}?v='+Math.random()+'"><\/script>');
+</script>
+{% endblock %}
+
+

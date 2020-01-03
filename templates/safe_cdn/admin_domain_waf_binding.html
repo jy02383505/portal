@@ -1,0 +1,43 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="main main_in form_information" id="opening_waf_first" style="display: none;">
+    <div class="list layui-form top_border">
+        <h5 class="mian_h5">{% trans "选择服务商" %}</h5>
+        <div class="layui-form-item">
+            <div class="layui-input-block" style="margin-left: 0;">
+              <input type="radio" name="service_bing" lay-filter="service_bing" value="{% trans "青松" %}" title="{% trans "青松" %}" checked>
+              <p class="waf_txt"><a class="blue" id="domain" href="javascript:;" >{{ domain.domain }} </a>{% trans "已有WAF服务" %}</p>
+              <p class="waf_txt">{% trans "WAF服务状态" %} <a class="blue" id="domain_status" href="javascript:;" ></a></p>
+              <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:133px;">{% trans "WAF接入CDN方式" %}</label>
+                    <div class="layui-input-block">
+                        {% for access_type in access_type_conf %}
+                            <input type="radio" name="waf_mode" lay-filter="waf_mode" value="{{ access_type.id }}" title="{% trans access_type.name %}">
+                        {% endfor %}
+                    </div>
+              </div>
+              <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:133px;">{% trans "WAF接入点" %}</label>
+                    <div class="layui-input-block">
+                        <select name="" id="waf_point" lay-filter="waf_point" lay-search>
+                            <option value=""></option>
+                            {% for access_point in access_point_conf %}
+                                    <option value="{{ access_point.short_name }}">{% trans access_point.name %}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+              </div>
+              <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:133px;"></label>
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit="" id="create_pine" lay-filter="create_pine">{% trans "绑定" %}</button>
+                    </div>
+              </div>
+            </div>
+            <div class="layui-input-block service_provider">
+              <input type="radio" name="service_bing" disabled lay-filter="service_bing" value="{% trans "F5" %}" title="{% trans "F5" %}" >
+              <p class="waf_txt">{% trans "即将上线，敬请期待" %}</p>
+            </div>
+        </div>
+    </div>
+</div>
