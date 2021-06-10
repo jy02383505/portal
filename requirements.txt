@@ -7,7 +7,7 @@ cffi==1.12.2
 chardet==3.0.4
 crypto==1.4.1
 cryptography==2.6.1
-Django==2.2
+Django==2.2.24
 docutils==0.14
 gevent==1.4.0
 greenlet==0.4.15
